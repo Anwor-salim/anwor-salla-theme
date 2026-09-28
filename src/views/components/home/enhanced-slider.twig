@@ -21,9 +21,21 @@
                 <div class="swiper-slide w-full min-h-[300px] lg:min-h-[528px] bg-dark relative">
 					<div style="background-image: url({{ slide.image }});" class="{{ slide.without_overlay ? '' : 'overlay-bg' }} bg-cover bg-center absolute inset-0"></div>
                     <div class="flex-center container pb-16 sm:pb-0 home-slider__content relative h-full">
-                        <div class=" w-4/6 text-center md:w-7/12 lg:w-5/12 text-white">
-                            <h2 data-swiper-parallax="-500" class="lg:text-title-size font-bold leading-tight mb-4">{{ slide.title }}</h2>
-                            <p data-swiper-parallax="-300" class="line-clamp-2 description">{{ slide.description }}</p>
+                        <div class="w-5/6 sm:w-4/6 text-center md:w-7/12 lg:w-6/12 text-white">
+                            <span class="inline-flex items-center gap-1.5 text-xs tracking-widest text-[#dfcaa7] bg-[#121316]/70 border border-[#c5a880]/40 rounded-full px-3.5 py-1 mb-3.5 backdrop-blur-sm">
+                              <i class="sicon-sparkle text-[#c5a880]"></i>
+                              مجموعة العطور الاستثنائية
+                            </span>
+                            <h2 data-swiper-parallax="-500" class="text-2xl sm:text-3xl lg:text-5xl font-extrabold leading-tight mb-4 tracking-tight text-white">{{ slide.title }}</h2>
+                            <p data-swiper-parallax="-300" class="line-clamp-2 description text-sm sm:text-base text-[#dfcaa7] max-w-xl mx-auto">{{ slide.description }}</p>
+                            {% if slide.url %}
+                              <div data-swiper-parallax="-200" class="mt-6">
+                                <a href="{{ slide.url }}" class="inline-flex items-center gap-2 px-7 py-3 rounded bg-[#c5a880] text-[#121316] font-bold text-sm hover:bg-white transition-all shadow-lg hover:shadow-[#c5a880]/30">
+                                  <span>اكتشف المجموعة</span>
+                                  <i class="sicon-arrow-left rtl:rotate-0 ltr:rotate-180"></i>
+                                </a>
+                              </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

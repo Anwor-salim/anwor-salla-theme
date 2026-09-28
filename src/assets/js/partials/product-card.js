@@ -57,6 +57,9 @@ class ProductCard extends HTMLElement {
     if (this.product.promotion_title) {
       return `<div class="s-product-card-promotion-title">${this.product.promotion_title}</div>`
     }
+    if (this.product?.is_on_sale && this.product?.discount_percentage) {
+      return `<div class="s-product-card-promotion-title">خصم ${this.product.discount_percentage}</div>`
+    }
     if (this.showQuantity && this.product?.quantity) {
       return `<div
         class="s-product-card-quantity">${this.remained} ${salla.helpers.number(this.product?.quantity)}</div>`
@@ -225,6 +228,9 @@ class ProductCard extends HTMLElement {
             : ``}
 
           <div class="s-product-card-content-main ${this.isSpecial ? 's-product-card-content-extra-padding' : ''}">
+            ${this.product?.brand?.name ?
+              `<span class="perfume-card-brand text-[11px] font-bold uppercase tracking-wider text-[#9e7f53] mb-1 block">${this.escapeHTML(this.product.brand.name)}</span>`
+              : ``}
             <h3 class="s-product-card-content-title">
               <a href="${this.product?.url}">${this.product?.name}</a>
             </h3>

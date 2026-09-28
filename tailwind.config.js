@@ -36,7 +36,17 @@ module.exports = {
                 'primary-d'       : 'var(--color-primary-dark)',
                 'primary-l'       : 'var(--color-primary-light)',
                 'primary-reverse' : 'var(--color-primary-reverse)',
-                'primary-dark' : 'var(--color-primary-dark)'
+                'primary-dark' : 'var(--color-primary-dark)',
+                'perfume-noir'    : '#121316',
+                'perfume-dark'    : '#1c1d21',
+                'perfume-charcoal': '#25262c',
+                'perfume-gold'    : '#c5a880',
+                'perfume-gold-light': '#dfcaa7',
+                'perfume-gold-dark': '#9e7f53',
+                'perfume-cream'   : '#faf7f2',
+                'perfume-beige'   : '#f4efe8',
+                'perfume-sand'    : '#e6dfd5',
+                'perfume-muted'   : '#8c8881',
             },
             spacing: {
               '3.75': '15px',
