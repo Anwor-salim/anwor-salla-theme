@@ -1,217 +1,101 @@
 <div id="top"></div>
 <br />
 <div align="center"> 
-  <a href="https://salla.dev"> 
-    <img src="https://salla.dev/wp-content/uploads/2023/03/1-Light.png" alt="Logo"> 
-  </a>
-  <h1 align="center">Theme Raed</h1>
+  <h1 align="center">✨ ثيم أنور الفاخر للعطور والبخور | Anwor Luxury Fragrance Theme ✨</h1>
   <p align="center">
-    Theme Raed is the starting point for developing Themes for Salla Stores. 
+    <strong>ثيم تجاري ملكي متكامل مبني على محرك Twilight لمنصة سلة (Salla)</strong>
     <br />
-    <a href="https://salla.dev/"><strong>Explore our blogs »</strong></a>
+    مخصص لمتاجر العطور الفاخرة، العود، البخور، الزيوت العطرية، ومجموعات الهدايا الاستثنائية.
     <br />
-    <a href="https://github.com/SallaApp/theme-raed/issues/new">Report Bug</a> · 
-    <a href="https://github.com/SallaApp/theme-raed/discussions/new">Request Feature</a> . <a href="https://t.me/salladev">&lt;/Salla Developers&gt;</a> . <a href="https://docs.salla.dev/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM">Official Documentation</a> 
+    <a href="https://github.com/Anwor-salim/anwor-theme">مستودع المشروع</a> · 
+    <a href="https://github.com/Anwor-salim/anwor-theme/issues">الدعم الفني والتبليغ عن المشاكل</a> · 
+    <a href="https://s.salla.sa">منصة سلة</a>
   </p>
 </div>
 
+---
 
-<!-- TABLE OF CONTENTS -->
-<details open>
-  <summary>Table of Contents</summary>
-<ol>
-<li><a  href="#overview">Overview</a></li>
-<li><a  href="#getting-started">Getting Started</a>
-<ul>
-<li><a  href="#prerequisite">Prerequisite</a></li>
-<li><a  href="#install">Installation</a></li>
-</ul>
-</li>
-<li>
-<a  href="#usage">Usage</a>
-<ul>
-<li><a  href="#directory-structure">Directory Structure</a></li>
-<li><a  href="#theme-preview">Theme Preview</a></li>
-</ul>
-</li>
-<li>
-<a  href="#main-features">Main Features</a>
-<ul>
-<li><a  href="#theme-features">Theme Features</a></li>
-<li><a  href="#theme-components">Theme Components</a></li>
-</ul>
-</li>
-<li><a  href="#support">Support</a></li>
-<li><a  href="#contributing">Contributing</a></li>
-<li><a  href="#credits">Credits</a></li>
-<li><a  href="#license">License</a></li>
-</ol>
-</details>
+## 🌟 نظرة عامة (Overview)
 
-<br>
+ثيم **anwor-theme** هو حل تجاري متكامل مُهندس خصيصاً لقطاع العطور والجمال على منصة سلة، يوفّر تجربة تسوق راقية تأسر الحواس وتعزز ثقة العميل من أول ثانية عبر:
+- **هوية بصرية ملكية**: درجات الفحم الداكن (Obsidian Noir #121316)، لمسات الذهب المعتق (Champagne Gold #c5a880)، وخلفيات العاج الدافئ (Warm Ivory #faf7f2).
+- **تصميم يدعم الهرم العطري**: عرض تفصيلي للنوتات (الافتتاحية، قلب العطر، القاعدة الملكية).
+- **استكشاف العائلات الشمية (Olfactory Discovery)**: توجيه العميل بحسب ذوقه (شرقي، خشبي، زهري، حمضي منعش، عود وعنبر، مسك).
+- **أوسمة الجودة والأصالة**: تأكيدات بصرية على الثبات والفوحان والأصالة 100%.
+- **نادي النخبة العطري**: قسم تفاعلي للنشرة البريدية والعروض الحصرية.
 
-## Overview
-Theme Raed is the starting point for developers to design themes for merchant stores that reflect the uniqueness of each store on the [Salla Platform](https://s.salla.sa). Custom themes will make it much easier for developers to tailor the merchant's store to its changing demands over time. It shipped as the default theme along with the [Twilight Themes](https://docs.salla.dev/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM), which is the Salla themes engine for developers to create customizable themes to be used on the [Salla Platform](https://salla.sa/site/).
-  
-## Getting Started 
-Developers can use Salla Theme Raed to not only design Salla themes with custom HTML/CSS/JS files and reusable custom UI components, but also to build custom actions that trigger JS events and hooks.
+---
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+## 💎 المكونات المخصصة الجديدة (Custom Components)
 
-### Prerequisite  
-- Basic understanding of HTML, CSS, JS, and the [Twig Template Engine](https://twig.symfony.com/).
-- Partner account at [Salla Partners Portal](https://salla.partners/) to create a demo store to publish and test your theme.
-- A [Github](https://github.com) account into which the theme can be synced.
-- Installing [Salla CLI](https://www.npmjs.com/package/@salla.sa/cli)
+### 1. دليل العائلات والنوتات العطرية (`home.perfume-discovery`)
+- يمكن إضافته وتخصيصه مباشرة من محرر ثيمات سلة.
+- يربط العائلات العطرية بصفحة نتائج المنتجات والوسوم بشكل ديناميكي.
 
-### Install  
-Theme Raed gets installed by default upon installing the Twilight Themes. Twilight can be installed in two ways:
+### 2. قصة دار العطور والفلسفة الملكية (`home.fragrance-story`)
+- مساحة سردية فاخرة تعكس أصالة المتجر وتاريخه، مع إحصائيات بصرية (نسبة الزيوت النقية، ساعات الثبات، عدد العملاء).
+- زر تحويل سريع للمجموعات الملكية مع تأثيرات حركية راقية.
 
-- Through the [Salla Partners Portal](https://docs.salla.dev/doc-421877/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM#creating-theme-via-salla-partners-portal)
+### 3. شريط الإعلانات الفاخر (`perfume-top-ribbon`)
+- شريط علوي قابل للتخصيص من إعدادات الثيم لإبراز الشحن السريع وتغليف الهدايا والعينات المجانية.
 
-- Through the [Salla CLI](https://docs.salla.dev/doc-422775/?nav=01HNA8QHCPJTCY5VSEZ616JCAK).
+### 4. بطاقات المنتجات المخصصة للقوارير
+- إبراز اسم الماركة التجارية ونسبة الخصم.
+- إطار بصري متناسق للقوارير العطرية بأبعاد مدروسة لمنع أي تشويه أو تمدد في الصور.
 
-Either way, it will trigger the installation of the Twilight Engine and the Theme Raed.  This a complete article for how to [install and create](https://docs.salla.dev/doc-421877/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM) the Twilight Themes.
+### 5. الهرم العطري في صفحة المنتج (`fragrance-notes-card`)
+- توزيع طبقي أنيق للنوتات العطرية يعزز من معدل التحويل وقرار الشراء.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+---
 
-## Usage 
-Theme Raed will be installed as the default theme when you install Twilight. We'll look at how this theme's directories are set up and how to use the preview mode in the next section.
+## ⚙️ إعدادات الثيم في مخصص سلة (Theme Settings)
 
-### Directory structure  
-**Theme Raed** is a collection of files and folders that define the Salla Store presentation layer. Following is the directory structure for this starter theme.
-```shell
-+---scr
-    +---assets
-    |   +---images      
-    |   +---js      
-    |   +---styles         
-    +---locales
-    |       ar.json
-    |       en.json
-    +---views
-        +---components
-        |   +---footer
-        |   +---header
-        |   +---home
-        |   +---product
-        |   comments.twig
-        +---layouts
-        |       master.twig
-        +---pages
-            |   cart.twig
-            |   index.twig
-            |   loyalty.twig
-            |   page-single.twig
-            |   thank-you.twig
-            +---blog
-            |       index.twig
-            |       single.twig 
-            +---brands
-            |       index.twig
-            |       single.twig 
-            +---customer
-               |   notifications.twig
-               |   profile.twig
-               |   wishlist.twig
-               +---orders
-               |      index.twig
-               |      single.twig
-            +---partials
-                |   single-comment.twig
-                +---product
-                  |   card-full-image.twig
-                  |   card-mini.twig
-                  |   card.twig
-                  |   options.twig
-                  |   slider.twig
-            +---product
-            |       index.twig
-            |       single.twig
-```
+الثيم يوفر لوحة إعدادات شاملة عبر `twilight.json`:
 
-### Theme Preview  
-Using [Salla CLI](https://github.com/SallaApp/Salla-CLI), the developer can preview the theme as they are being developed.  The `preview` command helps the developer to get a look at the theme in live mode.
+| الإعداد | الوصف | القيمة الافتراضية |
+|---------|-------|-------------------|
+| `show_top_ribbon` | تفعيل/إلغاء الشريط الإعلاني العلوي | `true` |
+| `top_ribbon_text` | نص الشريط الإعلاني في أعلى الصفحة | نص ترحيبي عاطر |
+| `show_fragrance_notes` | إظهار الهرم العطري في صفحة المنتج | `true` |
+| `show_perfume_badges` | إظهار أوسمة الضمان والفخامة بالمنتج | `true` |
+| `show_footer_newsletter` | تفعيل قسم نادي النخبة في الفوتر | `true` |
+| `footer_perfume_club_title` | عنوان نادي النخبة العطري | انضم إلى نادي النخبة العطري |
+| `footer_perfume_club_desc` | وصف نادي النخبة العطري | كن أول من يكتشف الإصدارات الحصرية |
 
-<!-- theme: info -->
-> To run the preview command, the developer must be in the theme's root folder.
+---
 
-The developer can run the command `preview` and specify the configuration to view the theme:
+## 🚀 التطوير المحلي والتشغيل (Local Development)
 
-```shell title = "Terminal"
+### المتطلبات المسبقة:
+- Node.js (v18+)
+- Salla CLI: مثبت ومسجل الدخول بحساب الشريك/المتجر.
+- pnpm أو npm
+
+### التثبيت والتشغيل:
+```bash
+# تثبيت الاعتماديات
+pnpm install
+
+# تشغيل خادم المعاينة المباشر وربطه بمتجر المعاينة
 salla theme preview
 
-# Alias command for preview
-salla theme p
+# بناء حزمة الإنتاج المصغرة
+pnpm run production
 ```
 
-On the other hand, the [Partners Portal]() lists the demo stores of the developer. The developer may select a demo store where the theme will be installed, after which the store will be instantly shown in the browser. This is a fantastic option for developers who want to see live updates to their themes appearing on the store right away.
+---
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+## 🛡️ التوافق مع معايير متجر سلة (Salla Marketplace Compliance)
 
-## Main Features 
-By default, Theme Raed home page displays a collection of Pre-Defined and Custom Components. These components are located in the [`src/views/components/home/`](https://github.com/SallaApp/theme-raed/tree/master/src/views/components/home) folder.
+- **حجم الحزمة الخفيف**: أقل بكثير من الحد الأقصى المسموح (1MB).
+- **التوافق التام مع Twilight**: استخدام المكونات الرسمية لجميع العمليات (السلة، البحث، الدخول، التصفية، الدفع).
+- **دعم كامل لـ RTL واللغتين**: اللغة العربية كلغة أساسية أولى وتوافق كامل مع الإنجليزية.
+- **التجاوب والأداء**: اختبار متجاوب عبر كافة الشاشات (320px إلى 1920px).
+- **إمكانية الوصول (Accessibility)**: مراعاة تباين الألوان وعناصر ARIA ولوحة المفاتيح.
 
+---
 
-### Theme Features  
- Pre-Defined  Components, which are know as Theme Features, listed in the [twilight.json](https://github.com/SallaApp/theme-raed/blob/master/twilight.json) under the `features` section. Below is a list of these components.
- 
- | <div style="width:220px">Component</div>                                                       | Discription                                                                                                                                                                 |
- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
- | [Youtube](https://docs.salla.dev/doc-422582/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM)                   | This component is responsible for displaying Youtube videos that the developer preselects.                                                                                  |
- | [Fixed Banner](https://docs.salla.dev/doc-422583/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM)              | Fixed banner is the area in charge of displaying a banner that is fixated on the home page.                                                                                 |
- | [Testimonials](https://docs.salla.dev/doc-422584/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM)              | This component displays testimonials that the developer preselects.                                                                                                         |
- | [Parallax backgorund](https://docs.salla.dev/doc-422585/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM)       | This component displays products with a backgournd that zooms out slowly giving a 2D effect.                                                                                |
- | [Photos slider](https://docs.salla.dev/doc-422586/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM)             | Photos are displayed in a slider by using this component.                                                                                                                   |
- | [Store Features](https://docs.salla.dev/doc-422587/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM)            | This component is responsible for showcasing the store features such as a detailed product description, customer reviews of the product, and a fast guest check-out option. |
- | [Square photos](https://docs.salla.dev/doc-422588/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM)             | Use this component to display photos in a square shape.                                                                                                                     |
- | [Fixed products](https://docs.salla.dev/doc-422589/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM)            | Use this component to pin the products that you wish to have displayed always.                                                                                              |
- | [Products slider](https://docs.salla.dev/doc-422590/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM)           | This slider component helps navigate between products vertically/horizontally.                                                                                              |
- | [Featured prodcuts style 1](https://docs.salla.dev/doc-422591/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM) | Using this component, featured products are exhibited in a pre-defined style.                                                                                               |
- | [Featured prodcuts style 2](https://docs.salla.dev/doc-422592/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM) | Using this component, featured products are exhibited in a pre-defined style.                                                                                               |
- | [Featured prodcuts style 3](https://docs.salla.dev/doc-422593/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM) | Using this component, featured products are exhibited in a pre-defined style.                                                                                               |
- | [Latest Products](https://docs.salla.dev/doc-422599/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM)           | This component displays the latest products added to the store automatically.                                                                                               |
- | [Vertical menu with slider](https://docs.salla.dev/doc-422600/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM) | Used to display a menu for a group of the sub-pages' links in a vertical menu.                                                                                              |
-
-### Theme Components
-The Custom Components can be easily modified by the developer. They are known as Theme Components. Below is the list of the Custom Components that are shipped by default along with Theme Raed.
-
-| Components                                                                                       | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| [Brands](https://docs.salla.dev/doc-422594/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM)                      | Brands' logos of the store are displayed in this component section.                              |
-| [Enhanced Squared Image](https://docs.salla.dev/doc-422595/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM)      | Enhanced images in a square shape are displayed with the help of this component.                 |
-| [Main links](https://docs.salla.dev/doc-422596/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM)                  | This component helps to portray the store main links.                                            |
-| [Enhanced Slider](https://docs.salla.dev/doc-422597/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM)             | The slider component helps navigate vertically/horizontally.                                     |
-| [Slider products with header](https://docs.salla.dev/doc-422598/?nav=01HNFTD5Y5ESFQS3P9MJ0721VM) | Slider products with header displays the products in a slide and give the sldier a header title. |
-
-
-## Support
-
-The team is always here to help you. Happen to face an issue? Want to report a bug? You can submit one here on Github using the [Issue Tracker](https://github.com/SallaApp/theme-raed/issues/new). If you still have any questions, please contact us via the [Telegram Bot](https://t.me/SallaSupportBot) or join in the Global Developer Community on [Telegram](https://t.me/salladev).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create.
-Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request.
-You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## Credits
-- [Salla](https://github.com/sallaApp)
-- [All Contributors](../../contributors)
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## License
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-<p align="right">(<a href="#top">back to top</a>)</p>
+## 📄 الترخيص والدعم (Support & License)
+- **الترخيص**: MIT License
+- **المطور**: أنور سالم (Anwor Salim)
+- **قناة الدعم**: عبر مستودع GitHub أو الدعم الفني المباشر لشركاء سلة.

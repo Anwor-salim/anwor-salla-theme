@@ -1,0 +1,81 @@
+{#
+  Fragrance House Story / قصة دار العطور
+  Editorial brand narrative component for luxury perfume houses
+#}
+<section component-id="{{ componentId }}" data-testid="store-fragrance-story" class="s-block s-block--fragrance-story py-14 md:py-20 relative overflow-hidden bg-[#121316] text-white my-8">
+  <!-- Subtle gold ambient background glows -->
+  <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-[#c5a880]/10 blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-[#c5a880]/10 blur-3xl pointer-events-none"></div>
+
+  <div class="container relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <!-- Story Image & Royal Framing -->
+      <div class="lg:col-span-5 order-2 lg:order-1">
+        <div class="relative max-w-md mx-auto lg:mx-0">
+          <div class="absolute -inset-2.5 rounded-2xl bg-gradient-to-tr from-[#c5a880]/40 via-transparent to-[#c5a880]/20 blur-sm"></div>
+          <div class="relative rounded-2xl overflow-hidden border border-[#c5a880]/30 bg-[#1c1d21] shadow-2xl">
+            <img 
+              src="{{ component.image|default('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=80') }}" 
+              alt="{{ component.title|default('قصة دار العطور') }}" 
+              class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-700" 
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#121316] via-transparent to-transparent opacity-60"></div>
+            <div class="absolute bottom-4 start-4 end-4 p-4 rounded-xl backdrop-blur-md bg-[#121316]/80 border border-[#c5a880]/20">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-[#c5a880]/20 border border-[#c5a880] flex items-center justify-center text-[#c5a880] shrink-0">
+                  <i class="sicon-crown"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-[#e8d7be]">{{ component.badge_label|default('فخامة استثنائية') }}</h4>
+                  <p class="text-[11px] text-[#a8a49d]">{{ component.badge_sub|default('صناعة متقنة بأندر المكونات العالمية') }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story Narrative & Brand Philosophy -->
+      <div class="lg:col-span-7 order-1 lg:order-2">
+        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#c5a880] mb-3 px-3 py-1 rounded-full bg-[#c5a880]/10 border border-[#c5a880]/30">
+          <i class="sicon-sparkle"></i>
+          <span>{{ component.subtitle|default('عراقة وأصالة الدار') }}</span>
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#faf7f2] mb-5 leading-tight">
+          {{ component.title|default('فلسفة العطر وسحر الحضور الذي لا يُنسى') }}
+        </h2>
+
+        <p class="text-sm sm:text-base text-[#cfcbc4] leading-relaxed mb-8 max-w-2xl font-light">
+          {{ component.description|default('نؤمن بأن العطر ليس مجرد رائحة عابرة، بل هو بصمة روحك وهوية حضورك في كل مجلس. ننتقي بدقة فائقة أنقى الزيوت العطرية من أندر مواطنها في فرنسا والشرق، لنصنع لكم توليفات خالدة تروي حكاية التميز والأناقة الملكية.') }}
+        </p>
+
+        <!-- 3 Brand Royal Stats / Pillars -->
+        <div class="grid grid-cols-3 gap-4 py-6 border-y border-[#c5a880]/20 mb-8 max-w-xl">
+          <div class="text-center sm:text-start">
+            <span class="block text-2xl sm:text-3xl font-black text-[#c5a880] font-mono">{{ component.stat_1_val|default('100%') }}</span>
+            <span class="text-xs text-[#a8a49d] font-medium">{{ component.stat_1_lbl|default('زيوت نقية أصلية') }}</span>
+          </div>
+          <div class="text-center sm:text-start border-x border-[#c5a880]/20 px-2 sm:px-4">
+            <span class="block text-2xl sm:text-3xl font-black text-[#c5a880] font-mono">{{ component.stat_2_val|default('48h+') }}</span>
+            <span class="text-xs text-[#a8a49d] font-medium">{{ component.stat_2_lbl|default('ثبات وفوحان دائم') }}</span>
+          </div>
+          <div class="text-center sm:text-start">
+            <span class="block text-2xl sm:text-3xl font-black text-[#c5a880] font-mono">{{ component.stat_3_val|default('50K+') }}</span>
+            <span class="text-xs text-[#a8a49d] font-medium">{{ component.stat_3_lbl|default('عميل يثق بذوقنا') }}</span>
+          </div>
+        </div>
+
+        {% set story_url = component.cta_url|default(link('products.index')) %}
+        {% if story_url %}
+          <a href="{{ story_url }}" class="btn-perfume-gold inline-flex items-center gap-2.5 px-7 py-3 rounded-md font-bold text-sm tracking-wide">
+            <span>{{ component.cta_text|default('استكشف التشكيلة الملكية') }}</span>
+            <i class="sicon-keyboard_arrow_left rtl:inline ltr:hidden text-lg"></i>
+            <i class="sicon-keyboard_arrow_right ltr:inline rtl:hidden text-lg"></i>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

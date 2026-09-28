@@ -215,6 +215,7 @@
                 <h1 data-testid="store-product-title" class="text-xl md:text-2xl leading-10 font-bold mb-3 text-gray-800">{{ product.name }}</h1>
 
                 {# Perfume Luxury Badges #}
+                {% if theme.settings.get('show_perfume_badges', true) %}
                 <div class="perfume-single-badges flex flex-wrap items-center gap-2 my-3">
                   <span class="inline-flex items-center gap-1.5 text-xs font-bold text-[#9e7f53] bg-[#c5a880]/10 border border-[#c5a880]/30 px-3 py-1 rounded">
                     <i class="sicon-sparkle"></i>
@@ -229,6 +230,7 @@
                     <span>تغليف هدايا فاخر</span>
                   </span>
                 </div>
+                {% endif %}
 
                 {% if product.subtitle %}
                     <h2 class="product-entry__sub-title text-sm text-gray-500 leading-6 mb-2.5">
@@ -278,6 +280,7 @@
                 </div>
 
                 {# Fragrance Notes Card #}
+                {% if theme.settings.get('show_fragrance_notes', true) %}
                 <div class="fragrance-notes-card" data-testid="store-fragrance-notes">
                   <div class="notes-title">
                     <i class="sicon-flower"></i>
@@ -311,6 +314,7 @@
                     </div>
                   </div>
                 </div>
+                {% endif %}
 
                 {% if product.tags|length and theme.settings.get('show_tags', true) %}
                     <div class="mb-3">

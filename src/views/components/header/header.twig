@@ -8,12 +8,14 @@
 {% set important_links = theme.settings.get('important_links') %}
 <header data-testid="store-header" class="store-header">
   {# Luxury Fragrance Announcement Bar #}
+  {% if theme.settings.get('show_top_ribbon', true) %}
   <div class="perfume-top-ribbon bg-[#121316] text-[#dfcaa7] text-xs py-1.5 px-4 text-center border-b border-[#c5a880]/20 flex items-center justify-center gap-2">
     <span class="inline-flex items-center gap-1.5 font-medium tracking-wide">
       <i class="sicon-sparkle text-[#c5a880] text-xs"></i>
       <span>{{ theme.settings.get('top_ribbon_text', 'عالم العطور الفاخرة • شحن سريع وتغليف هدايا راقٍ • عينات مجانية مع كل طلب') }}</span>
     </span>
   </div>
+  {% endif %}
 
   {# Bullet Delivery tag — mobile #}
   <div class="lg:hidden">

@@ -1,6 +1,20 @@
 # Changelog
 
-On this page, you will find all about Salla's Theme Raed updates, including frequent updates, bug fixes, new features, and deprecated elements. We will be displaying only released updates on [Theme Read's ChangeLog](https://github.com/SallaApp/theme-raed/blob/master/CHANGELOG.md) here on GitHub
+All notable changes to the **anwor-theme** (Anwor Luxury Perfume & Fragrance Theme) will be documented in this file.
+
+## 👑 [1.0.0] - 2026-09-28
+### Added
+- **Luxury Perfume Art Direction**: Complete aesthetic transformation tailored for high-end perfume, oud, and fragrance merchants (Obsidian Noir `#121316`, Champagne Gold `#c5a880`, Warm Ivory `#faf7f2`).
+- **Olfactory Discovery Component (`home.perfume-discovery`)**: Interactive scent family navigation (Oriental, Woody, Floral, Fresh, Oud & Amber, Pure Musk) linking directly to live products.
+- **Fragrance House Story (`home.fragrance-story`)**: Brand narrative section highlighting craftsmanship, oil purity, longevity statistics, and luxury collection CTA.
+- **Fragrance Pyramid in Product Details**: Dedicated visual section breaking down Top Notes (افتتاحية العطر), Heart Notes (قلب العطر), and Base Notes (القاعدة العطرية).
+- **Luxury Guarantee Badges**: Badges for 100% authentic fragrance, long-lasting performance, and royal gift packaging.
+- **Perfume VIP Club Newsletter**: High-conversion newsletter signup block in the footer for exclusive release notifications.
+- **Product Card Proportions for Fragrance Bottles**: Fixed-height, contain-fit image framing on warm ivory background to display bottles and boxes with zero distortion.
+- **Configurable Theme Settings in Twilight**: Full merchant control over announcement ribbon, fragrance pyramid, VIP newsletter, and guarantees.
+- **RTL & Typography Optimization**: Fine-tuned Arabic calligraphy weights, spacing, and mobile touch targets.
+
+---
 
 > 📝 Note
 > 

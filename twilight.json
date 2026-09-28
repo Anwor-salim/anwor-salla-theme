@@ -1,10 +1,10 @@
 {
     "name": {
-        "ar": "رائد",
-        "en": "Theme Raed"
+        "ar": "anwor-theme",
+        "en": "anwor-theme"
     },
-    "repository": "https://github.com/Anwor-salim/anwor-salla-theme",
-    "author_email": "support@salla.sa",
+    "repository": "https://github.com/Anwor-salim/anwor-theme",
+    "author_email": "anworsalim32@gmail.com",
     "features": [
         "mega-menu",
         "fonts",
@@ -21,6 +21,8 @@
         "component-square-photos",
         "component-store-features",
         "component-youtube",
+        "component-perfume-discovery",
+        "component-fragrance-story",
         "menu-images",
         "filters"
     ],
@@ -96,6 +98,28 @@
             "variant": "h6"
         },
         {
+            "id": "show_top_ribbon",
+            "label": "إظهار الشريط الإعلاني العطري الفاخر أعلى الصفحة",
+            "description": "شريط التنبيهات والضمانات أعلى الهيدر",
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "id": "top_ribbon_text",
+            "label": "نص الشريط الإعلاني العلوي",
+            "type": "string",
+            "icon": "sicon-format-text-alt",
+            "format": "text",
+            "multilanguage": true,
+            "value": "عالم العطور الفاخرة • شحن سريع وتغليف هدايا راقٍ • عينات مجانية مع كل طلب",
+            "required": false,
+            "placeholder": "أدخل نص الشريط الإعلاني هنا..."
+        },
+        {
             "id": "header_is_sticky",
             "label": "تثبت القائمة الرئيسية أعلى الصفحة عند التمرير لأسفل",
             "description": "يُنصح بالغاء تفعيلها في حالة وجود عناصر كثيرة في القائمة المنسدلة",
@@ -161,6 +185,37 @@
             "required": false,
             "value": true,
             "selected": false
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "إظهار نادي النخبة العطري (النشرة البريدية) في الفوتر",
+            "description": "صندوق الاشتراك الحصري في أسفل الصفحة",
+            "id": "show_footer_newsletter",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "id": "footer_perfume_club_title",
+            "label": "عنوان نادي النخبة في الفوتر",
+            "type": "string",
+            "icon": "sicon-format-text-alt",
+            "format": "text",
+            "multilanguage": true,
+            "value": "انضم إلى نادي النخبة العطري",
+            "required": false
+        },
+        {
+            "id": "footer_perfume_club_desc",
+            "label": "وصف نادي النخبة في الفوتر",
+            "type": "string",
+            "icon": "sicon-typography",
+            "format": "text",
+            "multilanguage": true,
+            "value": "كن أول من يكتشف الإصدارات الحصرية والعروض الملكية الخاصة.",
+            "required": false
         },
         {
             "type": "static",
@@ -280,6 +335,28 @@
             "required": false,
             "value": false,
             "selected": false
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "إظهار الهرم العطري والنوتات في صفحة المنتج",
+            "description": "عرض القمة العطرية، قلب العطر، والقاعدة الملكية",
+            "id": "show_fragrance_notes",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "إظهار أوسمة الضمان والفخامة في صفحة المنتج",
+            "description": "أوسمة: عطر أصلي 100%، ثبات وفوحان يدوم، تغليف هدايا فاخر",
+            "id": "show_perfume_badges",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
         }
     ],
     "components": [
@@ -1138,12 +1215,133 @@
                     "maxLength": 30
                 }
             ]
+        },
+        {
+            "key": "a78e4f12-92b0-4621-8ec1-912b55f10a01",
+            "title": {
+                "en": "Fragrance Families Discovery",
+                "ar": "دليل النوتات والعائلات العطرية"
+            },
+            "icon": "sicon-flower",
+            "path": "home.perfume-discovery",
+            "image": "https://cdn.salla.network/images/themes/raed/preview-images/square-photos.png?v=1.1",
+            "is_default": true,
+            "fields": [
+                {
+                    "type": "string",
+                    "icon": "sicon-sparkle",
+                    "label": "شارة القسم",
+                    "multilanguage": true,
+                    "id": "badge",
+                    "value": "دليل النوتات والعائلات العطرية",
+                    "required": false,
+                    "format": "text",
+                    "placeholder": "نص الشارة...",
+                    "minLength": 0,
+                    "maxLength": 100
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "العنوان الرئيسي",
+                    "multilanguage": true,
+                    "id": "title",
+                    "value": "اختر عطرك حسب ذوقك وطابعك",
+                    "required": false,
+                    "format": "text",
+                    "placeholder": "أدخل العنوان...",
+                    "minLength": 0,
+                    "maxLength": 150
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-typography",
+                    "label": "الوصف التوضيحي",
+                    "multilanguage": true,
+                    "id": "subtitle",
+                    "value": "استكشف العطور عبر عائلاتها الشمية المميزة لتصل إلى الرائحة التي تعبّر عن حضورك وشخصيتك.",
+                    "required": false,
+                    "format": "textarea",
+                    "placeholder": "أدخل الوصف...",
+                    "minLength": 0,
+                    "maxLength": 300
+                }
+            ]
+        },
+        {
+            "key": "c49d8e33-71a2-4a0b-93ff-183e20d88b02",
+            "title": {
+                "en": "Fragrance House Story",
+                "ar": "قصة دار العطور (عن المتجر)"
+            },
+            "icon": "sicon-crown",
+            "path": "home.fragrance-story",
+            "image": "https://cdn.salla.network/images/themes/raed/preview-images/parallax-background.png?v=1.1",
+            "is_default": true,
+            "fields": [
+                {
+                    "type": "string",
+                    "icon": "sicon-sparkle",
+                    "label": "العنوان الفرعي",
+                    "multilanguage": true,
+                    "id": "subtitle",
+                    "value": "عراقة وأصالة الدار",
+                    "required": false,
+                    "format": "text",
+                    "minLength": 0,
+                    "maxLength": 100
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "العنوان الرئيسي",
+                    "multilanguage": true,
+                    "id": "title",
+                    "value": "فلسفة العطر وسحر الحضور الذي لا يُنسى",
+                    "required": false,
+                    "format": "text",
+                    "minLength": 0,
+                    "maxLength": 150
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-typography",
+                    "label": "نص القصة",
+                    "multilanguage": true,
+                    "id": "description",
+                    "value": "نؤمن بأن العطر ليس مجرد رائحة عابرة، بل هو بصمة روحك وهوية حضورك في كل مجلس. ننتقي بدقة فائقة أنقى الزيوت العطرية من أندر مواطنها في فرنسا والشرق، لنصنع لكم توليفات خالدة تروي حكاية التميز والأناقة الملكية.",
+                    "required": false,
+                    "format": "textarea",
+                    "minLength": 0,
+                    "maxLength": 500
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-image",
+                    "label": "صورة قصة الدار",
+                    "id": "image",
+                    "format": "image",
+                    "required": false,
+                    "value": "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=80"
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "نص زر الاستكشاف",
+                    "multilanguage": true,
+                    "id": "cta_text",
+                    "value": "استكشف التشكيلة الملكية",
+                    "required": false,
+                    "format": "text",
+                    "minLength": 0,
+                    "maxLength": 50
+                }
+            ]
         }
     ],
-    "support_url": "https://salla.com/",
+    "support_url": "https://github.com/Anwor-salim/anwor-theme/issues",
     "description": {
-        "ar": "مجموعة كبيرة من المزايا لدعم تجارتك وتقديم تجربة تسوق مثيرة لعملائك",
-        "en": "A wide range of features to support your business and provide an exciting shopping experience for your customers"
+        "ar": "ثيم أنور الفاخر للعطور ومستحضرات التجميل - تصميم ملكي مخصص لمتاجر العطور والبخور والعود والزيوت العطرية والهدايا، بتجربة تسوق فريدة ودعم كامل للهرم العطري والعائلات الشمية.",
+        "en": "Anwor Luxury Perfume & Fragrance Salla Theme - A royal, high-conversion theme engineered specifically for luxury perfume, oud, incense, and beauty stores."
     }
 }
-

@@ -169,17 +169,20 @@ salla-cart-summary {
 
 /* 3. Luxury Perfume Product Cards */
 .s-product-card-entry {
+  display: flex !important;
+  flex-direction: column !important;
   background: #ffffff !important;
-  border: 1px solid rgba(197, 168, 128, 0.18) !important;
+  border: 1px solid rgba(197, 168, 128, 0.22) !important;
   border-radius: 8px !important;
-  overflow: hidden;
+  overflow: hidden !important;
+  height: 100% !important;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
   box-shadow: 0 4px 18px -4px rgba(18, 19, 22, 0.04) !important;
 
   &:hover {
     border-color: #c5a880 !important;
-    transform: translateY(-5px);
-    box-shadow: 0 16px 36px -8px rgba(197, 168, 128, 0.2) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px -8px rgba(197, 168, 128, 0.22) !important;
 
     .s-product-card-image img {
       transform: scale(1.05);
@@ -187,15 +190,76 @@ salla-cart-summary {
   }
 
   .s-product-card-image {
-    background: #fbf9f6 !important;
-    padding: 0.75rem;
-    position: relative;
-    overflow: hidden;
+    background: #faf7f2 !important;
+    height: 270px !important;
+    max-height: 270px !important;
+    width: 100% !important;
+    padding: 1rem !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+
+    a {
+      width: 100% !important;
+      height: 100% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
 
     img {
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      max-height: 100% !important;
+      max-width: 100% !important;
+      width: auto !important;
+      height: auto !important;
       object-fit: contain !important;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
+  }
+
+  .s-product-card-content {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+    justify-content: space-between !important;
+    padding: 1.15rem 1rem !important;
+    background: #ffffff !important;
+  }
+
+  .s-product-card-content-title {
+    margin-bottom: 0.5rem !important;
+    a {
+      color: #121316 !important;
+      font-weight: 700 !important;
+      font-size: 0.95rem !important;
+      line-height: 1.4 !important;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 2 !important;
+      -webkit-box-orient: vertical !important;
+      overflow: hidden !important;
+
+      &:hover {
+        color: #9e7f53 !important;
+      }
+    }
+  }
+
+  .s-product-card-content-sub {
+    margin-top: auto !important;
+    margin-bottom: 0.75rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .s-product-card-content-footer {
+    margin-top: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
   }
 
   /* Wishlist Button */

@@ -1,11 +1,11 @@
 {
-  "name": "theme-raed",
-  "version": "1.358.0",
-  "description": "Salla Theme",
+  "name": "anwor-theme",
+  "version": "1.0.0",
+  "description": "Anwor Luxury Perfume & Fragrance Salla Twilight Theme",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Anwor-salim/anwor-salla-theme.git"
+    "url": "git+https://github.com/Anwor-salim/anwor-theme.git"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -15,7 +15,7 @@
     "development": "webpack --mode development",
     "watch": "webpack --mode development --watch"
   },
-  "author": "Salla",
+  "author": "Anwor Salim",
   "dependencies": {
     "@babel/runtime": "^8.0.0",
     "animejs": "^3.2.2",
