@@ -1,11 +1,13 @@
 import "lite-youtube-embed";
 import BasePage from "./base-page";
 import Lightbox from "fslightbox";
+import { initPerfumeShowcase } from "./partials/perfume-showcase";
 window.fslightbox = Lightbox;
 
 class Home extends BasePage {
     onReady() {
         this.initFeaturedTabs();
+        initPerfumeShowcase();
     }
 
     /**

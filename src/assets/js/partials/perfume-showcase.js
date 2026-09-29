@@ -1,13 +1,12 @@
 /**
  * Luxury Dior Perfume Showcase Module
- * Deep shadow-DOM piercing and automatic product enhancement for Salla Twilight
+ * Continuous polling and shadow-root piercing for Salla Twilight Web Components
  */
 
 export const DIOR_PERFUMES = [
   {
     id: 1,
     name: "عطر سوفاج ديور أو دو بارفان - 100 مل",
-    nameEn: "Dior Sauvage Eau de Parfum",
     subtitle: "Dior Sauvage • الفخامة والرجولة الأيقونية",
     price: "580 ر.س",
     brand: "DIOR PARIS",
@@ -19,7 +18,6 @@ export const DIOR_PERFUMES = [
   {
     id: 2,
     name: "عطر ديور هوم إنتنس - 100 مل",
-    nameEn: "Dior Homme Intense",
     subtitle: "Dior Homme Intense • الأناقة والغموض الساحر",
     price: "620 ر.س",
     brand: "DIOR PARIS",
@@ -31,7 +29,6 @@ export const DIOR_PERFUMES = [
   {
     id: 3,
     name: "عطر مس ديور أو دو بارفان - 100 مل",
-    nameEn: "Miss Dior Eau de Parfum",
     subtitle: "Miss Dior • باقة زهرية ملكية حسية",
     price: "650 ر.س",
     brand: "DIOR PARIS",
@@ -43,7 +40,6 @@ export const DIOR_PERFUMES = [
   {
     id: 4,
     name: "عطر جريس ديور - كوليكسيون بريفيه 125 مل",
-    nameEn: "Gris Dior Maison Christian Dior",
     subtitle: "La Collection Privée Christian Dior",
     price: "1,250 ر.س",
     brand: "DIOR PRIVÉE",
@@ -55,7 +51,6 @@ export const DIOR_PERFUMES = [
   {
     id: 5,
     name: "عطر جادور ديور الملكي - 100 مل",
-    nameEn: "Dior J'adore Eau de Parfum",
     subtitle: "J'adore Dior • الأنوثة الذهبية المطلقة",
     price: "630 ر.س",
     brand: "DIOR PARIS",
@@ -67,7 +62,6 @@ export const DIOR_PERFUMES = [
   {
     id: 6,
     name: "عطر عود أصفهان ديور - لا كوليكسيون بريفيه 125 مل",
-    nameEn: "Dior Oud Ispahan Privée",
     subtitle: "Oud Ispahan • لقاء الورد الدمشقي والعود الكمبودي",
     price: "1,350 ر.س",
     brand: "DIOR PRIVÉE",
@@ -78,50 +72,34 @@ export const DIOR_PERFUMES = [
   }
 ];
 
-// Recursively traverse DOM and Shadow Roots
-function findCardsAndRoots(root = document) {
-  let list = [];
-  
-  // Custom or standard cards
-  const cards = root.querySelectorAll('salla-product-card, custom-salla-product-card, .s-product-card-entry, .s-product-card');
-  cards.forEach(c => list.push(c));
-
-  // Search inside shadow roots
-  const all = root.querySelectorAll('*');
-  all.forEach(el => {
-    if (el.shadowRoot) {
-      list = list.concat(findCardsAndRoots(el.shadowRoot));
-    }
-  });
-
-  return list;
-}
-
 export function initPerfumeShowcase() {
-  function applyDiorTransformation() {
-    // 1. Find all card components (regular DOM + all Shadow DOMs)
-    const cards = findCardsAndRoots(document);
-    cards.forEach((card, index) => {
-      const perfume = DIOR_PERFUMES[index % DIOR_PERFUMES.length];
-      const targetRoot = card.shadowRoot || card;
+  function transformAllProducts() {
+    let cardIndex = 0;
 
-      // Replace images inside target root
-      const imgs = targetRoot.querySelectorAll('img');
+    function processCard(card) {
+      const perfume = DIOR_PERFUMES[cardIndex % DIOR_PERFUMES.length];
+      cardIndex++;
+
+      const root = card.shadowRoot || card;
+
+      // 1. Force Image Replacement
+      const imgs = root.querySelectorAll('img');
       imgs.forEach(img => {
-        if (!img.src.includes('unsplash') || img.src !== perfume.image) {
+        if (!img.src || !img.src.includes('unsplash') || img.src !== perfume.image) {
           img.src = perfume.image;
+          img.setAttribute('src', perfume.image);
           if (img.dataset.src) img.dataset.src = perfume.image;
           img.srcset = '';
+          img.removeAttribute('srcset');
           img.alt = perfume.name;
           img.style.objectFit = 'contain';
-          img.style.maxHeight = '270px';
+          img.style.backgroundColor = '#faf7f2';
           img.style.padding = '8px';
-          img.style.background = '#faf7f2';
         }
       });
 
-      // Replace titles inside target root
-      const titles = targetRoot.querySelectorAll('.s-product-card-content-title a, h3 a, h4 a, .s-product-card-title a, a[title]');
+      // 2. Force Title Replacement
+      const titles = root.querySelectorAll('.s-product-card-content-title a, h3 a, h4 a, .s-product-card-title a, a.title');
       titles.forEach(t => {
         if (t.textContent !== perfume.name) {
           t.textContent = perfume.name;
@@ -129,80 +107,50 @@ export function initPerfumeShowcase() {
         }
       });
 
-      // Replace prices
-      const prices = targetRoot.querySelectorAll('.s-product-card-sale-price h4, .s-product-card-price, .total-price, .s-product-card-price h4');
+      // 3. Force Price Replacement
+      const prices = root.querySelectorAll('.s-product-card-sale-price h4, .s-product-card-price h4, .s-product-card-price, .total-price');
       prices.forEach(p => {
         p.textContent = perfume.price;
       });
 
-      // Replace subtitle
-      const sub = targetRoot.querySelector('.s-product-card-content-subtitle, .s-product-card-subtitle');
-      if (sub) {
+      // 4. Force Subtitle
+      const sub = root.querySelector('.s-product-card-content-subtitle, .s-product-card-subtitle');
+      if (sub && !sub.textContent.includes('DIOR')) {
         sub.textContent = perfume.brand + ' • ' + perfume.subtitle;
       }
+    }
 
-      // Track clicks to set perfume on single page
-      if (!card.dataset.perfumeClickAttached) {
-        card.dataset.perfumeClickAttached = 'true';
-        card.addEventListener('click', () => {
-          try {
-            sessionStorage.setItem('selected_perfume', JSON.stringify(perfume));
-          } catch(e) {}
-        });
-      }
+    // A. Check salla-products-list (nested shadow roots)
+    document.querySelectorAll('salla-products-list, salla-products-slider').forEach(list => {
+      const listRoot = list.shadowRoot || list;
+      listRoot.querySelectorAll('salla-product-card, custom-salla-product-card, .s-product-card').forEach(processCard);
     });
 
-    // 2. Direct fallback: Replace any product image in document or shadowRoots that is still a fashion dress
-    const allImages = [];
-    function collectAllImages(root) {
-      allImages.push(...Array.from(root.querySelectorAll('img')));
-      root.querySelectorAll('*').forEach(el => {
-        if (el.shadowRoot) collectAllImages(el.shadowRoot);
+    // B. Check top-level cards
+    document.querySelectorAll('salla-product-card, custom-salla-product-card, .s-product-card-entry, .s-product-card').forEach(processCard);
+
+    // C. Deep fallback: scan ALL shadow roots for any remaining dress images
+    function scanRoots(node) {
+      if (node.shadowRoot) {
+        node.shadowRoot.querySelectorAll('salla-product-card, custom-salla-product-card, .s-product-card').forEach(processCard);
+        scanRoots(node.shadowRoot);
+      }
+      node.querySelectorAll?.('*').forEach(child => {
+        if (child.shadowRoot) scanRoots(child);
       });
     }
-    collectAllImages(document);
+    scanRoots(document);
 
-    let dressCount = 0;
-    allImages.forEach(img => {
-      // If it looks like a demo product image (from salla cdn or avatar / dresses)
-      const isProductImg = img.closest?.('.s-product-card') || 
-                           img.closest?.('salla-product-card') ||
-                           img.closest?.('custom-salla-product-card') ||
-                           img.classList.contains('s-product-card-image') ||
-                           img.src.includes('cdn.salla.sa/products/') ||
-                           img.src.includes('cdn.salla.sa/stores/') ||
-                           (img.alt && (img.alt.includes('فستان') || img.alt.includes('skirt') || img.alt.includes('منتج')));
-
-      if (isProductImg && !img.src.includes('unsplash')) {
-        const perfume = DIOR_PERFUMES[dressCount % DIOR_PERFUMES.length];
-        dressCount++;
-        img.src = perfume.image;
-        if (img.dataset.src) img.dataset.src = perfume.image;
-        img.srcset = '';
-        img.alt = perfume.name;
-        img.style.objectFit = 'contain';
-        img.style.background = '#faf7f2';
-      }
-    });
-
-    // 3. Single Product Page Details
+    // D. Single Product Page Details
     const singleProductTitle = document.querySelector('h1[data-testid="store-product-title"], .container--product-details h1');
     if (singleProductTitle) {
-      let savedPerfume = null;
-      try {
-        const stored = sessionStorage.getItem('selected_perfume');
-        if (stored) savedPerfume = JSON.parse(stored);
-      } catch(e) {}
-      const cur = savedPerfume || DIOR_PERFUMES[0];
-
+      const cur = DIOR_PERFUMES[0];
       if (singleProductTitle.textContent !== cur.name) {
         singleProductTitle.textContent = cur.name;
       }
-      const sliderImgs = document.querySelectorAll('.details-slider img, .image-slider img');
-      sliderImgs.forEach(img => {
+      document.querySelectorAll('.details-slider img, .image-slider img').forEach(img => {
         if (img.src !== cur.image) {
           img.src = cur.image;
-          if (img.dataset.src) img.dataset.src = cur.image;
           img.srcset = '';
           img.style.objectFit = 'contain';
         }
@@ -216,23 +164,7 @@ export function initPerfumeShowcase() {
     }
   }
 
-  // Execute frequently to catch async rendered Web Components
-  applyDiorTransformation();
-  const intervals = [100, 300, 600, 1000, 1500, 2500, 4000, 6000];
-  intervals.forEach(ms => setTimeout(applyDiorTransformation, ms));
-
-  // Run on any DOM change
-  const observer = new MutationObserver(() => {
-    applyDiorTransformation();
-  });
-  observer.observe(document.body, { childList: true, subtree: true });
-  
-  // Also observe if there are iframes on same origin
-  document.querySelectorAll('iframe').forEach(frame => {
-    try {
-      if (frame.contentDocument) {
-        observer.observe(frame.contentDocument.body, { childList: true, subtree: true });
-      }
-    } catch(e) {}
-  });
+  // Run immediately and continuously every 250ms
+  transformAllProducts();
+  setInterval(transformAllProducts, 250);
 }
