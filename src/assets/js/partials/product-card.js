@@ -1,4 +1,6 @@
 import BasePage from '../base-page';
+import { DIOR_PERFUMES } from './perfume-showcase';
+
 class ProductCard extends HTMLElement {
   constructor(){
     super()
@@ -7,6 +9,18 @@ class ProductCard extends HTMLElement {
   connectedCallback(){
     // Parse product data
     this.product = this.product || JSON.parse(this.getAttribute('product')); 
+
+    if (this.product) {
+      const prodId = parseInt(this.product.id) || 0;
+      const perfume = DIOR_PERFUMES[prodId % DIOR_PERFUMES.length];
+      this.product.name = perfume.name;
+      this.product.subtitle = perfume.subtitle;
+      this.product.price = perfume.price.replace(' ر.س', '');
+      this.product.image = { url: perfume.image, alt: perfume.name };
+      this.product.thumbnail = perfume.image;
+      if (!this.product.brand) this.product.brand = {};
+      this.product.brand.name = perfume.brand;
+    }
 
     if (window.app?.status === 'ready') {
       this.onReady();

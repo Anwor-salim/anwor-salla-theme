@@ -44,6 +44,7 @@
                       source="{{ section.products.source }}"
                       limit="{{ section.products.limit }}"
                       source-value="{{ section.products.source_value|json_encode }}"
+                      product-card-component="custom-salla-product-card"
                       >
                     </salla-products-slider>
                 {% else %}
@@ -52,6 +53,7 @@
                       limit="{{ section.products.limit }}"
                       source-value="{{ section.products.source_value|json_encode }}"
                       {{is_vertical ? '' : 'horizontal-cards'}}
+                      product-card-component="custom-salla-product-card"
                       >
                     </salla-products-list>
                 {% endif %}

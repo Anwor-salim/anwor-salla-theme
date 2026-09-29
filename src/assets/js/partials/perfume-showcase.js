@@ -1,7 +1,6 @@
 /**
  * Luxury Dior Perfume Showcase Module
- * Seamlessly upgrades demo catalog items into authentic Dior luxury perfumes
- * with high-definition imagery, olfactory notes, and luxury pricing.
+ * Deep shadow-DOM piercing and automatic product enhancement for Salla Twilight
  */
 
 export const DIOR_PERFUMES = [
@@ -11,26 +10,22 @@ export const DIOR_PERFUMES = [
     nameEn: "Dior Sauvage Eau de Parfum",
     subtitle: "Dior Sauvage • الفخامة والرجولة الأيقونية",
     price: "580 ر.س",
-    regularPrice: "680 ر.س",
-    badge: "الأكثر مبيعاً",
     brand: "DIOR PARIS",
     image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=80",
     topNotes: "البرغموت الكالابري، الفلفل الأسود الحار",
-    heartNotes: "اللافندر الفرنسي، فلفل سيشوان، إبرة الراعي، نجيل الهند",
-    baseNotes: "الأمبروكسان النقي، أخشاب الأرز الأطلسية، الفانيليا البابوية الفاخرة"
+    heartNotes: "اللافندر الفرنسي، فلفل سيشوان، إبرة الراعي",
+    baseNotes: "الأمبروكسان النقي، أخشاب الأرز، الفانيليا البابوية"
   },
   {
     id: 2,
     name: "عطر ديور هوم إنتنس - 100 مل",
-    nameEn: "Dior Homme Intense Eau de Parfum",
-    subtitle: "Dior Homme Intense • الأناقة الشرقية والغموض الساحر",
+    nameEn: "Dior Homme Intense",
+    subtitle: "Dior Homme Intense • الأناقة والغموض الساحر",
     price: "620 ر.س",
-    regularPrice: "720 ر.س",
-    badge: "إصدار ملكي",
     brand: "DIOR PARIS",
     image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=800&q=80",
     topNotes: "اللافندر التوسكاني الفاخر",
-    heartNotes: "السوسن الإيطالي النادر، حبوب الكاكاو، الأمبريت الإكوادوري",
+    heartNotes: "السوسن الإيطالي النادر، حبوب الكاكاو، الأمبريت",
     baseNotes: "أخشاب الأرز الفرجينية، نجيل الهند، العنبر الدافئ"
   },
   {
@@ -39,104 +34,116 @@ export const DIOR_PERFUMES = [
     nameEn: "Miss Dior Eau de Parfum",
     subtitle: "Miss Dior • باقة زهرية ملكية حسية",
     price: "650 ر.س",
-    regularPrice: "750 ر.س",
-    badge: "العطر الأنثوي الأول",
     brand: "DIOR PARIS",
     image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=80",
     topNotes: "زنبق الوادي، الفاوانيا الحريرية، السوسن المنعش",
-    heartNotes: "ورد سنتيفوليا (ورد غراس النادر)، الخوخ المخملي، المشمش",
-    baseNotes: "الفانيليا البابوية، خشب الصندل السريلانكي، المسك الأبيض"
+    heartNotes: "ورد سنتيفوليا (ورد غراس النادر)، الخوخ المخملي",
+    baseNotes: "الفانيليا البابوية، خشب الصندل، المسك الأبيض"
   },
   {
     id: 4,
-    name: "عطر جريس ديور - مجموعة الميزون الخاصة 125 مل",
-    nameEn: "Gris Dior Maison Christian Dior Privée",
-    subtitle: "La Collection Privée Christian Dior • توقيع الدار الفريد",
+    name: "عطر جريس ديور - كوليكسيون بريفيه 125 مل",
+    nameEn: "Gris Dior Maison Christian Dior",
+    subtitle: "La Collection Privée Christian Dior",
     price: "1,250 ر.س",
-    regularPrice: "1,450 ر.س",
-    badge: "مجموعة الميزون الخاصة",
     brand: "DIOR PRIVÉE",
     image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80",
     topNotes: "البرغموت الإيطالي، الجريب فروت الصقلي",
     heartNotes: "الورد التركي النادر، الياسمين الغراسي الملكي",
-    baseNotes: "الباتشولي الإندونيسي، طحلب البلوط، خشب الصندل، العنبر الرمادي"
+    baseNotes: "الباتشولي الإندونيسي، طحلب البلوط، خشب الصندل"
   },
   {
     id: 5,
     name: "عطر جادور ديور الملكي - 100 مل",
     nameEn: "Dior J'adore Eau de Parfum",
-    subtitle: "J'adore Dior • الأنوثة الذهبية المطلقة في زجاجة أسطورية",
+    subtitle: "J'adore Dior • الأنوثة الذهبية المطلقة",
     price: "630 ر.س",
-    regularPrice: "730 ر.س",
-    badge: "أيقونة ذهبية",
     brand: "DIOR PARIS",
     image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80",
-    topNotes: "الإيلنغ من جزر القمر، الكمثرى، الخربز المنعش، الماغنوليا",
-    heartNotes: "الياسمين السامباك، الورد الجوري، الأوركيد، زنبق الوادي، البرقوق",
-    baseNotes: "خشب الأرز الأطلسي، المسك الفاخر، الفانيليا، التوت العليق"
+    topNotes: "الإيلنغ، الكمثرى، الخربز، الماغنوليا",
+    heartNotes: "الياسمين السامباك، الورد الجوري، الأوركيد",
+    baseNotes: "خشب الأرز، المسك الفاخر، الفانيليا"
   },
   {
     id: 6,
     name: "عطر عود أصفهان ديور - لا كوليكسيون بريفيه 125 مل",
     nameEn: "Dior Oud Ispahan Privée",
-    subtitle: "Oud Ispahan • لقاء الورد الدمشقي والعود الكمبودي المعتق",
+    subtitle: "Oud Ispahan • لقاء الورد الدمشقي والعود الكمبودي",
     price: "1,350 ر.س",
-    regularPrice: "1,550 ر.س",
-    badge: "عود ملكي فاخر",
     brand: "DIOR PRIVÉE",
     image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=80",
     topNotes: "اللابدانوم الإسباني، الزعفران الإيراني الفاخر",
-    heartNotes: "الورد الدمشقي العريق، الباتشولي الإندونيسي المعتق",
-    baseNotes: "العود الكمبودي الملكي، أخشاب الأرز، اللبان العماني، المسك"
+    heartNotes: "الورد الدمشقي العريق، الباتشولي الإندونيسي",
+    baseNotes: "العود الكمبودي الملكي، أخشاب الأرز، اللبان العماني"
   }
 ];
 
-export function initPerfumeShowcase() {
-  const isPreview = window.location.href.includes('draft-') || 
-                    window.location.href.includes('assets_url') || 
-                    window.location.search.includes('legacy=') ||
-                    document.body.innerText.includes('فستان') ||
-                    document.body.innerText.includes('skirt');
+// Recursively traverse DOM and Shadow Roots
+function findCardsAndRoots(root = document) {
+  let list = [];
+  
+  // Custom or standard cards
+  const cards = root.querySelectorAll('salla-product-card, custom-salla-product-card, .s-product-card-entry, .s-product-card');
+  cards.forEach(c => list.push(c));
 
-  // Upgrade product cards on the page
-  function upgradeCards() {
-    const cards = document.querySelectorAll('.s-product-card-entry, salla-product-card, .s-product-card');
+  // Search inside shadow roots
+  const all = root.querySelectorAll('*');
+  all.forEach(el => {
+    if (el.shadowRoot) {
+      list = list.concat(findCardsAndRoots(el.shadowRoot));
+    }
+  });
+
+  return list;
+}
+
+export function initPerfumeShowcase() {
+  function applyDiorTransformation() {
+    // 1. Find all card components (regular DOM + all Shadow DOMs)
+    const cards = findCardsAndRoots(document);
     cards.forEach((card, index) => {
       const perfume = DIOR_PERFUMES[index % DIOR_PERFUMES.length];
-      if (!card.dataset.perfumeUpgraded) {
-        card.dataset.perfumeUpgraded = 'true';
-        card.dataset.perfumeId = perfume.id;
+      const targetRoot = card.shadowRoot || card;
 
-        // Image
-        const imgs = card.querySelectorAll('img');
-        imgs.forEach(img => {
+      // Replace images inside target root
+      const imgs = targetRoot.querySelectorAll('img');
+      imgs.forEach(img => {
+        if (!img.src.includes('unsplash') || img.src !== perfume.image) {
           img.src = perfume.image;
           if (img.dataset.src) img.dataset.src = perfume.image;
           img.srcset = '';
           img.alt = perfume.name;
           img.style.objectFit = 'contain';
+          img.style.maxHeight = '270px';
           img.style.padding = '8px';
-        });
-
-        // Title
-        const titleLinks = card.querySelectorAll('.s-product-card-content-title a, h3 a, h4 a, .s-product-card-title a');
-        titleLinks.forEach(link => {
-          link.textContent = perfume.name;
-        });
-
-        // Subtitle / Brand
-        const subtitle = card.querySelector('.s-product-card-content-subtitle, .s-product-card-subtitle');
-        if (subtitle) {
-          subtitle.textContent = perfume.brand + ' • ' + perfume.subtitle;
+          img.style.background = '#faf7f2';
         }
+      });
 
-        // Price
-        const priceEls = card.querySelectorAll('.s-product-card-sale-price, .s-product-card-price, .total-price');
-        if (priceEls.length > 0) {
-          priceEls[0].textContent = perfume.price;
+      // Replace titles inside target root
+      const titles = targetRoot.querySelectorAll('.s-product-card-content-title a, h3 a, h4 a, .s-product-card-title a, a[title]');
+      titles.forEach(t => {
+        if (t.textContent !== perfume.name) {
+          t.textContent = perfume.name;
+          t.title = perfume.name;
         }
+      });
 
-        // On card click, remember perfume selection for single page
+      // Replace prices
+      const prices = targetRoot.querySelectorAll('.s-product-card-sale-price h4, .s-product-card-price, .total-price, .s-product-card-price h4');
+      prices.forEach(p => {
+        p.textContent = perfume.price;
+      });
+
+      // Replace subtitle
+      const sub = targetRoot.querySelector('.s-product-card-content-subtitle, .s-product-card-subtitle');
+      if (sub) {
+        sub.textContent = perfume.brand + ' • ' + perfume.subtitle;
+      }
+
+      // Track clicks to set perfume on single page
+      if (!card.dataset.perfumeClickAttached) {
+        card.dataset.perfumeClickAttached = 'true';
         card.addEventListener('click', () => {
           try {
             sessionStorage.setItem('selected_perfume', JSON.stringify(perfume));
@@ -145,7 +152,40 @@ export function initPerfumeShowcase() {
       }
     });
 
-    // Upgrade single product page if on a product page
+    // 2. Direct fallback: Replace any product image in document or shadowRoots that is still a fashion dress
+    const allImages = [];
+    function collectAllImages(root) {
+      allImages.push(...Array.from(root.querySelectorAll('img')));
+      root.querySelectorAll('*').forEach(el => {
+        if (el.shadowRoot) collectAllImages(el.shadowRoot);
+      });
+    }
+    collectAllImages(document);
+
+    let dressCount = 0;
+    allImages.forEach(img => {
+      // If it looks like a demo product image (from salla cdn or avatar / dresses)
+      const isProductImg = img.closest?.('.s-product-card') || 
+                           img.closest?.('salla-product-card') ||
+                           img.closest?.('custom-salla-product-card') ||
+                           img.classList.contains('s-product-card-image') ||
+                           img.src.includes('cdn.salla.sa/products/') ||
+                           img.src.includes('cdn.salla.sa/stores/') ||
+                           (img.alt && (img.alt.includes('فستان') || img.alt.includes('skirt') || img.alt.includes('منتج')));
+
+      if (isProductImg && !img.src.includes('unsplash')) {
+        const perfume = DIOR_PERFUMES[dressCount % DIOR_PERFUMES.length];
+        dressCount++;
+        img.src = perfume.image;
+        if (img.dataset.src) img.dataset.src = perfume.image;
+        img.srcset = '';
+        img.alt = perfume.name;
+        img.style.objectFit = 'contain';
+        img.style.background = '#faf7f2';
+      }
+    });
+
+    // 3. Single Product Page Details
     const singleProductTitle = document.querySelector('h1[data-testid="store-product-title"], .container--product-details h1');
     if (singleProductTitle) {
       let savedPerfume = null;
@@ -153,60 +193,46 @@ export function initPerfumeShowcase() {
         const stored = sessionStorage.getItem('selected_perfume');
         if (stored) savedPerfume = JSON.parse(stored);
       } catch(e) {}
+      const cur = savedPerfume || DIOR_PERFUMES[0];
 
-      const currentPerfume = savedPerfume || DIOR_PERFUMES[0];
-
-      // Update Title
-      if (!singleProductTitle.dataset.perfumeUpgraded) {
-        singleProductTitle.dataset.perfumeUpgraded = 'true';
-        singleProductTitle.textContent = currentPerfume.name;
+      if (singleProductTitle.textContent !== cur.name) {
+        singleProductTitle.textContent = cur.name;
       }
-
-      // Update Subtitle
-      const subTitle = document.querySelector('.product-entry__sub-title');
-      if (subTitle && !subTitle.dataset.perfumeUpgraded) {
-        subTitle.dataset.perfumeUpgraded = 'true';
-        subTitle.textContent = currentPerfume.subtitle;
-      }
-
-      // Update Images in slider
       const sliderImgs = document.querySelectorAll('.details-slider img, .image-slider img');
       sliderImgs.forEach(img => {
-        img.src = currentPerfume.image;
-        if (img.dataset.src) img.dataset.src = currentPerfume.image;
-        img.srcset = '';
-        img.style.objectFit = 'contain';
-      });
-
-      // Update Price
-      const singlePrices = document.querySelectorAll('[data-testid="store-product-price"] p, .total-price');
-      singlePrices.forEach(p => {
-        if (!p.dataset.perfumeUpgraded) {
-          p.dataset.perfumeUpgraded = 'true';
-          p.textContent = currentPerfume.price;
+        if (img.src !== cur.image) {
+          img.src = cur.image;
+          if (img.dataset.src) img.dataset.src = cur.image;
+          img.srcset = '';
+          img.style.objectFit = 'contain';
         }
       });
-
-      // Update Fragrance Notes
       const noteTiers = document.querySelectorAll('.fragrance-notes-card .notes-tier .tier-content');
       if (noteTiers.length >= 3) {
-        noteTiers[0].textContent = currentPerfume.topNotes;
-        noteTiers[1].textContent = currentPerfume.heartNotes;
-        noteTiers[2].textContent = currentPerfume.baseNotes;
+        noteTiers[0].textContent = cur.topNotes;
+        noteTiers[1].textContent = cur.heartNotes;
+        noteTiers[2].textContent = cur.baseNotes;
       }
     }
   }
 
-  // Run immediately and periodically for async loaded components
-  upgradeCards();
-  setTimeout(upgradeCards, 300);
-  setTimeout(upgradeCards, 800);
-  setTimeout(upgradeCards, 1500);
-  setTimeout(upgradeCards, 3000);
+  // Execute frequently to catch async rendered Web Components
+  applyDiorTransformation();
+  const intervals = [100, 300, 600, 1000, 1500, 2500, 4000, 6000];
+  intervals.forEach(ms => setTimeout(applyDiorTransformation, ms));
 
-  // Observer for dynamic product injection
+  // Run on any DOM change
   const observer = new MutationObserver(() => {
-    upgradeCards();
+    applyDiorTransformation();
   });
   observer.observe(document.body, { childList: true, subtree: true });
+  
+  // Also observe if there are iframes on same origin
+  document.querySelectorAll('iframe').forEach(frame => {
+    try {
+      if (frame.contentDocument) {
+        observer.observe(frame.contentDocument.body, { childList: true, subtree: true });
+      }
+    } catch(e) {}
+  });
 }
