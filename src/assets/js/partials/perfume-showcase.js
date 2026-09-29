@@ -157,6 +157,13 @@ export function initPerfumeShowcase() {
       }
     });
 
+    // F. Fix any relative products.index links on the page
+    document.querySelectorAll('a[href*="products.index"]').forEach(link => {
+      const href = link.getAttribute('href') || '';
+      const keyword = href.split('keyword=')[1] || '';
+      link.setAttribute('href', `/search?q=${keyword}`);
+    });
+
     // D. Single Product Page Details
     const singleProductTitle = document.querySelector('h1[data-testid="store-product-title"], .container--product-details h1');
     if (singleProductTitle) {
@@ -178,6 +185,25 @@ export function initPerfumeShowcase() {
         noteTiers[2].textContent = cur.baseNotes;
       }
     }
+  }
+
+  // Intercept any click on products.index to route cleanly to /search?q=
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (a && a.getAttribute('href') && a.getAttribute('href').includes('products.index')) {
+      e.preventDefault();
+      e.stopPropagation();
+      const href = a.getAttribute('href');
+      const keyword = href.split('keyword=')[1] || '';
+      window.location.href = `/search?q=${keyword}`;
+    }
+  }, true);
+
+  // If already stuck on a 410 products.index URL, redirect to search
+  if (window.location.href.includes('products.index')) {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get('keyword') || params.get('q') || '';
+    window.location.replace('/search?q=' + encodeURIComponent(q));
   }
 
   // Run immediately and continuously every 250ms
