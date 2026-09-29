@@ -3,6 +3,7 @@ import Swal from 'sweetalert2';
 import Anime from './partials/anime';
 import initTootTip from './partials/tooltip';
 import AppHelpers from "./app-helpers";
+import { initPerfumeShowcase } from './partials/perfume-showcase';
 
 class App extends AppHelpers {
   constructor() {
@@ -32,6 +33,9 @@ class App extends AppHelpers {
 
     initTootTip();
     this.loadModalImgOnclick();
+
+    // Initialize luxury perfume showcase transformation
+    initPerfumeShowcase();
 
     salla.comment.event.onAdded(() => window.location.reload());
 
