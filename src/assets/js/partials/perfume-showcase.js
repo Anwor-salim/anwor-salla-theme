@@ -143,11 +143,20 @@ export function initPerfumeShowcase() {
 
     // E. Transform header and navigation menu categories
     const catMap = {
-      'الفساتين': 'عطور رجالية فاخرة',
-      'البلايز': 'عطور نسائية ملكية',
-      'التنانير': 'العود والبخور',
-      'الجاكيتات': 'مجموعات النيش',
-      'تخفيضات': 'عروض ملكية'
+      'الفساتين': 'العطور الرجالية',
+      'البلايز': 'العطور النسائية',
+      'التنانير': 'مجموعات حصرية',
+      'الجاكيتات': 'عود وبخور',
+      'تخفيضات': 'هدايا فخمة',
+      'عروض': 'عن أنور',
+      'عطور رجالية فاخرة': 'العطور الرجالية',
+      'عطور نسائية ملكية': 'العطور النسائية',
+      'العود والبخور': 'عود وبخور',
+      'العود والبخور الخاص': 'عود وبخور',
+      'مجموعات النيش': 'مجموعات حصرية',
+      'مجموعات النيش الحصرية': 'مجموعات حصرية',
+      'عروض ملكية': 'هدايا فخمة',
+      'عروض العطور الملكية': 'عن أنور'
     };
     document.querySelectorAll('.main-menu a, #mobile-menu a, nav a, .sub-menu a, header a').forEach(link => {
       const span = link.querySelector('span') || link;
@@ -156,6 +165,12 @@ export function initPerfumeShowcase() {
         span.textContent = catMap[text];
       }
     });
+
+    // Update announcement ribbon text if present
+    const topRibbon = document.querySelector('.perfume-top-ribbon span');
+    if (topRibbon && !topRibbon.textContent.includes('خصم 20%')) {
+      topRibbon.textContent = 'عروض حصرية: احصل على خصم 20% على العطور الملكية لفترة محدودة | شحن مجاني للطلبات فوق 500 ريال';
+    }
 
     // F. Fix any relative products.index links on the page
     document.querySelectorAll('a[href*="products.index"]').forEach(link => {

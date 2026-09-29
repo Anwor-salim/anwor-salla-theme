@@ -1,0 +1,35 @@
+{#
+  Royal Perfume Hero Banner
+  Matching the luxury boutique aesthetic
+#}
+<section class="perfume-hero-section my-4 md:my-6" data-testid="store-perfume-hero">
+  <div class="container">
+    <div class="relative overflow-hidden rounded-2xl bg-[#141518] border border-[#c5a880]/30 shadow-2xl min-h-[320px] md:min-h-[380px] flex items-center">
+      {# Ambient smoky gold glow #}
+      <div class="absolute inset-0 bg-gradient-to-r from-[#121316] via-[#1a1b1f]/90 to-transparent z-10"></div>
+      
+      {# Hero Background Image #}
+      <img 
+        src="{{ 'images/hero-banner-luxury.png' | asset }}" 
+        alt="أنور للعطور الملكية" 
+        class="absolute inset-0 w-full h-full object-cover object-center hidden md:block opacity-90"
+      />
+
+      {# Content Overlay #}
+      <div class="relative z-20 w-full p-6 sm:p-10 md:p-14 lg:p-16 flex flex-col items-start max-w-xl text-start">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#faf7f2] mb-3 leading-tight tracking-tight">
+          فخامة الحضور وسحر الأثر
+        </h1>
+        <p class="text-xs sm:text-sm md:text-base text-[#d8d3c9] mb-6 leading-relaxed max-w-md font-light">
+          اكتشف مجموعتنا الحصرية من العطور الملكية التي تأسر القلوب وتعكس ذوقك الرفيع
+        </p>
+        <a 
+          href="/products" 
+          class="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-[#cca36e] hover:bg-[#b8915b] text-[#121316] font-bold text-sm transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#cca36e]/20"
+        >
+          تسوق الآن
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

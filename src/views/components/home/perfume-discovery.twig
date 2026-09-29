@@ -1,75 +1,46 @@
 {#
-  Perfume Olfactory Discovery Section (العائلات العطرية)
-  Helps customers explore fragrances by scent family
+  Fragrance Families Section (العائلات العطرية)
+  Matching luxury perfume boutique design
 #}
-<section component-id="{{ componentId }}" class="perfume-discovery-section py-12 md:py-16 bg-[#faf7f2] border-y border-[#c5a880]/20 my-8" data-testid="store-perfume-discovery">
+<section component-id="{{ componentId }}" class="perfume-discovery-section py-8 md:py-10 my-4" data-testid="store-perfume-discovery">
   <div class="container">
-    <div class="s-block__title text-center max-w-2xl mx-auto mb-10">
-      <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#9e7f53] mb-2 px-3 py-1 rounded-full bg-[#c5a880]/10 border border-[#c5a880]/30">
-        <i class="sicon-sparkle"></i>
-        <span>{{ component.badge|default('دليل النوتات والعائلات العطرية') }}</span>
-      </div>
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-[#121316] mb-3 text-center justify-center">
-        {{ component.title|default('اختر عطرك حسب ذوقك وطابعك') }}
+    <div class="mb-5 flex items-center justify-between">
+      <h2 class="text-xl sm:text-2xl font-bold text-[#121316] tracking-tight">
+        العائلات العطرية
       </h2>
-      <p class="text-sm text-[#7a7670] leading-relaxed">
-        {{ component.subtitle|default('استكشف العطور عبر عائلاتها الشمية المميزة لتصل إلى الرائحة التي تعبّر عن حضورك وشخصيتك.') }}
-      </p>
     </div>
 
-    <div class="perfume-family-grid">
-      {# 1. Oriental / شرقي #}
-      <a href="/search?q={{ 'شرقي'|url_encode }}" class="perfume-family-card group" data-testid="family-card-oriental">
-        <div class="family-icon-wrap group-hover:scale-110 transition-transform">
-          <i class="sicon-fire"></i>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+      {# 1. Oriental / الشرقية #}
+      <a href="/search?q={{ 'عطور شرقية'|url_encode }}" class="perfume-family-box group" data-testid="family-card-oriental">
+        <div class="family-box-icon">
+          <i class="sicon-sparkle"></i>
         </div>
-        <h3 class="family-title">عطور شرقية</h3>
-        <span class="family-sub">دافئة وغامضة</span>
+        <h3 class="family-box-title">الشرقية</h3>
       </a>
 
-      {# 2. Woody / خشبي #}
-      <a href="/search?q={{ 'خشبي'|url_encode }}" class="perfume-family-card group" data-testid="family-card-woody">
-        <div class="family-icon-wrap group-hover:scale-110 transition-transform">
-          <i class="sicon-tree"></i>
-        </div>
-        <h3 class="family-title">عطور خشبية</h3>
-        <span class="family-sub">أرز، صندل، فتيفير</span>
-      </a>
-
-      {# 3. Floral / زهري #}
-      <a href="/search?q={{ 'زهري'|url_encode }}" class="perfume-family-card group" data-testid="family-card-floral">
-        <div class="family-icon-wrap group-hover:scale-110 transition-transform">
+      {# 2. Floral / الزهرية #}
+      <a href="/search?q={{ 'عطور زهرية'|url_encode }}" class="perfume-family-box group" data-testid="family-card-floral">
+        <div class="family-box-icon">
           <i class="sicon-flower"></i>
         </div>
-        <h3 class="family-title">عطور زهرية</h3>
-        <span class="family-sub">ياسمين، ورد، فانيليا</span>
+        <h3 class="family-box-title">الزهرية</h3>
       </a>
 
-      {# 4. Fresh / حمضي منعش #}
-      <a href="/search?q={{ 'حمضي'|url_encode }}" class="perfume-family-card group" data-testid="family-card-fresh">
-        <div class="family-icon-wrap group-hover:scale-110 transition-transform">
-          <i class="sicon-water"></i>
+      {# 3. Woody / الخشبية #}
+      <a href="/search?q={{ 'عطور خشبية'|url_encode }}" class="perfume-family-box group" data-testid="family-card-woody">
+        <div class="family-box-icon">
+          <i class="sicon-tree"></i>
         </div>
-        <h3 class="family-title">حمضية ومنعشة</h3>
-        <span class="family-sub">برغموت، حمضيات، بحرية</span>
+        <h3 class="family-box-title">الخشبية</h3>
       </a>
 
-      {# 5. Oud & Amber / عود وعنبر #}
-      <a href="/search?q={{ 'عود'|url_encode }}" class="perfume-family-card group" data-testid="family-card-oud">
-        <div class="family-icon-wrap group-hover:scale-110 transition-transform">
+      {# 4. Royal Oud / العود الملكي #}
+      <a href="/search?q={{ 'عود ملكي'|url_encode }}" class="perfume-family-box group" data-testid="family-card-oud">
+        <div class="family-box-icon">
           <i class="sicon-crown"></i>
         </div>
-        <h3 class="family-title">العود والعنبر</h3>
-        <span class="family-sub">فخامة ملكية أصيلة</span>
-      </a>
-
-      {# 6. Pure Musk / مسك نقي #}
-      <a href="/search?q={{ 'مسك'|url_encode }}" class="perfume-family-card group" data-testid="family-card-musk">
-        <div class="family-icon-wrap group-hover:scale-110 transition-transform">
-          <i class="sicon-feather"></i>
-        </div>
-        <h3 class="family-title">مسك ونقاء</h3>
-        <span class="family-sub">رقة ونظافة تدوم</span>
+        <h3 class="family-box-title">العود الملكي</h3>
       </a>
     </div>
   </div>
