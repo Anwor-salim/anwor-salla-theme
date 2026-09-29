@@ -67,7 +67,7 @@
           </div>
         </div>
 
-        {% set story_url = component.cta_url|default(link('products.index')) %}
+        {% set story_url = component.cta_url|default('/products') %}
         {% if story_url %}
           <a href="{{ story_url }}" class="btn-perfume-gold inline-flex items-center gap-2.5 px-7 py-3 rounded-md font-bold text-sm tracking-wide">
             <span>{{ component.cta_text|default('استكشف التشكيلة الملكية') }}</span>
