@@ -141,6 +141,22 @@ export function initPerfumeShowcase() {
     }
     scanRoots(document);
 
+    // E. Transform header and navigation menu categories
+    const catMap = {
+      'الفساتين': 'عطور رجالية فاخرة',
+      'البلايز': 'عطور نسائية ملكية',
+      'التنانير': 'العود والبخور',
+      'الجاكيتات': 'مجموعات النيش',
+      'تخفيضات': 'عروض ملكية'
+    };
+    document.querySelectorAll('.main-menu a, #mobile-menu a, nav a, .sub-menu a, header a').forEach(link => {
+      const span = link.querySelector('span') || link;
+      const text = (span.textContent || '').trim();
+      if (catMap[text]) {
+        span.textContent = catMap[text];
+      }
+    });
+
     // D. Single Product Page Details
     const singleProductTitle = document.querySelector('h1[data-testid="store-product-title"], .container--product-details h1');
     if (singleProductTitle) {

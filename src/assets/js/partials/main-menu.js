@@ -1,3 +1,30 @@
+const PERFUME_CATEGORIES_MAP = {
+    'الفساتين': 'عطور رجالية فاخرة',
+    'البلايز': 'عطور نسائية ملكية',
+    'التنانير': 'العود والبخور الخاص',
+    'الجاكيتات': 'مجموعات النيش الحصرية',
+    'تخفيضات': 'عروض العطور الملكية',
+    'dresses': 'عطور رجالية فاخرة',
+    'blouses': 'عطور نسائية ملكية',
+    'skirts': 'العود والبخور الخاص',
+    'jackets': 'مجموعات النيش الحصرية',
+    'sale': 'عروض العطور الملكية'
+};
+
+function transformMenuToPerfumes(menu) {
+    if (!menu) return menu;
+    for (const [key, val] of Object.entries(PERFUME_CATEGORIES_MAP)) {
+        if (menu.title && menu.title.includes(key)) {
+            menu.title = val;
+            break;
+        }
+    }
+    if (menu.children && Array.isArray(menu.children)) {
+        menu.children.forEach(transformMenuToPerfumes);
+    }
+    return menu;
+}
+
 class NavigationMenu extends HTMLElement {
     connectedCallback() {
         // Seed a skeleton placeholder shown until the menu data is fetched
@@ -22,7 +49,7 @@ class NavigationMenu extends HTMLElement {
 
                 return salla.api.component.getMenus()
                 .then(({ data }) => {
-                    this.menus = data;
+                    this.menus = (data || []).map(transformMenuToPerfumes);
                     return this.render()
                 }).then(() => {
                     this.initializeResponsiveMenu();
