@@ -816,3 +816,46 @@ salla-user-menu {
     right: auto;
   }
 }
+
+/* 10. Royal Category Showcase View & Maintenance Banner Hiding */
+salla-maintenance-alert,
+.s-maintenance-alert-wrapper,
+.s-maintenance-alert-content,
+.maintenance-banner,
+.alert-maintenance {
+  display: none !important;
+}
+
+.royal-category-showcase-view {
+  animation: royalFadeIn 0.35s ease-out;
+}
+
+@keyframes royalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.royal-perfume-card {
+  &:hover {
+    transform: translateY(-6px);
+    border-color: rgba(204, 163, 110, 0.6) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45) !important;
+
+    img {
+      transform: scale(1.06);
+    }
+
+    .royal-add-cart-btn {
+      background: #dfcaa7 !important;
+      color: #121316 !important;
+      box-shadow: 0 4px 14px rgba(204, 163, 110, 0.4);
+    }
+  }
+}
+

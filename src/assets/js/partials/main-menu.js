@@ -1,22 +1,32 @@
-const PERFUME_CATEGORIES_MAP = {
-    'الفساتين': 'العطور الرجالية',
-    'البلايز': 'العطور النسائية',
-    'التنانير': 'مجموعات حصرية',
-    'الجاكيتات': 'عود وبخور',
-    'تخفيضات': 'هدايا فخمة',
-    'عروض': 'عن أنور',
-    'dresses': 'العطور الرجالية',
-    'blouses': 'العطور النسائية',
-    'skirts': 'مجموعات حصرية',
-    'jackets': 'عود وبخور',
-    'sale': 'هدايا فخمة'
+const PERFUME_CATEGORIES_CONFIG = {
+    'الفساتين': { title: 'العطور الرجالية', key: 'MEN' },
+    'البلايز': { title: 'العطور النسائية', key: 'WOMEN' },
+    'التنانير': { title: 'عود وبخور', key: 'OUD' },
+    'الجاكيتات': { title: 'مجموعات حصرية', key: 'EXCLUSIVE' },
+    'تخفيضات': { title: 'هدايا فخمة', key: 'GIFTS' },
+    'عروض': { title: 'عن أنور', key: 'ABOUT' },
+    'dresses': { title: 'العطور الرجالية', key: 'MEN' },
+    'blouses': { title: 'العطور النسائية', key: 'WOMEN' },
+    'skirts': { title: 'عود وبخور', key: 'OUD' },
+    'jackets': { title: 'مجموعات حصرية', key: 'EXCLUSIVE' },
+    'sale': { title: 'هدايا فخمة', key: 'GIFTS' }
+};
+
+window.switchRoyalCategory = window.switchRoyalCategory || function(catKey) {
+    if (typeof window._royalCategoryHandler === 'function') {
+        window._royalCategoryHandler(catKey);
+    } else {
+        window._pendingRoyalCat = catKey;
+    }
 };
 
 function transformMenuToPerfumes(menu) {
     if (!menu) return menu;
-    for (const [key, val] of Object.entries(PERFUME_CATEGORIES_MAP)) {
+    for (const [key, conf] of Object.entries(PERFUME_CATEGORIES_CONFIG)) {
         if (menu.title && menu.title.includes(key)) {
-            menu.title = val;
+            menu.title = conf.title;
+            menu.catKey = conf.key;
+            menu.url = '#category-' + conf.key.toLowerCase();
             break;
         }
     }
@@ -99,7 +109,7 @@ class NavigationMenu extends HTMLElement {
         return `
         <li class="lg:hidden text-sm font-bold" ${menu.attrs}>
             ${!this.hasChildren(menu) ? `
-                <a href="${menu.url}" aria-label="${menu.title || 'category'}" class="text-gray-500 ${menu.image ? '!py-3' : ''}" ${menu.link_attrs}>
+                <a href="${menu.url}" aria-label="${menu.title || 'category'}" class="text-gray-500 ${menu.image ? '!py-3' : ''}" data-royal-cat="${menu.catKey || ''}" onclick="if (window.switchRoyalCategory && '${menu.catKey || ''}') { window.switchRoyalCategory('${menu.catKey}'); return false; }" ${menu.link_attrs}>
                     ${menuImage}
                     <span>${menu.title || ''}</span>
                 </a>` :
@@ -110,7 +120,7 @@ class NavigationMenu extends HTMLElement {
                 </span>
                 <ul>
                     <li class="text-sm font-bold">
-                        <a href="${menu.url}" class="text-gray-500">${displayAllText}</a>
+                        <a href="${menu.url}" class="text-gray-500" data-royal-cat="${menu.catKey || ''}" onclick="if (window.switchRoyalCategory && '${menu.catKey || ''}') { window.switchRoyalCategory('${menu.catKey}'); return false; }">${displayAllText}</a>
                     </li>
                     ${menu.children.map((subMenu) => this.getMobileMenu(subMenu, displayAllText)).join('')}
                 </ul>
@@ -128,7 +138,7 @@ class NavigationMenu extends HTMLElement {
     getDesktopMenu(menu, isRootMenu, additionalClasses = '') {
         return `
         <li class="${this.getDesktopClasses(menu, isRootMenu)} ${additionalClasses}" ${menu.attrs} data-menu-item>
-            <a href="${menu.url}" aria-label="${menu.title || 'category'}" ${menu.link_attrs}>
+            <a href="${menu.url}" aria-label="${menu.title || 'category'}" data-royal-cat="${menu.catKey || ''}" onclick="if (window.switchRoyalCategory && '${menu.catKey || ''}') { window.switchRoyalCategory('${menu.catKey}'); return false; }" ${menu.link_attrs}>
                 <span>${menu.title}</span>
             </a>
             ${this.hasChildren(menu) ? `

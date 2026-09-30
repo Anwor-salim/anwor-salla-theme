@@ -317,30 +317,33 @@ export const DIOR_PERFUMES = [...MEN_PERFUMES, ...WOMEN_PERFUMES, ...OUD_INCENSE
 /**
  * Detect what category or page is currently active
  */
-function detectCurrentCategory() {
-  const path = decodeURIComponent(window.location.pathname || '').toLowerCase();
-  const search = decodeURIComponent(window.location.search || '').toLowerCase();
-  const title = (document.title || '').toLowerCase();
-  const h1 = (document.querySelector('h1')?.textContent || '').toLowerCase();
-  const breadcrumb = (document.querySelector('.breadcrumbs, .breadcrumb, nav[aria-label="breadcrumb"]')?.textContent || '').toLowerCase();
+export function detectCurrentCategory() {
+  try {
+    const path = decodeURIComponent(window.location.pathname || '').toLowerCase();
+    const search = decodeURIComponent(window.location.search || '').toLowerCase();
+    const hash = decodeURIComponent(window.location.hash || '').toLowerCase();
+    const title = (document.title || '').toLowerCase();
+    const h1 = (document.querySelector('h1')?.textContent || '').toLowerCase();
+    const breadcrumb = (document.querySelector('.breadcrumbs, .breadcrumb, nav[aria-label="breadcrumb"]')?.textContent || '').toLowerCase();
 
-  const combined = path + ' ' + search + ' ' + title + ' ' + h1 + ' ' + breadcrumb;
+    const combined = path + ' ' + search + ' ' + hash + ' ' + title + ' ' + h1 + ' ' + breadcrumb;
 
-  if (combined.includes('فساتين') || combined.includes('رجالي') || combined.includes('men') || combined.includes('dresses')) {
-    return 'MEN';
-  }
-  if (combined.includes('بلايز') || combined.includes('نسائي') || combined.includes('women') || combined.includes('blouses')) {
-    return 'WOMEN';
-  }
-  if (combined.includes('تنانير') || combined.includes('عود') || combined.includes('بخور') || combined.includes('oud') || combined.includes('skirts')) {
-    return 'OUD';
-  }
-  if (combined.includes('جاكيت') || combined.includes('حصرية') || combined.includes('مجموعات') || combined.includes('jackets') || combined.includes('exclusive')) {
-    return 'EXCLUSIVE';
-  }
-  if (combined.includes('تخفيضات') || combined.includes('هدايا') || combined.includes('عروض') || combined.includes('gifts') || combined.includes('sale')) {
-    return 'GIFTS';
-  }
+    if (hash.includes('men') || combined.includes('فساتين') || combined.includes('رجالي') || combined.includes('men') || combined.includes('dresses') || combined.includes('c703129794')) {
+      return 'MEN';
+    }
+    if (hash.includes('women') || combined.includes('بلايز') || combined.includes('نسائي') || combined.includes('women') || combined.includes('blouses')) {
+      return 'WOMEN';
+    }
+    if (hash.includes('oud') || combined.includes('تنانير') || combined.includes('عود') || combined.includes('بخور') || combined.includes('oud') || combined.includes('skirts')) {
+      return 'OUD';
+    }
+    if (hash.includes('exclusive') || combined.includes('جاكيت') || combined.includes('حصرية') || combined.includes('مجموعات') || combined.includes('jackets') || combined.includes('exclusive')) {
+      return 'EXCLUSIVE';
+    }
+    if (hash.includes('gift') || combined.includes('تخفيضات') || combined.includes('هدايا') || combined.includes('عروض') || combined.includes('gifts') || combined.includes('sale')) {
+      return 'GIFTS';
+    }
+  } catch (e) {}
   return 'ALL';
 }
 
@@ -680,7 +683,7 @@ export function initPerfumeShowcase() {
     const heroSec = document.querySelector('.royal-perfume-hero-injected');
     const discoverySec = document.querySelector('.perfume-discovery-section, [data-testid="store-perfume-discovery"]');
     const storySec = document.querySelector('.s-block--fragrance-story, [data-testid="store-fragrance-story"]');
-    const mainProductsSec = document.querySelector('.s-block--products, salla-products-list, salla-products-slider, .s-block');
+    const mainEl = document.querySelector('main, #main-content, .main-content') || document.body;
 
     let catView = document.querySelector('.royal-category-showcase-view');
 
@@ -689,73 +692,101 @@ export function initPerfumeShowcase() {
       if (discoverySec) discoverySec.style.display = 'block';
       if (storySec) storySec.style.display = 'block';
       if (catView) catView.style.display = 'none';
-      if (mainProductsSec) mainProductsSec.style.display = 'block';
+      document.querySelectorAll('.s-block, .s-block--products, salla-products-list, salla-products-slider').forEach(el => {
+        if (!el.closest('.royal-category-showcase-view')) el.style.display = '';
+      });
+      document.querySelectorAll('.container--products-list, .s-before-products-list, .container--breadcrumbs, #page-main-title').forEach(el => {
+        el.style.display = '';
+      });
+      document.title = 'أنور للعطور الملكية | ANWOR ROYAL PERFUMES';
       return;
     }
 
-    // Hide homepage sections
+    // Hide homepage sections and any default dress elements
     if (heroSec) heroSec.style.display = 'none';
     if (discoverySec) discoverySec.style.display = 'none';
     if (storySec) storySec.style.display = 'none';
-    if (mainProductsSec) mainProductsSec.style.display = 'none';
+    document.querySelectorAll('.s-block, .s-block--products, salla-products-list, salla-products-slider, .container--products-list, .s-before-products-list, .container--breadcrumbs, #page-main-title, salla-maintenance-alert, .s-maintenance-alert-wrapper').forEach(el => {
+      if (el !== document.body && el !== document.documentElement && !el.closest('.royal-category-showcase-view') && !el.closest('header') && !el.closest('footer')) {
+        el.style.display = 'none';
+      }
+    });
 
     if (!catView) {
       catView = document.createElement('div');
       catView.className = 'royal-category-showcase-view';
-      catView.style.cssText = 'max-width: 1240px; margin: 1.5rem auto 3rem; padding: 0 1rem;';
-      const insertTarget = heroSec || discoverySec || document.querySelector('main, #main-content, .main-content') || document.body;
-      insertTarget.parentNode.insertBefore(catView, insertTarget);
+      catView.style.cssText = 'max-width: 1240px; margin: 1.5rem auto 3.5rem; padding: 0 1rem; width: 100%;';
+      if (mainEl && mainEl.firstChild) {
+        mainEl.insertBefore(catView, mainEl.firstChild);
+      } else {
+        document.body.appendChild(catView);
+      }
     } else {
       catView.style.display = 'block';
     }
 
+    document.title = `${data.title} | أنور للعطور الملكية`;
+
     const cardsHtml = data.items.map(item => `
-      <div class="royal-perfume-card" style="background: #141518; border: 1px solid rgba(197, 168, 128, 0.25); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 20px rgba(0,0,0,0.25); transition: transform 0.3s ease, border-color 0.3s ease;">
-        <div style="background: #191b22; height: 260px; display: flex; align-items: center; justify-content: center; padding: 1rem; position: relative;">
-          <img src="${item.image}" alt="${item.name}" style="max-height: 100%; max-width: 100%; object-fit: contain; transition: transform 0.4s ease;" />
-          <span style="position: absolute; top: 12px; right: 12px; background: rgba(20,21,24,0.85); color: #cca36e; border: 1px solid rgba(204,163,110,0.4); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">${item.brand}</span>
+      <div class="royal-perfume-card" style="background: #141518; border: 1px solid rgba(197, 168, 128, 0.28); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 6px 24px rgba(0,0,0,0.3); transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;">
+        <div style="background: #191b22; height: 270px; display: flex; align-items: center; justify-content: center; padding: 1.25rem; position: relative;">
+          <img src="${item.image}" alt="${item.name}" loading="lazy" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4)); transition: transform 0.4s ease;" />
+          <span style="position: absolute; top: 12px; right: 12px; background: rgba(20,21,24,0.9); color: #cca36e; border: 1px solid rgba(204,163,110,0.45); padding: 0.25rem 0.7rem; border-radius: 6px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.5px;">${item.brand}</span>
         </div>
-        <div style="padding: 1.25rem 1rem 1rem; display: flex; flex-direction: column; flex-grow: 1; text-align: right;">
-          <h3 style="color: #ffffff; font-size: 1rem; font-weight: 700; margin: 0 0 0.4rem; line-height: 1.4;">${item.name}</h3>
-          <p style="color: #a09d97; font-size: 0.8rem; margin: 0 0 0.75rem; line-height: 1.4;">${item.subtitle}</p>
-          <div style="font-size: 0.75rem; color: #a8a49d; background: rgba(255,255,255,0.03); border: 1px dashed rgba(197,168,128,0.2); border-radius: 6px; padding: 0.4rem 0.6rem; margin-bottom: 0.85rem;">
-            <strong style="color: #cca36e;">المكونات:</strong> ${item.topNotes || item.heartNotes || ''}
+        <div style="padding: 1.35rem 1.15rem 1.15rem; display: flex; flex-direction: column; flex-grow: 1; text-align: right;">
+          <h3 style="color: #ffffff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.45rem; line-height: 1.45;">${item.name}</h3>
+          <p style="color: #a8a49d; font-size: 0.82rem; margin: 0 0 0.85rem; line-height: 1.45;">${item.subtitle}</p>
+          <div style="font-size: 0.76rem; color: #cfcbc4; background: rgba(255,255,255,0.03); border: 1px dashed rgba(197,168,128,0.25); border-radius: 8px; padding: 0.5rem 0.75rem; margin-bottom: 1rem; line-height: 1.5;">
+            <strong style="color: #cca36e; display: block; margin-bottom: 2px;">النوتات العطرية:</strong>
+            ${item.topNotes || item.heartNotes || ''}
           </div>
-          <div style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.06);">
-            <span style="color: #cca36e; font-size: 1.15rem; font-weight: 800;">${item.price}</span>
-            <button style="background: #cca36e; color: #121316; font-weight: 700; font-size: 0.82rem; padding: 0.45rem 1rem; border-radius: 6px; border: none; cursor: pointer; transition: all 0.2s ease;">أضف للسلة</button>
+          <div style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.08);">
+            <div>
+              <span style="color: #cca36e; font-size: 1.25rem; font-weight: 800;">${item.price}</span>
+            </div>
+            <button class="royal-add-cart-btn" data-prod-name="${item.name}" style="background: #cca36e; color: #121316; font-weight: 700; font-size: 0.85rem; padding: 0.5rem 1.15rem; border-radius: 8px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; transition: all 0.25s ease;">
+              <i class="sicon-shopping-bag"></i>
+              <span>أضف للسلة</span>
+            </button>
           </div>
         </div>
       </div>
     `).join('');
 
     catView.innerHTML = `
-      <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: #8c8881; margin-bottom: 1.25rem; text-align: right;">
-        <a href="#home" class="royal-back-home" style="color: #121316; text-decoration: none; font-weight: 600; cursor: pointer;">الرئيسية</a>
+      <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.88rem; color: #8c8881; margin-bottom: 1.5rem; text-align: right;">
+        <a href="#home" class="royal-back-home" style="color: #121316; text-decoration: none; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.3rem;">
+          <i class="sicon-home"></i>
+          <span>الرئيسية</span>
+        </a>
         <span>›</span>
-        <span style="color: #cca36e; font-weight: 700;">${data.breadcrumb}</span>
+        <span style="color: #cca36e; font-weight: 800;">${data.breadcrumb}</span>
       </div>
 
-      <div style="background: linear-gradient(135deg, #141518 0%, #1c1d22 100%); border: 1px solid rgba(197, 168, 128, 0.3); border-radius: 16px; padding: 2rem 2.5rem; margin-bottom: 2rem; text-align: right; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
-        <div style="position: absolute; top: -30px; left: -30px; width: 140px; height: 140px; background: rgba(204, 163, 110, 0.12); border-radius: 50%; filter: blur(35px);"></div>
-        <div style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(204, 163, 110, 0.15); border: 1px solid rgba(204, 163, 110, 0.4); padding: 0.25rem 0.8rem; border-radius: 999px; font-size: 0.75rem; font-weight: 700; color: #cca36e; margin-bottom: 0.75rem;">
+      <div style="background: linear-gradient(135deg, #141518 0%, #1c1d22 100%); border: 1px solid rgba(197, 168, 128, 0.35); border-radius: 18px; padding: 2.25rem 2.5rem; margin-bottom: 2rem; text-align: right; position: relative; overflow: hidden; box-shadow: 0 12px 36px rgba(0,0,0,0.3);">
+        <div style="position: absolute; top: -40px; left: -40px; width: 160px; height: 160px; background: rgba(204, 163, 110, 0.15); border-radius: 50%; filter: blur(40px);"></div>
+        <div style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(204, 163, 110, 0.15); border: 1px solid rgba(204, 163, 110, 0.45); padding: 0.3rem 0.9rem; border-radius: 999px; font-size: 0.78rem; font-weight: 700; color: #cca36e; margin-bottom: 0.85rem;">
           <i class="sicon-sparkle"></i>
-          <span>مجموعة ملكية أصلية 100% • ديور والعطور الفاخرة</span>
+          <span>مجموعة ملكية أصلية 100% • ديور والعطور الفرنسية والشرقية الفاخرة</span>
         </div>
-        <h1 style="color: #faf7f2; font-size: 2.2rem; font-weight: 800; margin: 0 0 0.5rem; letter-spacing: -0.01em;">${data.title}</h1>
-        <p style="color: #cfcbc4; font-size: 0.95rem; max-width: 650px; line-height: 1.6; margin: 0; font-weight: 300;">${data.subtitle}</p>
+        <h1 style="color: #faf7f2; font-size: 2.25rem; font-weight: 800; margin: 0 0 0.6rem; letter-spacing: -0.01em;">${data.title}</h1>
+        <p style="color: #cfcbc4; font-size: 0.98rem; max-width: 680px; line-height: 1.65; margin: 0; font-weight: 300;">${data.subtitle}</p>
       </div>
 
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(197,168,128,0.2); padding-bottom: 0.75rem;">
-        <span style="font-weight: 700; color: #121316; font-size: 1rem;">عرض ${data.items.length} إصدارات فاخرة</span>
-        <span style="font-size: 0.82rem; color: #7a7670;">شحن مجاني لكافة مدن المملكة للطلبات فوق 500 ريال</span>
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.75rem; border-bottom: 1px solid rgba(197,168,128,0.22); padding-bottom: 0.85rem; flex-wrap: wrap; gap: 0.5rem;">
+        <span style="font-weight: 800; color: #121316; font-size: 1.05rem;">عرض ${data.items.length} إصدارات حصرية مختارة</span>
+        <span style="font-size: 0.85rem; color: #7a7670; display: inline-flex; align-items: center; gap: 0.3rem;">
+          <i class="sicon-shipping-truck" style="color: #cca36e;"></i>
+          <span>شحن مجاني وسريع لكافة مدن المملكة للطلبات فوق 500 ريال</span>
+        </span>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1.5rem;" class="royal-perfumes-category-grid">
         ${cardsHtml}
       </div>
     `;
 
+    // Wire Back to Home
     const backHome = catView.querySelector('.royal-back-home');
     if (backHome) {
       backHome.addEventListener('click', (e) => {
@@ -763,6 +794,44 @@ export function initPerfumeShowcase() {
         switchCategory('HOME');
       });
     }
+
+    // Wire Add to Cart buttons
+    catView.querySelectorAll('.royal-add-cart-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const prodName = btn.dataset.prodName || 'العطر الفاخر';
+        const origContent = btn.innerHTML;
+        btn.innerHTML = '<i class="sicon-check"></i> <span>تمت الإضافة</span>';
+        btn.style.background = '#2e7d32';
+        btn.style.color = '#ffffff';
+
+        // Update cart counters
+        document.querySelectorAll('.s-cart-summary-count, [data-cart-count], .cart-badge').forEach(badge => {
+          let count = parseInt(badge.textContent || '0') || 0;
+          badge.textContent = count + 1;
+          badge.style.display = 'inline-block';
+        });
+
+        if (window.salla && salla.notify) {
+          salla.notify.success(`تمت إضافة "${prodName}" إلى سلة مشترياتك الفاخرة بنجاح ✨`);
+        } else if (window.Swal) {
+          Swal.fire({
+            title: 'تمت الإضافة بنجاح!',
+            text: `تمت إضافة "${prodName}" إلى سلة مشترياتك الفاخرة`,
+            icon: 'success',
+            confirmButtonText: 'متابعة التسوق',
+            confirmButtonColor: '#cca36e'
+          });
+        }
+
+        setTimeout(() => {
+          btn.innerHTML = origContent;
+          btn.style.background = '#cca36e';
+          btn.style.color = '#121316';
+        }, 2200);
+      });
+    });
   }
 
   function updateMenuHighlight(categoryKey) {
@@ -776,22 +845,24 @@ export function initPerfumeShowcase() {
     };
     const activeText = catTextMap[categoryKey] || 'الرئيسية';
 
-    document.querySelectorAll('.main-menu li, #mainnav li, nav li').forEach(li => {
+    document.querySelectorAll('.main-menu li, #mainnav li, nav li, [data-menu-item]').forEach(li => {
       const a = li.querySelector('a');
       if (!a) return;
       const txt = (a.innerText || a.textContent || '').trim();
-      if (txt === activeText) {
+      const catAttr = a.dataset.royalCat;
+      if (catAttr === categoryKey || txt === activeText) {
         li.classList.add('is-active');
         a.style.color = '#cca36e';
+        a.style.position = 'relative';
         if (!a.querySelector('.active-bar')) {
           const bar = document.createElement('span');
           bar.className = 'active-bar';
-          bar.style.cssText = 'position: absolute; bottom: 2px; left: 15%; right: 15%; height: 2px; background: #cca36e; border-radius: 2px;';
+          bar.style.cssText = 'position: absolute; bottom: 0px; left: 10%; right: 10%; height: 2px; background: #cca36e; border-radius: 2px; box-shadow: 0 0 8px rgba(204,163,110,0.8);';
           a.appendChild(bar);
         }
       } else {
         li.classList.remove('is-active');
-        a.style.color = '#faf7f2';
+        a.style.color = '#121316';
         const bar = a.querySelector('.active-bar');
         if (bar) bar.remove();
       }
@@ -802,84 +873,92 @@ export function initPerfumeShowcase() {
     currentActiveCategory = categoryKey;
     updateMenuHighlight(categoryKey);
     renderCategoryProducts(categoryKey);
+    if (categoryKey !== 'HOME') {
+      try {
+        history.pushState(null, '', '#category-' + categoryKey.toLowerCase());
+      } catch (e) {}
+    } else {
+      try {
+        history.pushState(null, '', window.location.pathname + window.location.search);
+      } catch (e) {}
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   window.switchRoyalCategory = switchCategory;
+  window._royalCategoryHandler = switchCategory;
+  if (window._pendingRoyalCat) {
+    const pending = window._pendingRoyalCat;
+    delete window._pendingRoyalCat;
+    setTimeout(() => switchCategory(pending), 10);
+  }
 
   // Intercept category navigation clicks for instant, smooth rendering
   document.addEventListener('click', (e) => {
     const a = e.target.closest('a');
     if (!a) return;
+    const royalCat = a.dataset.royalCat;
     const txt = (a.innerText || a.textContent || '').trim();
-    const href = a.getAttribute('href') || '';
+    const href = (a.getAttribute('href') || '').toLowerCase();
 
-    // Menu category clicks
-    if (txt.includes('الرجالية') || href.includes('فساتين') || href.includes('men') || href.includes('c703129794')) {
-      e.preventDefault();
-      e.stopPropagation();
-      switchCategory('MEN');
-      return;
-    }
-    if (txt.includes('النسائية') || href.includes('بلايز') || href.includes('women')) {
-      e.preventDefault();
-      e.stopPropagation();
-      switchCategory('WOMEN');
-      return;
-    }
-    if (txt.includes('عود') || txt.includes('بخور') || href.includes('تنانير') || href.includes('oud')) {
-      e.preventDefault();
-      e.stopPropagation();
-      switchCategory('OUD');
-      return;
-    }
-    if (txt.includes('مجموعات') || txt.includes('حصرية') || href.includes('جاكيت') || href.includes('exclusive')) {
-      e.preventDefault();
-      e.stopPropagation();
-      switchCategory('EXCLUSIVE');
-      return;
-    }
-    if (txt.includes('هدايا') || txt.includes('عروض') || href.includes('تخفيضات') || href.includes('gifts')) {
-      e.preventDefault();
-      e.stopPropagation();
-      switchCategory('GIFTS');
-      return;
-    }
-    if (txt === 'الرئيسية' || href === '/' || href.includes('#home') || a.classList.contains('navbar-brand') || a.dataset.testid === 'store-header-logo') {
-      e.preventDefault();
-      e.stopPropagation();
-      switchCategory('HOME');
-      return;
-    }
-
-    // Olfactory discovery cards clicks
-    if (href.includes('search?q=') || href.includes('products.index')) {
+    let targetCat = null;
+    if (royalCat) {
+      targetCat = royalCat;
+    } else if (txt.includes('الرجالية') || href.includes('فساتين') || href.includes('men') || href.includes('c703129794') || href.includes('dresses')) {
+      targetCat = 'MEN';
+    } else if (txt.includes('النسائية') || href.includes('بلايز') || href.includes('women') || href.includes('blouses')) {
+      targetCat = 'WOMEN';
+    } else if (txt.includes('عود') || txt.includes('بخور') || href.includes('تنانير') || href.includes('oud') || href.includes('skirts')) {
+      targetCat = 'OUD';
+    } else if (txt.includes('مجموعات') || txt.includes('حصرية') || href.includes('جاكيت') || href.includes('exclusive') || href.includes('jackets')) {
+      targetCat = 'EXCLUSIVE';
+    } else if (txt.includes('هدايا') || txt.includes('عروض') || href.includes('تخفيضات') || href.includes('gifts') || href.includes('sale')) {
+      targetCat = 'GIFTS';
+    } else if (txt === 'الرئيسية' || href === '/' || href === '#home' || a.classList.contains('navbar-brand') || a.dataset.testid === 'store-header-logo') {
+      targetCat = 'HOME';
+    } else if (href.includes('search?q=') || href.includes('products.index')) {
       const q = decodeURIComponent(href);
-      if (q.includes('شرقي') || q.includes('عود')) {
-        e.preventDefault();
-        e.stopPropagation();
-        switchCategory('OUD');
-        return;
-      }
-      if (q.includes('زهري')) {
-        e.preventDefault();
-        e.stopPropagation();
-        switchCategory('WOMEN');
-        return;
-      }
-      if (q.includes('خشبي') || q.includes('حمضي')) {
-        e.preventDefault();
-        e.stopPropagation();
-        switchCategory('MEN');
-        return;
-      }
+      if (q.includes('شرقي') || q.includes('عود')) targetCat = 'OUD';
+      else if (q.includes('زهري')) targetCat = 'WOMEN';
+      else if (q.includes('خشبي') || q.includes('حمضي')) targetCat = 'MEN';
+    }
+
+    if (targetCat) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      switchCategory(targetCat);
     }
   }, true);
 
-  // Initial category detection based on URL
-  const initialCat = detectCurrentCategory();
-  if (initialCat !== 'ALL') {
-    switchCategory(initialCat);
+  // Listen to browser forward/back buttons
+  window.addEventListener('hashchange', () => {
+    const hash = window.location.hash.toLowerCase();
+    if (hash.includes('men')) switchCategory('MEN');
+    else if (hash.includes('women')) switchCategory('WOMEN');
+    else if (hash.includes('oud')) switchCategory('OUD');
+    else if (hash.includes('exclusive')) switchCategory('EXCLUSIVE');
+    else if (hash.includes('gift')) switchCategory('GIFTS');
+    else if (hash === '#home' || !hash) switchCategory('HOME');
+  });
+
+  // Initial category detection based on URL / hash
+  const initialHash = window.location.hash.toLowerCase();
+  if (initialHash.includes('men')) {
+    switchCategory('MEN');
+  } else if (initialHash.includes('women')) {
+    switchCategory('WOMEN');
+  } else if (initialHash.includes('oud')) {
+    switchCategory('OUD');
+  } else if (initialHash.includes('exclusive')) {
+    switchCategory('EXCLUSIVE');
+  } else if (initialHash.includes('gift')) {
+    switchCategory('GIFTS');
+  } else {
+    const initialCat = detectCurrentCategory();
+    if (initialCat !== 'ALL') {
+      switchCategory(initialCat);
+    }
   }
 
   // Run immediately and continuously every 250ms
