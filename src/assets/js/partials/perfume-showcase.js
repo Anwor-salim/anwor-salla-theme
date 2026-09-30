@@ -10,10 +10,12 @@
 export const MEN_PERFUMES = [
   {
     id: 101,
-    name: "عطر عنبر رويال المركز - 100 مل",
+    name: "عطر عنبر رويال المركز",
+    volume: "100 مل",
     subtitle: "Maison Anwor • تركيز استثنائي فوّاح",
     price: "920 ر.س",
     brand: "MAISON ANWOR",
+    badge: "جديد",
     image: "http://localhost:8000/images/perfume-amber-men.jpg",
     topNotes: "الجريب فروت الصقلي، الهيل الغواتيمالي، القرفة السيلانية",
     heartNotes: "الخزامى الفرنسية، جوزة الطيب، إبرة الراعي",
@@ -21,10 +23,12 @@ export const MEN_PERFUMES = [
   },
   {
     id: 102,
-    name: "عطر إمبريال سافاج النادر - 100 مل",
+    name: "عطر إمبريال سافاج النادر",
+    volume: "100 مل",
     subtitle: "Maison Anwor • فوحان أسطوري وجاذبية لا تُقاوم",
     price: "850 ر.س",
     brand: "MAISON ANWOR",
+    badge: "الأكثر مبيعًا",
     image: "http://localhost:8000/images/perfume-noir-men.jpg",
     topNotes: "البرغموت الكالابري، الفلفل الأسود",
     heartNotes: "فلفل سيشوان، اللافندر الجبلي، الباتشولي",
@@ -32,10 +36,12 @@ export const MEN_PERFUMES = [
   },
   {
     id: 103,
-    name: "عطر فيلفت آيريس الأرستقراطي - 100 مل",
+    name: "عطر فيلفت آيريس الأرستقراطي",
+    volume: "100 مل",
     subtitle: "Maison Anwor • السوسن والجلود الفاخرة",
     price: "780 ر.س",
     brand: "MAISON ANWOR",
+    badge: "اختيار مميز",
     image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80",
     topNotes: "الخزامى التوسكانية، المريمية",
     heartNotes: "السوسن الفلورنسي، بذور الأمبريت، حبوب الكاكاو",
@@ -43,10 +49,12 @@ export const MEN_PERFUMES = [
   },
   {
     id: 104,
-    name: "عطر ليذر نوار الخاص - 75 مل",
+    name: "عطر ليذر نوار الخاص",
+    volume: "75 مل",
     subtitle: "Noir Maison • دفء الجلود النبيلة والحرارة الشرقية",
     price: "740 ر.س",
     brand: "NOIR MAISON",
+    badge: "جديد",
     image: "http://localhost:8000/images/perfume-noir-men.jpg",
     topNotes: "الماندرين الصقلي، الهيل الأخضر",
     heartNotes: "أوراق البنفسج النادرة، الجلد السويدي",
@@ -54,10 +62,12 @@ export const MEN_PERFUMES = [
   },
   {
     id: 105,
-    name: "عطر مسك نوار المنعش - 100 مل",
+    name: "عطر مسك نوار المنعش",
+    volume: "100 مل",
     subtitle: "Noir Maison • حمضيات كالابريا ودفء الأخشاب",
     price: "620 ر.س",
     brand: "NOIR MAISON",
+    badge: "خصم 20%",
     image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=80",
     topNotes: "الليمون الإيطالي، البرغموت، النعناع البري",
     heartNotes: "الفلفل الوردي، الزنجبيل النيجيري",
@@ -65,10 +75,12 @@ export const MEN_PERFUMES = [
   },
   {
     id: 106,
-    name: "عطر كلاسيك نوار أو دو بارفان - 100 مل",
+    name: "عطر كلاسيك نوار أو دو بارفان",
+    volume: "100 مل",
     subtitle: "Noir Maison • الكلاسيكية الرفيعة والأناقة الخالدة",
     price: "680 ر.س",
     brand: "NOIR MAISON",
+    badge: "الأكثر مبيعًا",
     image: "http://localhost:8000/images/perfume-amber-men.jpg",
     topNotes: "البرغموت، إكليل الجبل، الليمون الحامض",
     heartNotes: "الخزامى العضوية، أوراق القرنفل",
@@ -80,10 +92,12 @@ export const MEN_PERFUMES = [
 export const WOMEN_PERFUMES = [
   {
     id: 201,
-    name: "عطر جولد إكسير النسائي الفاخر - 80 مل",
+    name: "عطر جولد إكسير النسائي",
+    volume: "80 مل",
     subtitle: "Éclat Privé • الأنوثة والجاذبية في قطرات ذهبية",
     price: "890 ر.س",
     brand: "ÉCLAT PRIVÉ",
+    badge: "جديد",
     image: "http://localhost:8000/images/perfume-rose-women.jpg",
     topNotes: "زهر البرتقال الغراسي، البرغموت",
     heartNotes: "الورد الدمشقي، الياسمين الملكي، الفاوانيا",
@@ -91,10 +105,12 @@ export const WOMEN_PERFUMES = [
   },
   {
     id: 202,
-    name: "عطر روز فلورال المخملي - 100 مل",
+    name: "عطر روز فلورال المخملي",
+    volume: "100 مل",
     subtitle: "Éclat Privé • بتلات الورد الطبيعي والمسك الأبيض",
     price: "760 ر.س",
     brand: "ÉCLAT PRIVÉ",
+    badge: "الأكثر مبيعًا",
     image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=80",
     topNotes: "الماندرين، براعم الخوخ المخملي",
     heartNotes: "ورد غراس الاستثنائي، زنبق الوادي",
@@ -102,10 +118,12 @@ export const WOMEN_PERFUMES = [
   },
   {
     id: 203,
-    name: "عطر نوار ديسير الحسي - 90 مل",
+    name: "عطر نوار ديسير الحسي",
+    volume: "90 مل",
     subtitle: "Éclat Privé • سحر الفانيليا وحبوب التونكا الفاخرة",
     price: "690 ر.س",
     brand: "ÉCLAT PRIVÉ",
+    badge: "اختيار مميز",
     image: "http://localhost:8000/images/perfume-rose-women.jpg",
     topNotes: "البرتقال المر، الليمون الصقلي",
     heartNotes: "الورد الجوري، زهر البرتقال",
@@ -113,10 +131,12 @@ export const WOMEN_PERFUMES = [
   },
   {
     id: 204,
-    name: "عطر إمبريال جاسمين النقي - 100 مل",
+    name: "عطر إمبريال جاسمين النقي",
+    volume: "100 مل",
     subtitle: "Éclat Privé • شذى الياسمين الاستثنائي والندى الصباحي",
     price: "820 ر.س",
     brand: "ÉCLAT PRIVÉ",
+    badge: "جديد",
     image: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?auto=format&fit=crop&w=800&q=80",
     topNotes: "الياسمين السامباك، زهر الليمون",
     heartNotes: "مسك الروم النبيل، أزهار البرتقال",
@@ -124,10 +144,12 @@ export const WOMEN_PERFUMES = [
   },
   {
     id: 205,
-    name: "عطر فيلفت روز بريفيه - 100 مل",
+    name: "عطر فيلفت روز بريفيه",
+    volume: "100 مل",
     subtitle: "Éclat Privé • باقة مخملية ساحرة تأسرك من اللحظة الأولى",
     price: "710 ر.س",
     brand: "ÉCLAT PRIVÉ",
+    badge: "خصم 20%",
     image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80",
     topNotes: "التوت البري، الفلفل الوردي",
     heartNotes: "الورد البلغاري، الماغنوليا",
@@ -135,10 +157,12 @@ export const WOMEN_PERFUMES = [
   },
   {
     id: 206,
-    name: "عطر مسك بلانك الصافي - 100 مل",
+    name: "عطر مسك بلانك الصافي",
+    volume: "100 مل",
     subtitle: "Éclat Privé • نقاء المسك الأبيض البودري الفاخر",
     price: "640 ر.س",
     brand: "ÉCLAT PRIVÉ",
+    badge: "الأكثر مبيعًا",
     image: "http://localhost:8000/images/perfume-rose-women.jpg",
     topNotes: "بودرة الأرز، الأزهار البيضاء",
     heartNotes: "الورد الطائفي، زنبق الوادي",
@@ -150,10 +174,12 @@ export const WOMEN_PERFUMES = [
 export const OUD_INCENSE_PERFUMES = [
   {
     id: 301,
-    name: "عطر رويال عود أصفهان الملكي - 125 مل",
+    name: "عطر رويال عود أصفهان",
+    volume: "125 مل",
     subtitle: "Anwor Royal Oud • لقاء العود المعتق والورد الفاخر",
     price: "1,350 ر.س",
     brand: "ANWOR ROYAL OUD",
+    badge: "إصدار ملكي",
     image: "http://localhost:8000/images/perfume-noir-men.jpg",
     topNotes: "اللابدانوم الإسباني، الزعفران الإيراني الممتاز",
     heartNotes: "الورد الدمشقي العريق، الباتشولي الإندونيسي",
@@ -161,21 +187,25 @@ export const OUD_INCENSE_PERFUMES = [
   },
   {
     id: 302,
-    name: "عطر عنبر نوي المركز - 125 مل",
+    name: "عطر عنبر نوي المركز",
+    volume: "125 مل",
     subtitle: "Anwor Royal Oud • ليلة ساحرة بين العنبر البحري والورد",
     price: "1,280 ر.س",
     brand: "ANWOR ROYAL OUD",
-    image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80",
+    badge: "الأكثر مبيعًا",
+    image: "http://localhost:8000/images/perfume-amber-men.jpg",
     topNotes: "البرغموت، الجريب فروت الصقلي المنعش",
     heartNotes: "الورد التركي الدموي، الفلفل الوردي الحار",
     baseNotes: "العنبر البحري الرمادي النادر، الباتشولي، الأرز"
   },
   {
     id: 303,
-    name: "دهن عود تراد الحطب المعتق الفاخر - ربع تولة",
+    name: "دهن عود تراد الحطب المعتق",
+    volume: "ربع تولة",
     subtitle: "Anwor Royal Oud • نقاء الدهن الصافي برائحة بخورية سويتية",
     price: "950 ر.س",
     brand: "ANWOR ROYAL OUD",
+    badge: "معتق فاخر",
     image: "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=800&q=80",
     topNotes: "نكهة سويتية عسلية دافئة",
     heartNotes: "طبقات بخورية عميقة مدخنة",
@@ -183,10 +213,12 @@ export const OUD_INCENSE_PERFUMES = [
   },
   {
     id: 304,
-    name: "رقائق عود مروكي طبيعي سوبر مرتفع (30 جم)",
+    name: "رقائق عود مروكي طبيعي سوبر",
+    volume: "30 جم",
     subtitle: "Anwor Royal Oud • زبد كثيف ونكهة مروكية زكية للمجالس",
     price: "480 ر.س",
     brand: "ANWOR ROYAL OUD",
+    badge: "طبيعي 100%",
     image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80",
     topNotes: "رائحة بخورية خشبية باردة",
     heartNotes: "فوحان ملكي ينتشر في أرجاء المكان سريعاً",
@@ -194,21 +226,25 @@ export const OUD_INCENSE_PERFUMES = [
   },
   {
     id: 305,
-    name: "عطر عود وود بريفيه الفاخر - 100 مل",
+    name: "عطر عود وود بريفيه",
+    volume: "100 مل",
     subtitle: "Anwor Royal Oud • دفء الأخشاب النادرة وجلال العود الصافي",
     price: "1,180 ر.س",
     brand: "ANWOR ROYAL OUD",
-    image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=800&q=80",
+    badge: "اختيار مميز",
+    image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80",
     topNotes: "خشب الورد، الهيل، الفلفل الصيني",
     heartNotes: "خشب العود الطبيعي، خشب الصندل، نجيل الهند",
     baseNotes: "حبوب التونكا، الفانيليا، العنبر"
   },
   {
     id: 306,
-    name: "بخور دخون الملوك الخاص (معجون عود معتق)",
+    name: "بخور دخون الملوك الخاص",
+    volume: "معجون معتق",
     subtitle: "Anwor Royal Oud • توليفة فاخرة من مسحوق العود ودهن الورد",
     price: "360 ر.س",
     brand: "ANWOR ROYAL OUD",
+    badge: "الأكثر طلبًا",
     image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=80",
     topNotes: "الورد الطائفي الفاخر، الزعفران",
     heartNotes: "العود الهندي، الصندل الميسوري",
@@ -220,10 +256,12 @@ export const OUD_INCENSE_PERFUMES = [
 export const EXCLUSIVE_COLLECTIONS = [
   {
     id: 401,
-    name: "مجموعة الديسكفري الاستكشافية (6 عطور × 15 مل)",
+    name: "مجموعة الديسكفري الاستكشافية",
+    volume: "6 عطور × 15 مل",
     subtitle: "Noble Essence • تجربة استكشافية متكاملة لنخبة العطور",
     price: "850 ر.س",
     brand: "NOBLE ESSENCE",
+    badge: "مجموعة خاصة",
     image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80",
     topNotes: "عود أصفهان، عنبر رويال، روز بريفيه",
     heartNotes: "ليذر نوار، جولد إكسير، مسك بلانك",
@@ -231,10 +269,12 @@ export const EXCLUSIVE_COLLECTIONS = [
   },
   {
     id: 402,
-    name: "صندوق العود الملكي مع مبخرة رخامية مذهبة عيار 24",
+    name: "صندوق العود الملكي مع مبخرة رخامية",
+    volume: "طقم VIP فاخر",
     subtitle: "Noble Essence • VIP Royal Oud Collection Box",
     price: "1,290 ر.س",
     brand: "NOBLE ESSENCE",
+    badge: "إصدار محدود",
     image: "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=800&q=80",
     topNotes: "أوقية عود مروكي سوبر، تولة دهن عود تراد",
     heartNotes: "مبخرة رخامية يونانية يدوية الصنع بلمسات مذهبة",
@@ -242,22 +282,26 @@ export const EXCLUSIVE_COLLECTIONS = [
   },
   {
     id: 403,
-    name: "طقم الثنائيات العطرية VIP (عطر 100 مل + معطر شعر فاخر)",
+    name: "طقم الثنائيات العطرية VIP",
+    volume: "عطر + معطر شعر",
     subtitle: "Noble Essence • Signature Perfume & Hair Mist Set",
     price: "790 ر.س",
     brand: "NOBLE ESSENCE",
-    image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=80",
+    badge: "الأكثر مبيعًا",
+    image: "http://localhost:8000/images/perfume-amber-men.jpg",
     topNotes: "عطر عنبر رويال 100 مل بتركيز بارفان",
     heartNotes: "معطر شعر مغذي ومعطر غني بفيتامين E",
     baseNotes: "تغليف هدايا ملكي باللون الكحلي والذهبي"
   },
   {
     id: 404,
-    name: "صندوق النيش الملكي الخاص (عطران 100 مل + شمعة معطرة)",
+    name: "صندوق النيش الملكي الخاص",
+    volume: "عطران + شمعة",
     subtitle: "Noble Essence • Exclusive Twin Luxury Vault",
     price: "1,650 ر.س",
     brand: "NOBLE ESSENCE",
-    image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=800&q=80",
+    badge: "طقم حصري",
+    image: "http://localhost:8000/images/perfume-noir-men.jpg",
     topNotes: "عطران كاملان من التشكيلة الحصرية",
     heartNotes: "شمعة معطرة من شمع الصويا الطبيعي 250 جم",
     baseNotes: "صندوق خشبي فاخر مبطن بالحرير الأسود"
@@ -268,10 +312,12 @@ export const EXCLUSIVE_COLLECTIONS = [
 export const GIFTS_PERFUMES = [
   {
     id: 501,
-    name: "صندوق إهداء ملكي فاخر محفور بالاسم بماء الذهب",
+    name: "صندوق إهداء ملكي مخصص بالاسم",
+    volume: "حفر بماء الذهب",
     subtitle: "Noble Essence • Custom Engraved Luxury Gift Box",
     price: "1,450 ر.س",
     brand: "NOBLE ESSENCE",
+    badge: "إهداء ملكي",
     image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80",
     topNotes: "حفر ليزر مذهب لاسم متلقي الهدية على الصندوق",
     heartNotes: "عطران ملكيان من التشكيلة الحصرية مع بخور خاص",
@@ -279,10 +325,12 @@ export const GIFTS_PERFUMES = [
   },
   {
     id: 502,
-    name: "مبخرة كريستالية هندسية مطلية بماء الذهب عيار 24",
+    name: "مبخرة كريستالية مطلية بماء الذهب",
+    volume: "ذهب عيار 24",
     subtitle: "Noble Essence • Royal 24K Gold Plated Crystal Censer",
     price: "520 ر.س",
     brand: "NOBLE ESSENCE",
+    badge: "تحفة فاخرة",
     image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80",
     topNotes: "كريستال نقي بقطع هندسي ماسي عاكس للضوء",
     heartNotes: "شبك إشعال فولاذي مقاوم للحرارة مطلي بالذهب",
@@ -290,10 +338,12 @@ export const GIFTS_PERFUMES = [
   },
   {
     id: 503,
-    name: "باقة الإهداء العطري الخاصة مع شريط ساتان مذهب",
+    name: "باقة الإهداء العطري الخاصة",
+    volume: "تغليف مخملي",
     subtitle: "Noble Essence • Luxury Gift Wrapping & Presentation Package",
     price: "690 ر.س",
     brand: "NOBLE ESSENCE",
+    badge: "باقة إهداء",
     image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=80",
     topNotes: "عطر فاخر حسب اختيارك من التشكيلة",
     heartNotes: "صندوق مخملي أنيق مزين بشريط ساتان مذهب",
@@ -301,11 +351,13 @@ export const GIFTS_PERFUMES = [
   },
   {
     id: 504,
-    name: "بطاقة إهداء أنور للعطور الملكية VIP (بقيمة 1,000 ر.س)",
+    name: "بطاقة إهداء أنور الملكية VIP",
+    volume: "بقيمة 1,000 ر.س",
     subtitle: "Noble Essence • Digital & Physical Royal VIP Voucher",
     price: "1,000 ر.س",
     brand: "NOBLE ESSENCE",
-    image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=800&q=80",
+    badge: "بطاقة VIP",
+    image: "http://localhost:8000/images/perfume-noir-men.jpg",
     topNotes: "بطاقة ذهبية معدنية ملموسة داخل مغلف ملكي",
     heartNotes: "صالحة للشراء من كافة مجموعات العطور والبخور",
     baseNotes: "صالحة لمدة عام كامل بلا قيود"
@@ -352,38 +404,44 @@ export function detectCurrentCategory() {
 const CATEGORY_DATA = {
   MEN: {
     title: 'العطور الرجالية الفاخرة',
-    subtitle: 'تشكيلة استثنائية من أرقى العطور الفرنسية والشرقية الرجالية ذات الفوحان والثبات الأسطوري.',
+    subtitle: 'مجموعة مختارة من أرقى العطور التي تجمع بين العمق والجاذبية والأناقة الاستثنائية.',
     breadcrumb: 'العطور الرجالية',
+    bannerImage: 'http://localhost:8000/images/perfume-amber-men.jpg',
     items: MEN_PERFUMES
   },
   WOMEN: {
     title: 'العطور النسائية الملكية',
     subtitle: 'توليفات زهرية وحسية آسرة تجسد الأنوثة الطاغية والجاذبية الملكية المطلقة.',
     breadcrumb: 'العطور النسائية',
+    bannerImage: 'http://localhost:8000/images/perfume-rose-women.jpg',
     items: WOMEN_PERFUMES
   },
   OUD: {
     title: 'العود والبخور الملكي الخاص',
     subtitle: 'أنقى أدهان العود الطبيعية ورقائق البخور المروكي وعطور العود واللبان النادرة.',
     breadcrumb: 'عود وبخور',
+    bannerImage: 'http://localhost:8000/images/perfume-noir-men.jpg',
     items: OUD_INCENSE_PERFUMES
   },
   EXCLUSIVE: {
     title: 'مجموعات النيش الحصرية',
     subtitle: 'مجموعات استكشافية حصرية وبوكسات VIP مصممة لأصحاب الذوق الرفيع والفريد.',
     breadcrumb: 'مجموعات حصرية',
+    bannerImage: 'http://localhost:8000/images/perfume-noir-men.jpg',
     items: EXCLUSIVE_COLLECTIONS
   },
   GIFTS: {
-    title: 'هدايا فخمة وعروض ملكية',
+    title: 'هدايا فاخرة وعروض ملكية',
     subtitle: 'خيارات إهداء استثنائية مع تغليف ملكي فاخر وبطاقات إهداء مخصصة بالاسم.',
-    breadcrumb: 'هدايا فخمة',
+    breadcrumb: 'هدايا فاخرة',
+    bannerImage: 'http://localhost:8000/images/perfume-amber-men.jpg',
     items: GIFTS_PERFUMES
   },
   ALL: {
     title: 'أحدث الإصدارات العطرية',
     subtitle: 'نخبة العطور الملكية المختارة بعناية لأصحاب الذوق الرفيع.',
     breadcrumb: 'جميع العطور',
+    bannerImage: 'http://localhost:8000/images/perfume-amber-men.jpg',
     items: PERFUMES
   }
 };
@@ -427,10 +485,10 @@ export function initPerfumeShowcase() {
 
       const root = card.shadowRoot || card;
 
-      // 1. Force Image Replacement
+      // 1. Force Image Replacement with Consistent Container
       const imgs = root.querySelectorAll('img');
       imgs.forEach(img => {
-        if (!img.src || !img.src.includes('unsplash') || img.src !== perfume.image) {
+        if (!img.src || !img.src.includes('perfume') || img.src !== perfume.image) {
           img.src = perfume.image;
           img.setAttribute('src', perfume.image);
           if (img.dataset.src) img.dataset.src = perfume.image;
@@ -438,22 +496,24 @@ export function initPerfumeShowcase() {
           img.removeAttribute('srcset');
           img.alt = perfume.name;
           img.style.objectFit = 'contain';
-          img.style.backgroundColor = '#16171b';
-          img.style.padding = '12px';
+          img.style.backgroundColor = '#f8f6f2';
+          img.style.padding = '1rem';
         }
       });
 
-      // 2. Force Title Replacement
+      // 2. Force Title Replacement (clean & readable)
       const titles = root.querySelectorAll('.s-product-card-content-title a, h3 a, h4 a, .s-product-card-title a, a.title');
       titles.forEach(t => {
         if (t.textContent !== perfume.name) {
           t.textContent = perfume.name;
           t.title = perfume.name;
           t.style.color = '#121316';
+          t.style.fontSize = '1rem';
+          t.style.fontWeight = '700';
         }
       });
 
-      // 3. Force Price Replacement
+      // 3. Force Price Replacement (prominent champagne gold)
       const prices = root.querySelectorAll('.s-product-card-sale-price h4, .s-product-card-price h4, .s-product-card-price, .total-price');
       prices.forEach(p => {
         p.textContent = perfume.price;
@@ -461,15 +521,25 @@ export function initPerfumeShowcase() {
         p.style.fontWeight = '800';
       });
 
-      // 4. Force Brand & Subtitle
+      // 4. Force Brand (small, uppercase, subtle)
       const brandSpan = root.querySelector('.perfume-card-brand');
       if (brandSpan && brandSpan.textContent !== perfume.brand) {
         brandSpan.textContent = perfume.brand;
       }
+
+      // 5. Force Short Metadata / Volume (NO long descriptions)
       const sub = root.querySelector('.s-product-card-content-subtitle, .s-product-card-subtitle');
-      if (sub && !sub.textContent.includes(perfume.subtitle)) {
-        sub.textContent = perfume.subtitle;
-        sub.style.color = '#7a7670';
+      if (sub && sub.textContent !== (perfume.volume || '100 مل')) {
+        sub.textContent = perfume.volume || '100 مل';
+        sub.style.color = '#8c8881';
+        sub.style.fontSize = '0.8rem';
+        sub.style.fontWeight = '500';
+      }
+
+      // 6. Force Badge (clean Arabic text: جديد / الأكثر مبيعًا / اختيار مميز)
+      const badge = root.querySelector('.s-product-card-promotion-title, .badge');
+      if (badge && perfume.badge) {
+        badge.textContent = perfume.badge;
       }
     }
 
@@ -500,7 +570,7 @@ export function initPerfumeShowcase() {
       'البلايز': 'العطور النسائية',
       'التنانير': 'عود وبخور',
       'الجاكيتات': 'مجموعات حصرية',
-      'تخفيضات': 'هدايا فخمة',
+      'تخفيضات': 'هدايا فاخرة',
       'عروض': 'عن أنور',
       'عطور رجالية فاخرة': 'العطور الرجالية',
       'عطور نسائية ملكية': 'العطور النسائية',
@@ -508,7 +578,7 @@ export function initPerfumeShowcase() {
       'العود والبخور الخاص': 'عود وبخور',
       'مجموعات النيش': 'مجموعات حصرية',
       'مجموعات النيش الحصرية': 'مجموعات حصرية',
-      'عروض ملكية': 'هدايا فخمة',
+      'عروض ملكية': 'هدايا فاخرة',
       'عروض العطور الملكية': 'عن أنور'
     };
     document.querySelectorAll('.main-menu a, #mobile-menu a, nav a, .sub-menu a, header a, .breadcrumbs a, .breadcrumb a').forEach(link => {
@@ -770,24 +840,32 @@ export function initPerfumeShowcase() {
     document.title = `${data.title} | أنور للعطور الملكية`;
 
     // High luxury editorial product cards:
-    // IMAGE -> BRAND -> TITLE -> SUBTITLE/VOLUME -> PRICE -> ADD TO CART
-    // Notes are kept on product details page as instructed
+    // Image (4/5 Aspect Ratio, #f8f6f2 background, Wishlist, Clean Badge)
+    // Brand (Small, uppercase, tracking)
+    // Title (Primary & Readable)
+    // Metadata (Volume only - NO long descriptions)
+    // Price (Prominent Champagne Gold)
+    // Add to Cart Button (Compact, Dark with Gold Icon)
     const cardsHtml = data.items.map(item => `
-      <div class="royal-perfume-card" style="background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.28); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 18px rgba(0,0,0,0.04); transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;">
-        <div style="background: #f7f5f0; height: 260px; display: flex; align-items: center; justify-content: center; padding: 1.5rem; position: relative;">
-          <img src="${item.image}" alt="${item.name}" loading="lazy" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.12)); transition: transform 0.4s ease;" />
-          <button type="button" aria-label="أضف للمفضلة" style="position: absolute; top: 12px; left: 12px; width: 34px; height: 34px; border-radius: 50%; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.3); display: flex; align-items: center; justify-content: center; color: #121316; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.color='#cca36e'" onmouseout="this.style.color='#121316'">
+      <div class="royal-perfume-card" style="background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.22); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 16px rgba(0,0,0,0.03); transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;">
+        <div style="background: #f8f6f2; height: 270px; width: 100%; display: flex; align-items: center; justify-content: center; padding: 1.25rem; position: relative;">
+          <img src="${item.image}" alt="${item.name}" loading="lazy" style="max-height: 85%; max-width: 85%; object-fit: contain; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.08)); transition: transform 0.4s ease;" />
+          
+          <button type="button" aria-label="أضف للمفضلة" style="position: absolute; top: 12px; left: 12px; width: 34px; height: 34px; border-radius: 50%; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.3); display: flex; align-items: center; justify-content: center; color: #121316; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.color='#cca36e'; this.style.borderColor='#cca36e';" onmouseout="this.style.color='#121316'; this.style.borderColor='rgba(197, 168, 128, 0.3)';">
             <i class="sicon-heart" style="font-size: 0.95rem;"></i>
           </button>
-          <span style="position: absolute; top: 12px; right: 12px; background: #121316; color: #dfcaa7; border: 1px solid rgba(204,163,110,0.3); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px;">أصلي 100%</span>
+          
+          <span style="position: absolute; top: 12px; right: 12px; background: #121316; color: #dfcaa7; border: 1px solid rgba(204,163,110,0.3); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.3px;">${item.badge || 'جديد'}</span>
         </div>
+        
         <div style="padding: 1.25rem 1.15rem 1.15rem; display: flex; flex-direction: column; flex-grow: 1; text-align: right;">
           <span style="font-size: 0.7rem; font-weight: 700; color: #9e7f53; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.35rem; display: block;">${item.brand}</span>
-          <h3 style="color: #121316; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem; line-height: 1.45;">${item.name}</h3>
-          <p style="color: #7a7670; font-size: 0.82rem; margin: 0 0 1.25rem; line-height: 1.45; font-weight: 400;">${item.subtitle}</p>
+          <h3 style="color: #121316; font-size: 1rem; font-weight: 700; margin: 0 0 0.35rem; line-height: 1.45;">${item.name}</h3>
+          <span style="font-size: 0.8rem; color: #8c8881; font-weight: 500; margin-bottom: 0.95rem; display: block;">${item.volume || '100 مل'}</span>
+          
           <div style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; padding-top: 0.85rem; border-top: 1px solid #f0ede6;">
             <div>
-              <span style="color: #cca36e; font-size: 1.25rem; font-weight: 800;">${item.price}</span>
+              <span style="color: #cca36e; font-size: 1.2rem; font-weight: 800;">${item.price}</span>
             </div>
             <button class="royal-add-cart-btn" data-prod-name="${item.name}" style="background: #121316; color: #ffffff; font-weight: 700; font-size: 0.85rem; padding: 0.55rem 1.15rem; border-radius: 8px; border: 1px solid #121316; cursor: pointer; display: inline-flex; align-items: center; gap: 0.45rem; transition: all 0.25s ease;">
               <i class="sicon-shopping-bag" style="color: #cca36e;"></i>
@@ -808,14 +886,28 @@ export function initPerfumeShowcase() {
         <span style="color: #cca36e; font-weight: 800;">${data.breadcrumb}</span>
       </div>
 
-      <div style="background: linear-gradient(135deg, #141518 0%, #1c1d22 100%); border: 1px solid rgba(197, 168, 128, 0.35); border-radius: 18px; padding: 2.25rem 2.5rem; margin-bottom: 2rem; text-align: right; position: relative; overflow: hidden; box-shadow: 0 12px 36px rgba(0,0,0,0.3);">
-        <div style="position: absolute; top: -40px; left: -40px; width: 160px; height: 160px; background: rgba(204, 163, 110, 0.15); border-radius: 50%; filter: blur(40px);"></div>
-        <div style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(204, 163, 110, 0.15); border: 1px solid rgba(204, 163, 110, 0.45); padding: 0.3rem 0.9rem; border-radius: 999px; font-size: 0.78rem; font-weight: 700; color: #cca36e; margin-bottom: 0.85rem;">
-          <i class="sicon-sparkle"></i>
-          <span>مجموعة أصلية 100% • مختارات الدار الحصرية من أندر التوليفات</span>
+      <div class="royal-category-hero-banner" style="background: linear-gradient(135deg, #121316 0%, #1a1b20 100%); border: 1px solid rgba(197, 168, 128, 0.3); border-radius: 16px; padding: 2.25rem 2.5rem; margin-bottom: 2rem; position: relative; overflow: hidden; box-shadow: 0 16px 40px rgba(0,0,0,0.35); display: flex; align-items: center; justify-content: space-between; gap: 2rem; min-height: 220px;">
+        <div style="position: absolute; top: -50px; left: -50px; width: 220px; height: 220px; background: rgba(204, 163, 110, 0.12); border-radius: 50%; filter: blur(50px); pointer-events: none;"></div>
+        
+        <div style="max-width: 620px; z-index: 2; text-align: right;">
+          <div style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(204, 163, 110, 0.12); border: 1px solid rgba(204, 163, 110, 0.4); padding: 0.25rem 0.85rem; border-radius: 999px; font-size: 0.76rem; font-weight: 700; color: #cca36e; margin-bottom: 0.85rem;">
+            <i class="sicon-sparkle"></i>
+            <span>دار العطور الملكية الفاخرة</span>
+          </div>
+          <h1 style="color: #faf7f2; font-size: 2.25rem; font-weight: 800; margin: 0 0 0.65rem; letter-spacing: -0.01em; line-height: 1.25;">${data.title}</h1>
+          <p style="color: #cfcbc4; font-size: 0.98rem; line-height: 1.6; margin: 0 0 1.25rem; font-weight: 300;">${data.subtitle}</p>
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <span style="display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #cca36e; font-weight: 600;">
+              <i class="sicon-check-circle"></i>
+              <span>مختارات أصلية وحصرية</span>
+            </span>
+          </div>
         </div>
-        <h1 style="color: #faf7f2; font-size: 2.25rem; font-weight: 800; margin: 0 0 0.6rem; letter-spacing: -0.01em;">${data.title}</h1>
-        <p style="color: #cfcbc4; font-size: 0.98rem; max-width: 680px; line-height: 1.65; margin: 0; font-weight: 300;">${data.subtitle}</p>
+
+        <div class="hidden md:flex" style="flex-shrink: 0; width: 220px; height: 190px; z-index: 2; align-items: center; justify-content: center; position: relative;">
+          <div style="position: absolute; inset: 0; background: radial-gradient(circle, rgba(204,163,110,0.18) 0%, transparent 70%); border-radius: 50%;"></div>
+          <img src="${data.bannerImage || 'http://localhost:8000/images/perfume-amber-men.jpg'}" alt="${data.title}" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 12px 24px rgba(0,0,0,0.5));" />
+        </div>
       </div>
 
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.75rem; border-bottom: 1px solid rgba(197,168,128,0.22); padding-bottom: 0.85rem; flex-wrap: wrap; gap: 0.5rem;">
@@ -888,7 +980,7 @@ export function initPerfumeShowcase() {
       WOMEN: 'العطور النسائية',
       OUD: 'عود وبخور',
       EXCLUSIVE: 'مجموعات حصرية',
-      GIFTS: 'هدايا فخمة'
+      GIFTS: 'هدايا فاخرة'
     };
     const activeText = catTextMap[categoryKey] || 'الرئيسية';
 
