@@ -226,21 +226,16 @@ export function initPerfumeShowcase() {
       menuUl.prepend(homeLi);
     }
 
-    // 5. Hero Banner
+    // 5. Hero Banner (Pixel Perfect with no duplicate text)
     const isHome = window.location.pathname === '/' || window.location.pathname === '' || window.location.pathname.includes('dev-') || !window.location.pathname.includes('/');
     if (isHome && !document.querySelector('.royal-perfume-hero-injected')) {
       const heroContainer = document.createElement('section');
       heroContainer.className = 'royal-perfume-hero-injected';
       heroContainer.style.cssText = 'max-width: 1240px; margin: 1.5rem auto 1rem; padding: 0 1rem;';
       heroContainer.innerHTML = `
-        <div style="position: relative; overflow: hidden; border-radius: 16px; background: #141518; border: 1px solid rgba(197, 168, 128, 0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.3); min-height: 380px; display: flex; align-items: center;">
-          <img src="http://localhost:8000/images/hero-banner-luxury.png" alt="أنور للعطور الملكية" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0.95;" />
-          <div style="position: relative; z-index: 10; padding: 2.5rem 3rem; max-width: 580px; text-align: right; background: linear-gradient(90deg, rgba(20,21,24,0.92) 0%, rgba(20,21,24,0.75) 55%, transparent 100%); border-radius: 16px 0 0 16px;">
-            <h1 style="color: #faf7f2; font-size: 2.5rem; font-weight: 800; margin-bottom: 0.75rem; line-height: 1.25;">فخامة الحضور وسحر الأثر</h1>
-            <p style="color: #d8d3c9; font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem; font-weight: 300;">اكتشف مجموعتنا الحصرية من العطور الملكية التي تأسر القلوب وتعكس ذوقك الرفيع</p>
-            <a href="/products" style="display: inline-block; background: #cca36e; color: #121316; font-weight: 700; font-size: 0.95rem; padding: 0.75rem 2.25rem; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 15px rgba(204,163,110,0.3); transition: all 0.2s ease;">تسوق الآن</a>
-          </div>
-        </div>
+        <a href="/products" style="display: block; position: relative; overflow: hidden; border-radius: 16px; background: #141518; border: 1px solid rgba(197, 168, 128, 0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.3); text-decoration: none; transition: transform 0.3s ease;">
+          <img src="http://localhost:8000/images/hero-banner-luxury.png" alt="أنور للعطور الملكية - فخامة الحضور وسحر الأثر" style="width: 100%; height: auto; display: block; border-radius: 16px;" />
+        </a>
       `;
       const targetSec = document.querySelector('.perfume-discovery-section, [data-testid="store-perfume-discovery"], #main-content, main, .main-content');
       if (targetSec) {
