@@ -1,46 +1,78 @@
 {#
-  Fragrance Families Section (العائلات العطرية)
-  Matching luxury perfume boutique design
+  Fragrance Discovery Section (اكتشف عطرك)
+  7 Distinct Olfactory Families: عود، مسك، عنبر، زهري، خشبي، حمضيات، شرقي
 #}
-<section component-id="{{ componentId }}" class="perfume-discovery-section py-8 md:py-10 my-4" data-testid="store-perfume-discovery">
+<section component-id="{{ componentId }}" class="perfume-discovery-section py-10 md:py-14 my-6" data-testid="store-perfume-discovery">
   <div class="container">
-    <div class="mb-5 flex items-center justify-between">
-      <h2 class="text-xl sm:text-2xl font-bold text-[#121316] tracking-tight">
-        العائلات العطرية
-      </h2>
+    <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-3 text-start">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-[#9e7f53] mb-1.5 block">
+          {{ theme.settings.get('discovery_subtitle', 'العائلات العطرية الفاخرة') }}
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-[#121316] tracking-tight">
+          {{ theme.settings.get('discovery_title', 'اكتشف عطرك') }}
+        </h2>
+      </div>
+      <p class="text-xs sm:text-sm text-[#7a7670] max-w-md font-light">
+        اختر الطابع العطري الذي يعبّر عن تميزك وحضورك الاستثنائي في كل مناسبة.
+      </p>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
-      {# 1. Oriental / الشرقية #}
-      <a href="/search?q={{ 'عطور شرقية'|url_encode }}" class="perfume-family-box group" data-testid="family-card-oriental">
-        <div class="family-box-icon">
-          <i class="sicon-sparkle"></i>
-        </div>
-        <h3 class="family-box-title">الشرقية</h3>
-      </a>
-
-      {# 2. Floral / الزهرية #}
-      <a href="/search?q={{ 'عطور زهرية'|url_encode }}" class="perfume-family-box group" data-testid="family-card-floral">
-        <div class="family-box-icon">
-          <i class="sicon-flower"></i>
-        </div>
-        <h3 class="family-box-title">الزهرية</h3>
-      </a>
-
-      {# 3. Woody / الخشبية #}
-      <a href="/search?q={{ 'عطور خشبية'|url_encode }}" class="perfume-family-box group" data-testid="family-card-woody">
-        <div class="family-box-icon">
-          <i class="sicon-tree"></i>
-        </div>
-        <h3 class="family-box-title">الخشبية</h3>
-      </a>
-
-      {# 4. Royal Oud / العود الملكي #}
-      <a href="/search?q={{ 'عود ملكي'|url_encode }}" class="perfume-family-box group" data-testid="family-card-oud">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4">
+      {# 1. Oud / عود #}
+      <a href="/search?q={{ 'عود'|url_encode }}" class="perfume-family-box group" data-testid="family-card-oud">
         <div class="family-box-icon">
           <i class="sicon-crown"></i>
         </div>
-        <h3 class="family-box-title">العود الملكي</h3>
+        <h3 class="family-box-title">عود</h3>
+      </a>
+
+      {# 2. Musk / مسك #}
+      <a href="/search?q={{ 'مسك'|url_encode }}" class="perfume-family-box group" data-testid="family-card-musk">
+        <div class="family-box-icon">
+          <i class="sicon-sparkle"></i>
+        </div>
+        <h3 class="family-box-title">مسك</h3>
+      </a>
+
+      {# 3. Amber / عنبر #}
+      <a href="/search?q={{ 'عنبر'|url_encode }}" class="perfume-family-box group" data-testid="family-card-amber">
+        <div class="family-box-icon">
+          <i class="sicon-gem"></i>
+        </div>
+        <h3 class="family-box-title">عنبر</h3>
+      </a>
+
+      {# 4. Floral / زهري #}
+      <a href="/search?q={{ 'زهري'|url_encode }}" class="perfume-family-box group" data-testid="family-card-floral">
+        <div class="family-box-icon">
+          <i class="sicon-flower"></i>
+        </div>
+        <h3 class="family-box-title">زهري</h3>
+      </a>
+
+      {# 5. Woody / خشبي #}
+      <a href="/search?q={{ 'خشبي'|url_encode }}" class="perfume-family-box group" data-testid="family-card-woody">
+        <div class="family-box-icon">
+          <i class="sicon-tree"></i>
+        </div>
+        <h3 class="family-box-title">خشبي</h3>
+      </a>
+
+      {# 6. Citrus / حمضيات #}
+      <a href="/search?q={{ 'حمضيات'|url_encode }}" class="perfume-family-box group" data-testid="family-card-citrus">
+        <div class="family-box-icon">
+          <i class="sicon-apple"></i>
+        </div>
+        <h3 class="family-box-title">حمضيات</h3>
+      </a>
+
+      {# 7. Oriental / شرقي #}
+      <a href="/search?q={{ 'شرقي'|url_encode }}" class="perfume-family-box group" data-testid="family-card-oriental">
+        <div class="family-box-icon">
+          <i class="sicon-moon"></i>
+        </div>
+        <h3 class="family-box-title">شرقي</h3>
       </a>
     </div>
   </div>

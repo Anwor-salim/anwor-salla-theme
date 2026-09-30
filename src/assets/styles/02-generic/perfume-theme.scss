@@ -1,9 +1,22 @@
 /* ==========================================================================
    PREMIUM PERFUME & LUXURY FRAGRANCE THEME STYLES
    Designed specifically for Salla Twilight Engine
+   Haute Parfumerie Design System
    ========================================================================== */
 
 /* 1. Global Luxury Styling */
+:root {
+  --color-perfume-black: #121316;
+  --color-perfume-charcoal: #191b22;
+  --color-perfume-ivory: #faf8f5;
+  --color-perfume-cream: #f8f6f2;
+  --color-perfume-gold: #cca36e;
+  --color-perfume-gold-dark: #9e7f53;
+  --color-perfume-gold-light: #dfcaa7;
+  --color-perfume-border: rgba(197, 168, 128, 0.25);
+  --color-perfume-text-muted: #7a7670;
+}
+
 body {
   background-color: #faf8f5 !important;
   color: #232220;
@@ -33,8 +46,8 @@ body {
   margin-bottom: 2rem !important;
 
   h2 {
-    font-size: 1.45rem !important;
-    font-weight: 700 !important;
+    font-size: 1.55rem !important;
+    font-weight: 800 !important;
     color: #121316 !important;
     letter-spacing: -0.01em;
     display: inline-flex;
@@ -46,7 +59,7 @@ body {
       display: inline-block;
       width: 4px;
       height: 22px;
-      background: linear-gradient(180deg, #c5a880 0%, #9e7f53 100%);
+      background: linear-gradient(180deg, #cca36e 0%, #9e7f53 100%);
       border-radius: 2px;
     }
   }
@@ -62,15 +75,15 @@ body {
   color: #121316 !important;
   border: 1px solid rgba(197, 168, 128, 0.45);
   background: #ffffff;
-  padding: 0.45rem 1.15rem;
-  border-radius: 6px;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
   font-size: 0.85rem !important;
   font-weight: 600 !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 
   &:hover {
     background: #121316;
-    color: #dfcaa7 !important;
+    color: #cca36e !important;
     border-color: #121316;
     transform: translateY(-1px);
     box-shadow: 0 4px 14px rgba(18, 19, 22, 0.12);
@@ -97,20 +110,20 @@ body {
 }
 
 .s-search-input {
-  background: #cbb592 !important;
-  color: #121316 !important;
-  border: 1px solid #cca36e !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(197, 168, 128, 0.35) !important;
   border-radius: 8px !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   transition: all 0.25s ease;
 
   &::placeholder {
-    color: #3d372e !important;
+    color: #a8a49d !important;
   }
 
   &:focus, &:hover {
-    background: #dfcaa7 !important;
-    border-color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: #cca36e !important;
   }
 }
 
@@ -158,7 +171,28 @@ body {
       height: 2.5px;
       background: #cca36e;
       border-radius: 2px;
+      box-shadow: 0 0 8px rgba(204, 163, 110, 0.8);
     }
+  }
+}
+
+/* Header Action Icons: 38x38px with uniform delicate borders */
+.store-header button,
+.store-header a[href*="wishlist"] {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(197, 168, 128, 0.35) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #faf7f2 !important;
+  transition: all 0.25s ease !important;
+
+  &:hover {
+    background: #cca36e !important;
+    color: #121316 !important;
+    border-color: #cca36e !important;
   }
 }
 
@@ -185,32 +219,22 @@ salla-user-menu {
   color: #faf7f2 !important;
 }
 
-.store-header a[href*="wishlist"] {
-  border-color: rgba(197, 168, 128, 0.3) !important;
-  color: #faf7f2 !important;
-  &:hover {
-    background: #cca36e !important;
-    color: #121316 !important;
-    border-color: #cca36e !important;
-  }
-}
-
 /* 3. Luxury Perfume Product Cards */
 .s-product-card-entry {
   display: flex !important;
   flex-direction: column !important;
-  background: #141518 !important;
+  background: #ffffff !important;
   border: 1px solid rgba(197, 168, 128, 0.25) !important;
   border-radius: 12px !important;
   overflow: hidden !important;
   height: 100% !important;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  box-shadow: 0 4px 18px -4px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0 4px 18px -4px rgba(0, 0, 0, 0.04) !important;
 
   &:hover {
     border-color: #cca36e !important;
     transform: translateY(-4px);
-    box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 16px 36px -8px rgba(204, 163, 110, 0.18) !important;
 
     .s-product-card-image img {
       transform: scale(1.05);
@@ -218,11 +242,11 @@ salla-user-menu {
   }
 
   .s-product-card-image {
-    background: #191b22 !important;
-    height: 270px !important;
-    max-height: 270px !important;
+    background: #f8f6f2 !important;
+    height: 260px !important;
+    max-height: 260px !important;
     width: 100% !important;
-    padding: 1rem !important;
+    padding: 1.25rem !important;
     position: relative !important;
     display: flex !important;
     align-items: center !important;
@@ -244,6 +268,7 @@ salla-user-menu {
       width: auto !important;
       height: auto !important;
       object-fit: contain !important;
+      filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.1));
       transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
   }
@@ -253,26 +278,44 @@ salla-user-menu {
     flex-direction: column !important;
     flex-grow: 1 !important;
     justify-content: space-between !important;
-    padding: 1.15rem 1rem !important;
-    background: #141518 !important;
+    padding: 1.25rem 1.15rem 1.15rem !important;
+    background: #ffffff !important;
+  }
+
+  .perfume-card-brand {
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    color: #9e7f53 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    margin-bottom: 0.35rem !important;
+    display: block !important;
   }
 
   .s-product-card-content-title {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.4rem !important;
     a {
-      color: #faf7f2 !important;
+      color: #121316 !important;
       font-weight: 700 !important;
-      font-size: 0.95rem !important;
-      line-height: 1.4 !important;
+      font-size: 1rem !important;
+      line-height: 1.45 !important;
       display: -webkit-box !important;
       -webkit-line-clamp: 2 !important;
       -webkit-box-orient: vertical !important;
       overflow: hidden !important;
+      transition: color 0.2s ease;
 
       &:hover {
         color: #cca36e !important;
       }
     }
+  }
+
+  .s-product-card-content-subtitle {
+    color: #7a7670 !important;
+    font-size: 0.82rem !important;
+    margin-bottom: 0.75rem !important;
+    line-height: 1.45 !important;
   }
 
   .s-product-card-content-sub {
@@ -290,11 +333,11 @@ salla-user-menu {
     gap: 0.5rem !important;
   }
 
-  /* Wishlist Button */
+  /* Wishlist Button: Subtle & Refined */
   .s-product-card-wishlist-btn button {
     background: #ffffff !important;
     box-shadow: 0 2px 8px rgba(18, 19, 22, 0.08) !important;
-    border: 1px solid rgba(197, 168, 128, 0.25) !important;
+    border: 1px solid rgba(197, 168, 128, 0.3) !important;
     border-radius: 50% !important;
     width: 34px !important;
     height: 34px !important;
@@ -302,24 +345,26 @@ salla-user-menu {
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
+    color: #121316 !important;
 
     &:hover {
       background: #121316 !important;
       border-color: #121316 !important;
+      color: #cca36e !important;
 
       svg {
-        fill: #dfcaa7 !important;
+        fill: #cca36e !important;
       }
     }
   }
 
-  /* Badges */
+  /* Refined, Minimal Badges */
   .s-product-card-promotion-title {
     background: #121316 !important;
     color: #dfcaa7 !important;
-    border-right: 3px solid #c5a880 !important;
+    border-right: 3px solid #cca36e !important;
     border-radius: 0 4px 4px 0 !important;
-    font-size: 0.75rem !important;
+    font-size: 0.72rem !important;
     font-weight: 700 !important;
     letter-spacing: 0.02em;
     padding: 0.25rem 0.65rem !important;
@@ -330,34 +375,12 @@ salla-user-menu {
     color: #dfcaa7 !important;
     border: 1px solid rgba(197, 168, 128, 0.4) !important;
     border-radius: 4px !important;
+    font-size: 0.72rem !important;
   }
 
-  /* Content */
-  .s-product-card-content {
-    padding: 1.15rem 1rem !important;
-    background: #ffffff;
-  }
-
-  .s-product-card-content-title a {
-    color: #121316 !important;
-    font-weight: 700 !important;
-    font-size: 0.95rem !important;
-    line-height: 1.4 !important;
-    transition: color 0.2s ease;
-
-    &:hover {
-      color: #9e7f53 !important;
-    }
-  }
-
-  .s-product-card-content-subtitle {
-    color: #8c8881 !important;
-    font-size: 0.82rem !important;
-  }
-
-  /* Prices */
+  /* Prominent Luxury Prices */
   .s-product-card-price {
-    font-size: 1.05rem !important;
+    font-size: 1.15rem !important;
     font-weight: 800 !important;
     color: #cca36e !important;
   }
@@ -365,7 +388,7 @@ salla-user-menu {
   .s-product-card-sale-price {
     h4 {
       color: #cca36e !important;
-      font-size: 1.05rem !important;
+      font-size: 1.15rem !important;
       font-weight: 800 !important;
     }
     span {
@@ -374,51 +397,41 @@ salla-user-menu {
     }
   }
 
-  /* Add to Cart Button in Card */
+  /* Add to Cart Button in Card: Moderate Radius & Champagne Accent */
   salla-add-product-button button,
   .s-product-card-btn {
     background: #121316 !important;
     color: #ffffff !important;
     border: 1px solid #121316 !important;
-    border-radius: 6px !important;
+    border-radius: 8px !important;
     font-size: 0.85rem !important;
-    font-weight: 600 !important;
-    padding: 0.45rem 1rem !important;
+    font-weight: 700 !important;
+    padding: 0.55rem 1.15rem !important;
     transition: all 0.25s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+
+    i {
+      color: #cca36e !important;
+    }
 
     &:hover {
-      background: #c5a880 !important;
-      border-color: #c5a880 !important;
+      background: #cca36e !important;
+      border-color: #cca36e !important;
       color: #121316 !important;
-      box-shadow: 0 4px 12px rgba(197, 168, 128, 0.35) !important;
+      box-shadow: 0 4px 14px rgba(204, 163, 110, 0.35) !important;
+
+      i {
+        color: #121316 !important;
+      }
     }
   }
 }
 
-/* 4. Luxury Hero Slider */
-.s-block--hero-slider {
-  .swiper-slide {
-    background: #121316 !important;
-
-    .overlay-bg::after {
-      background: radial-gradient(circle at center, rgba(18, 19, 22, 0.45) 0%, rgba(18, 19, 22, 0.88) 100%) !important;
-    }
-  }
-
-  .home-slider__content {
-    h2 {
-      color: #ffffff !important;
-      font-family: inherit;
-      letter-spacing: -0.02em;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    }
-    p.description {
-      color: #dfcaa7 !important;
-      font-size: 1.1rem !important;
-      line-height: 1.6;
-      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
-    }
-  }
+/* 4. Luxury Hero Banner Component */
+.perfume-hero-section {
+  position: relative;
 }
 
 /* 5. Trust / Store Features (مزايا متجر العطور الفاخر) */
@@ -429,7 +442,7 @@ salla-user-menu {
   .s-block--features__item {
     background: #ffffff !important;
     border: 1px solid rgba(197, 168, 128, 0.22) !important;
-    border-radius: 8px !important;
+    border-radius: 12px !important;
     padding: 1.75rem 1.25rem !important;
     text-align: center;
     transition: all 0.3s ease;
@@ -483,7 +496,7 @@ salla-user-menu {
   }
 }
 
-/* 6. Fragrance Discovery / Olfactory Notes Card Components */
+/* 6. Fragrance Discovery / Olfactory Families Card Components */
 .perfume-family-box {
   display: flex;
   flex-direction: column;
@@ -491,7 +504,7 @@ salla-user-menu {
   justify-content: center;
   padding: 1.5rem 1rem;
   background: #ffffff;
-  border: 1px solid rgba(197, 168, 128, 0.35);
+  border: 1px solid rgba(197, 168, 128, 0.3);
   border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
@@ -500,7 +513,7 @@ salla-user-menu {
 
   .family-box-icon {
     font-size: 2rem;
-    color: #121316;
+    color: #cca36e;
     margin-bottom: 0.6rem;
     transition: transform 0.3s ease, color 0.3s ease;
     display: flex;
@@ -528,135 +541,45 @@ salla-user-menu {
   }
 }
 
-.perfume-family-card {
-  background: #ffffff;
-  border: 1px solid rgba(197, 168, 128, 0.2);
-  border-radius: 8px;
-  padding: 1.5rem 1rem;
-  text-align: center;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #c5a880, #dfcaa7);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  &:hover {
-    border-color: #c5a880;
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px -6px rgba(197, 168, 128, 0.25);
-
-    &::after {
-      opacity: 1;
-    }
-
-    .family-icon-wrap {
-      background: #121316;
-      border-color: #c5a880;
-      color: #dfcaa7;
-    }
-
-    .family-title {
-      color: #9e7f53;
-    }
-  }
-
-  .family-icon-wrap {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: #faf7f2;
-    border: 1px solid rgba(197, 168, 128, 0.3);
-    color: #9e7f53;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.9rem;
-    font-size: 1.35rem;
-    transition: all 0.3s ease;
-  }
-
-  .family-title {
-    font-size: 0.925rem;
-    font-weight: 700;
-    color: #121316;
-    margin-bottom: 0.25rem;
-    transition: color 0.25s ease;
-  }
-
-  .family-sub {
-    font-size: 0.75rem;
-    color: #8c8881;
-    letter-spacing: 0.02em;
-  }
-}
-
 /* 7. Product Single Details Luxury Enhancements */
-.product-single {
+.container--product-details {
   .details-slider {
     border: 1px solid rgba(197, 168, 128, 0.2);
-    border-radius: 8px;
+    border-radius: 12px;
     background: #ffffff;
     padding: 1rem;
   }
 
-  h1.product-title {
+  h1[data-testid="store-product-title"] {
     font-size: 1.85rem !important;
     font-weight: 800 !important;
     color: #121316 !important;
     letter-spacing: -0.01em;
-    line-height: 1.3;
+    line-height: 1.35;
   }
 
-  .product-brand-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    background: rgba(197, 168, 128, 0.12);
-    border: 1px solid rgba(197, 168, 128, 0.3);
-    color: #9e7f53;
-    font-size: 0.8rem;
-    font-weight: 700;
-    padding: 0.25rem 0.75rem;
-    border-radius: 4px;
-    margin-bottom: 0.75rem;
-  }
-
-  /* Fragrance Pyramid Notes Box */
+  /* Fragrance Pyramid Notes Box: Elegant Tiers */
   .fragrance-notes-card {
     background: #ffffff;
-    border: 1px solid rgba(197, 168, 128, 0.25);
-    border-radius: 8px;
+    border: 1px solid rgba(197, 168, 128, 0.28);
+    border-radius: 12px;
     padding: 1.5rem;
     margin: 1.5rem 0;
     box-shadow: 0 4px 16px -4px rgba(18, 19, 22, 0.04);
 
     .notes-title {
-      font-size: 1.05rem;
-      font-weight: 700;
+      font-size: 1.1rem;
+      font-weight: 800;
       color: #121316;
       display: flex;
       align-items: center;
       gap: 0.5rem;
       margin-bottom: 1.25rem;
       padding-bottom: 0.75rem;
-      border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+      border-bottom: 1px solid rgba(197, 168, 128, 0.2);
 
       i {
-        color: #c5a880;
+        color: #cca36e;
       }
     }
 
@@ -666,7 +589,7 @@ salla-user-menu {
       gap: 0.35rem;
       margin-bottom: 1rem;
       padding-bottom: 1rem;
-      border-bottom: 1px dashed rgba(197, 168, 128, 0.2);
+      border-bottom: 1px dashed rgba(197, 168, 128, 0.25);
 
       &:last-child {
         margin-bottom: 0;
@@ -675,50 +598,55 @@ salla-user-menu {
       }
 
       .tier-label {
-        font-size: 0.82rem;
+        font-size: 0.85rem;
         font-weight: 700;
         color: #9e7f53;
         display: flex;
         align-items: center;
         gap: 0.4rem;
+
+        i {
+          color: #cca36e;
+        }
       }
 
       .tier-content {
-        font-size: 0.9rem;
+        font-size: 0.925rem;
         color: #232220;
+        line-height: 1.55;
       }
     }
   }
 
-  /* Quantity & Buy Button */
+  /* Quantity & Add to Cart on Single Product */
   salla-add-product-button button {
     background: #121316 !important;
     color: #dfcaa7 !important;
     border: 1px solid #121316 !important;
-    border-radius: 6px !important;
+    border-radius: 8px !important;
     height: 52px !important;
-    font-size: 1rem !important;
+    font-size: 1.05rem !important;
     font-weight: 700 !important;
     letter-spacing: 0.02em;
     transition: all 0.3s ease !important;
 
     &:hover {
-      background: #c5a880 !important;
+      background: #cca36e !important;
       color: #121316 !important;
-      border-color: #c5a880 !important;
+      border-color: #cca36e !important;
       box-shadow: 0 8px 24px rgba(197, 168, 128, 0.35) !important;
     }
   }
 
   .btn--wishlist {
     border: 1px solid rgba(197, 168, 128, 0.35) !important;
-    border-radius: 6px !important;
+    border-radius: 8px !important;
     background: #ffffff !important;
     height: 52px !important;
 
     &:hover {
       background: #faf7f2 !important;
-      border-color: #c5a880 !important;
+      border-color: #cca36e !important;
     }
   }
 }
@@ -772,8 +700,8 @@ salla-user-menu {
     color: #dfcaa7 !important;
 
     &:hover {
-      background: #c5a880 !important;
-      border-color: #c5a880 !important;
+      background: #cca36e !important;
+      border-color: #cca36e !important;
       color: #121316 !important;
     }
   }
@@ -788,10 +716,11 @@ salla-user-menu {
   background: #121316 !important;
   color: #dfcaa7 !important;
   border: 1px solid #121316 !important;
+  border-radius: 8px !important;
 
   &:hover {
-    background: #c5a880 !important;
-    border-color: #c5a880 !important;
+    background: #cca36e !important;
+    border-color: #cca36e !important;
     color: #121316 !important;
   }
 }
@@ -843,19 +772,23 @@ salla-maintenance-alert,
 
 .royal-perfume-card {
   &:hover {
-    transform: translateY(-6px);
-    border-color: rgba(204, 163, 110, 0.6) !important;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45) !important;
+    transform: translateY(-5px);
+    border-color: #cca36e !important;
+    box-shadow: 0 14px 34px rgba(204, 163, 110, 0.16) !important;
 
     img {
-      transform: scale(1.06);
+      transform: scale(1.05);
     }
 
     .royal-add-cart-btn {
-      background: #dfcaa7 !important;
+      background: #cca36e !important;
+      border-color: #cca36e !important;
       color: #121316 !important;
-      box-shadow: 0 4px 14px rgba(204, 163, 110, 0.4);
+      box-shadow: 0 4px 14px rgba(204, 163, 110, 0.35);
+
+      i {
+        color: #121316 !important;
+      }
     }
   }
 }
-

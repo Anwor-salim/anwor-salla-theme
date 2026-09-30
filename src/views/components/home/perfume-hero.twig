@@ -1,34 +1,55 @@
 {#
-  Royal Perfume Hero Banner
-  Matching the luxury boutique aesthetic
+  Luxury Editorial Fragrance Hero Section
+  Designed for Haute Parfumerie aesthetic with Salla Twilight settings integration
 #}
-<section class="perfume-hero-section my-4 md:my-6" data-testid="store-perfume-hero">
+<section class="perfume-hero-section my-6 md:my-8" data-testid="store-perfume-hero">
   <div class="container">
-    <div class="relative overflow-hidden rounded-2xl bg-[#141518] border border-[#c5a880]/30 shadow-2xl min-h-[320px] md:min-h-[380px] flex items-center">
-      {# Ambient smoky gold glow #}
-      <div class="absolute inset-0 bg-gradient-to-r from-[#121316] via-[#1a1b1f]/90 to-transparent z-10"></div>
+    <div class="relative overflow-hidden rounded-2xl bg-[#121316] border border-[#c5a880]/30 shadow-2xl min-h-[360px] md:min-h-[440px] flex items-center">
+      {# Ambient smoky dark luxury gradient #}
+      <div class="absolute inset-0 bg-gradient-to-l from-transparent via-[#121316]/70 to-[#121316] z-10 rtl:bg-gradient-to-r rtl:from-transparent rtl:via-[#121316]/75 rtl:to-[#121316]"></div>
       
-      {# Hero Background Image #}
+      {# Hero Desktop & Mobile Image #}
       <img 
-        src="{{ 'images/hero-banner-luxury.png' | asset }}" 
-        alt="أنور للعطور الملكية" 
-        class="absolute inset-0 w-full h-full object-cover object-center hidden md:block opacity-90"
+        src="{{ theme.settings.get('hero_image') ? theme.settings.get('hero_image') : 'images/hero-banner-luxury.png' | asset }}" 
+        alt="{{ store.name }} - {{ theme.settings.get('hero_title', 'عطرك... بصمتك التي لا تُنسى') }}" 
+        class="absolute inset-0 w-full h-full object-cover object-center opacity-85"
+        loading="eager"
+        fetchpriority="high"
       />
 
-      {# Content Overlay #}
+      {# Editorial Content Container #}
       <div class="relative z-20 w-full p-6 sm:p-10 md:p-14 lg:p-16 flex flex-col items-start max-w-xl text-start">
-        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#faf7f2] mb-3 leading-tight tracking-tight">
-          فخامة الحضور وسحر الأثر
+        {# Subtle Luxury Pill Badge #}
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#cca36e]/15 border border-[#cca36e]/40 text-[#cca36e] text-xs font-semibold mb-4 tracking-wide">
+          <i class="sicon-sparkle"></i>
+          <span>{{ theme.settings.get('hero_badge', 'دار العطور الملكية الفاخرة') }}</span>
+        </div>
+
+        {# Main Headline #}
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-[#faf7f2] mb-3 leading-tight tracking-tight">
+          {{ theme.settings.get('hero_title', 'عطرك... بصمتك التي لا تُنسى') }}
         </h1>
-        <p class="text-xs sm:text-sm md:text-base text-[#d8d3c9] mb-6 leading-relaxed max-w-md font-light">
-          اكتشف مجموعتنا الحصرية من العطور الملكية التي تأسر القلوب وتعكس ذوقك الرفيع
+
+        {# Supporting Subtitle #}
+        <p class="text-sm sm:text-base md:text-lg text-[#cfcbc4] mb-8 leading-relaxed max-w-md font-light">
+          {{ theme.settings.get('hero_subtitle', 'اكتشف مجموعة مختارة من العطور الفاخرة التي تعبّر عن شخصيتك وتترك أثراً استثنائياً في كل حضور.') }}
         </p>
-        <a 
-          href="/products" 
-          class="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-[#cca36e] hover:bg-[#b8915b] text-[#121316] font-bold text-sm transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#cca36e]/20"
-        >
-          تسوق الآن
-        </a>
+
+        {# Dual CTA Buttons #}
+        <div class="flex items-center gap-3 sm:gap-4 flex-wrap">
+          <a 
+            href="{{ theme.settings.get('hero_cta_url', '/products') }}" 
+            class="inline-flex items-center justify-center px-7 sm:px-8 py-3.5 rounded-lg bg-[#cca36e] hover:bg-[#b8915b] text-[#121316] font-bold text-sm sm:text-base transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-[#cca36e]/20"
+          >
+            {{ theme.settings.get('hero_cta_text', 'اكتشف العطور') }}
+          </a>
+          <a 
+            href="{{ theme.settings.get('hero_secondary_cta_url', '/products') }}" 
+            class="inline-flex items-center justify-center px-6 sm:px-7 py-3.5 rounded-lg bg-transparent border border-[#faf7f2]/40 hover:border-[#cca36e] hover:text-[#cca36e] text-[#faf7f2] font-semibold text-sm sm:text-base transition-all duration-300"
+          >
+            {{ theme.settings.get('hero_secondary_cta_text', 'تسوق الآن') }}
+          </a>
+        </div>
       </div>
     </div>
   </div>

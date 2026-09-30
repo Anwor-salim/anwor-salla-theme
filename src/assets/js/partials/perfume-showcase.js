@@ -1,7 +1,8 @@
 /**
- * Luxury Perfume Boutique Multi-Category Showcase Module
+ * Luxury Fragrance Brand Multi-Category Showcase Module
  * Designed for Salla Twilight Engine
- * Provides category-specific Dior & Royal Fragrance collections
+ * Provides authentic, original Haute Parfumerie collections:
+ * Maison Anwor, Éclat Privé, Anwor Royal Oud, Noble Essence, Noir Maison
  * Ensures seamless preview link preservation across all store pages
  */
 
@@ -9,69 +10,69 @@
 export const MEN_PERFUMES = [
   {
     id: 101,
-    name: "عطر ديور سوفاج إكسير المركز - 60 مل",
-    subtitle: "Dior Sauvage Elixir • تركيز استثنائي فوّاح",
-    price: "980 ر.س",
-    brand: "DIOR PARIS",
-    image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=80",
-    topNotes: "جوزة الطيب، القرفة السيلانية، حب الهيل، الجريب فروت",
-    heartNotes: "اللافندر الفرنسي العضوي، الباتشولي النقي",
-    baseNotes: "العنبر الداكن، خشب الصندل، نجيل الهند الهايتي، اللبان"
+    name: "عطر عنبر رويال المركز - 100 مل",
+    subtitle: "Maison Anwor • تركيز استثنائي فوّاح",
+    price: "920 ر.س",
+    brand: "MAISON ANWOR",
+    image: "http://localhost:8000/images/perfume-amber-men.jpg",
+    topNotes: "الجريب فروت الصقلي، الهيل الغواتيمالي، القرفة السيلانية",
+    heartNotes: "الخزامى الفرنسية، جوزة الطيب، إبرة الراعي",
+    baseNotes: "العنبر الرمادي الداكن، خشب الصندل، نجيل الهند الهايتي"
   },
   {
     id: 102,
-    name: "عطر ديور هوم إنتنس الأسطوري - 100 مل",
-    subtitle: "Dior Homme Intense • السوسن الأرستقراطي الفاخر",
-    price: "720 ر.س",
-    brand: "DIOR PARIS",
-    image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=800&q=80",
-    topNotes: "اللافندر التوسكاني الفاخر",
-    heartNotes: "السوسن الإيطالي النادر، حبوب الكاكاو، بذور الأمبريت",
-    baseNotes: "أخشاب الأرز الفرجينية، نجيل الهند، العنبر الدافئ"
+    name: "عطر إمبريال سافاج النادر - 100 مل",
+    subtitle: "Maison Anwor • فوحان أسطوري وجاذبية لا تُقاوم",
+    price: "850 ر.س",
+    brand: "MAISON ANWOR",
+    image: "http://localhost:8000/images/perfume-noir-men.jpg",
+    topNotes: "البرغموت الكالابري، الفلفل الأسود",
+    heartNotes: "فلفل سيشوان، اللافندر الجبلي، الباتشولي",
+    baseNotes: "الأمبروكسان، أخشاب الأرز، الفانيليا المدخنة"
   },
   {
     id: 103,
-    name: "عطر سوفاج ديور أو دو بارفان - 100 مل",
-    subtitle: "Sauvage Eau de Parfum • الرجولة الأيقونية الأكثر طلباً",
-    price: "650 ر.س",
-    brand: "DIOR PARIS",
-    image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80",
-    topNotes: "البرغموت الكالابري، الفلفل الحار",
-    heartNotes: "فلفل سيشوان، اللافندر، اليانسون النجمي، جوزة الطيب",
-    baseNotes: "الأمبروكسان المركز، الفانيليا البابوية العذبة"
+    name: "عطر فيلفت آيريس الأرستقراطي - 100 مل",
+    subtitle: "Maison Anwor • السوسن والجلود الفاخرة",
+    price: "780 ر.س",
+    brand: "MAISON ANWOR",
+    image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80",
+    topNotes: "الخزامى التوسكانية، المريمية",
+    heartNotes: "السوسن الفلورنسي، بذور الأمبريت، حبوب الكاكاو",
+    baseNotes: "خشب الأرز الأطلسي، نجيل الهند، الجلود الإيطالية"
   },
   {
     id: 104,
-    name: "عطر ديور فهرنهايت بارفان الملكي - 75 مل",
-    subtitle: "Fahrenheit Le Parfum • الجلود والحرارة والجاذبية",
-    price: "690 ر.س",
-    brand: "DIOR PARIS",
-    image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80",
-    topNotes: "الجلود الإيطالية، العرقسوس، الماندرين الصقلي",
-    heartNotes: "أوراق البنفسج النادرة، الروم، الكزبرة، الكمون",
-    baseNotes: "فانيليا بوربون المطلقة، أخشاب الأرز"
+    name: "عطر ليذر نوار الخاص - 75 مل",
+    subtitle: "Noir Maison • دفء الجلود النبيلة والحرارة الشرقية",
+    price: "740 ر.س",
+    brand: "NOIR MAISON",
+    image: "http://localhost:8000/images/perfume-noir-men.jpg",
+    topNotes: "الماندرين الصقلي، الهيل الأخضر",
+    heartNotes: "أوراق البنفسج النادرة، الجلد السويدي",
+    baseNotes: "العود المدخن، خشب الأرز، الباتشولي"
   },
   {
     id: 105,
-    name: "عطر ديور هوم سبورت المنعش - 125 مل",
-    subtitle: "Dior Homme Sport • انتعاش الحمضيات والأخشاب الدافئة",
-    price: "560 ر.س",
-    brand: "DIOR PARIS",
+    name: "عطر مسك نوار المنعش - 100 مل",
+    subtitle: "Noir Maison • حمضيات كالابريا ودفء الأخشاب",
+    price: "620 ر.س",
+    brand: "NOIR MAISON",
     image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=80",
-    topNotes: "الليمون الصقلي، البرغموت، الألدهيدات المنعشة",
-    heartNotes: "الفلفل الوردي، راتنج الإيليمي المهدئ",
-    baseNotes: "خشب الأرز، اللبان العماني، العنبر"
+    topNotes: "الليمون الإيطالي، البرغموت، النعناع البري",
+    heartNotes: "الفلفل الوردي، الزنجبيل النيجيري",
+    baseNotes: "نجيل الهند، اللبان العماني، خشب الأرز"
   },
   {
     id: 106,
-    name: "عطر ديور أو سوفاج بارفان كلاسيك - 100 مل",
-    subtitle: "Eau Sauvage Parfum • أناقة كلاسيكية فرنسية رفيعة",
-    price: "640 ر.س",
-    brand: "DIOR PARIS",
-    image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=80",
-    topNotes: "الليمون الحامض، البرغموت، إكليل الجبل",
-    heartNotes: "الخزامى، نجيل الهند الهايتي، البيتيتغرين",
-    baseNotes: "المر الفاخر، طحلب البلوط، أخشاب الأرز"
+    name: "عطر كلاسيك نوار أو دو بارفان - 100 مل",
+    subtitle: "Noir Maison • الكلاسيكية الرفيعة والأناقة الخالدة",
+    price: "680 ر.س",
+    brand: "NOIR MAISON",
+    image: "http://localhost:8000/images/perfume-amber-men.jpg",
+    topNotes: "البرغموت، إكليل الجبل، الليمون الحامض",
+    heartNotes: "الخزامى العضوية، أوراق القرنفل",
+    baseNotes: "طحلب البلوط، المر، أخشاب الأرز"
   }
 ];
 
@@ -79,69 +80,69 @@ export const MEN_PERFUMES = [
 export const WOMEN_PERFUMES = [
   {
     id: 201,
-    name: "عطر جادور لور ديور إكسير الذهب - 50 مل",
-    subtitle: "J'adore l'Or Dior • الأنوثة المطلقة في قطرات ذهبية",
+    name: "عطر جولد إكسير النسائي الفاخر - 80 مل",
+    subtitle: "Éclat Privé • الأنوثة والجاذبية في قطرات ذهبية",
     price: "890 ر.س",
-    brand: "DIOR PARIS",
-    image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80",
-    topNotes: "زهر البرتقال الغراسي، الياسمين الغرانديفلوروم",
-    heartNotes: "ورد سنتيفوليا المايوي النادر، أزهار الخوخ",
-    baseNotes: "الفانيليا التاهيتية، العنبر الحريري، خشب الأرز"
+    brand: "ÉCLAT PRIVÉ",
+    image: "http://localhost:8000/images/perfume-rose-women.jpg",
+    topNotes: "زهر البرتقال الغراسي، البرغموت",
+    heartNotes: "الورد الدمشقي، الياسمين الملكي، الفاوانيا",
+    baseNotes: "الفانيليا التاهيتية، العنبر الحريري، خشب الصندل"
   },
   {
     id: 202,
-    name: "عطر مس ديور بارفان الجديد - 80 مل",
-    subtitle: "Miss Dior Parfum • باقة من الورد والأخشاب المخملية",
-    price: "750 ر.س",
-    brand: "DIOR PARIS",
+    name: "عطر روز فلورال المخملي - 100 مل",
+    subtitle: "Éclat Privé • بتلات الورد الطبيعي والمسك الأبيض",
+    price: "760 ر.س",
+    brand: "ÉCLAT PRIVÉ",
     image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=80",
-    topNotes: "الماندرين، الفراولة البرية، المشمش اللذيذ",
-    heartNotes: "ورد غراس الاستثنائي، الياسمين المشرق، الفاوانيا",
-    baseNotes: "الباتشولي، العنبر الجاف، خشب الأرز، الطحلب"
+    topNotes: "الماندرين، براعم الخوخ المخملي",
+    heartNotes: "ورد غراس الاستثنائي، زنبق الوادي",
+    baseNotes: "المسك الأبيض النقي، خشب الأرز"
   },
   {
     id: 203,
-    name: "عطر بويزن جيرل ديور أو دو بارفان - 100 مل",
-    subtitle: "Poison Girl • إغراء الفانيليا والتونكا الحلوة",
-    price: "620 ر.س",
-    brand: "DIOR PARIS",
-    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&q=80",
-    topNotes: "البرتقال المر الصقلي، الليمون المنعش",
-    heartNotes: "ورد دمشقي نادر، زهر البرتقال الحسي",
-    baseNotes: "حبوب التونكا الفنزويلية، الفانيليا، اللوز، خشب الصندل"
+    name: "عطر نوار ديسير الحسي - 90 مل",
+    subtitle: "Éclat Privé • سحر الفانيليا وحبوب التونكا الفاخرة",
+    price: "690 ر.س",
+    brand: "ÉCLAT PRIVÉ",
+    image: "http://localhost:8000/images/perfume-rose-women.jpg",
+    topNotes: "البرتقال المر، الليمون الصقلي",
+    heartNotes: "الورد الجوري، زهر البرتقال",
+    baseNotes: "التونكا الفنزويلية، الفانيليا، خشب الصندل"
   },
   {
     id: 204,
-    name: "عطر روز كابوكي ديور كوليكسيون بريفيه - 125 مل",
-    subtitle: "Rose Kabuki Dior Privée • نقاء بتلات الورد والمسك",
-    price: "1,250 ر.س",
-    brand: "DIOR PRIVÉE",
+    name: "عطر إمبريال جاسمين النقي - 100 مل",
+    subtitle: "Éclat Privé • شذى الياسمين الاستثنائي والندى الصباحي",
+    price: "820 ر.س",
+    brand: "ÉCLAT PRIVÉ",
     image: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?auto=format&fit=crop&w=800&q=80",
-    topNotes: "الورد الدمشقي المنعش، الندى الصباحي",
-    heartNotes: "براعم الورد الطازجة، الفاوانيا الزهرية",
-    baseNotes: "المسك الأبيض البودري الفاخر، العنبر الخفيف"
+    topNotes: "الياسمين السامباك، زهر الليمون",
+    heartNotes: "مسك الروم النبيل، أزهار البرتقال",
+    baseNotes: "العنبر الأبيض، المسك الحريري"
   },
   {
     id: 205,
-    name: "عطر هيبنوتيك بويزن ديور الملكي - 100 مل",
-    subtitle: "Hypnotic Poison • سحر اللوز المر والياسمين السامباك",
-    price: "630 ر.س",
-    brand: "DIOR PARIS",
+    name: "عطر فيلفت روز بريفيه - 100 مل",
+    subtitle: "Éclat Privé • باقة مخملية ساحرة تأسرك من اللحظة الأولى",
+    price: "710 ر.س",
+    brand: "ÉCLAT PRIVÉ",
     image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80",
-    topNotes: "المشمش، البرقوق، جوز الهند الإكزوتيك",
-    heartNotes: "الياسمين السامباك، مسك الروم، زنبق الوادي، الورد",
-    baseNotes: "اللوز المر، الفانيليا، خشب الصندل، الجاكاراندا"
+    topNotes: "التوت البري، الفلفل الوردي",
+    heartNotes: "الورد البلغاري، الماغنوليا",
+    baseNotes: "الباتشولي، العنبر الدافئ، الفانيليا"
   },
   {
     id: 206,
-    name: "عطر جادور إنفينيسيم ديور - 100 مل",
-    subtitle: "J'adore Infinissime • فيض لامتناهٍ من أنقى الأزهار",
-    price: "670 ر.س",
-    brand: "DIOR PARIS",
-    image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80",
-    topNotes: "البرتقال الأحمر، البرغموت، الفلفل الوردي",
-    heartNotes: "مسك الروم الغراسي، الياسمين، زنبق الوادي، الإيلنغ",
-    baseNotes: "خشب الصندل الكريمي الدافئ"
+    name: "عطر مسك بلانك الصافي - 100 مل",
+    subtitle: "Éclat Privé • نقاء المسك الأبيض البودري الفاخر",
+    price: "640 ر.س",
+    brand: "ÉCLAT PRIVÉ",
+    image: "http://localhost:8000/images/perfume-rose-women.jpg",
+    topNotes: "بودرة الأرز، الأزهار البيضاء",
+    heartNotes: "الورد الطائفي، زنبق الوادي",
+    baseNotes: "المسك الصافي، العنبر الأبيض الخفيف"
   }
 ];
 
@@ -149,21 +150,21 @@ export const WOMEN_PERFUMES = [
 export const OUD_INCENSE_PERFUMES = [
   {
     id: 301,
-    name: "عطر عود أصفهان ديور لا كوليكسيون بريفيه - 125 مل",
-    subtitle: "Oud Ispahan • لقاء الورد الدمشقي العريق والعود الملكي",
-    price: "1,450 ر.س",
-    brand: "DIOR PRIVÉE",
-    image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=80",
+    name: "عطر رويال عود أصفهان الملكي - 125 مل",
+    subtitle: "Anwor Royal Oud • لقاء العود المعتق والورد الفاخر",
+    price: "1,350 ر.س",
+    brand: "ANWOR ROYAL OUD",
+    image: "http://localhost:8000/images/perfume-noir-men.jpg",
     topNotes: "اللابدانوم الإسباني، الزعفران الإيراني الممتاز",
     heartNotes: "الورد الدمشقي العريق، الباتشولي الإندونيسي",
     baseNotes: "العود الكمبودي الملكي المعتق، أخشاب الأرز، اللبان"
   },
   {
     id: 302,
-    name: "عطر عنبر نوي ديور لا كوليكسيون بريفيه - 125 مل",
-    subtitle: "Ambre Nuit • ليلة ساحرة بين العنبر البحري والورد",
-    price: "1,450 ر.س",
-    brand: "DIOR PRIVÉE",
+    name: "عطر عنبر نوي المركز - 125 مل",
+    subtitle: "Anwor Royal Oud • ليلة ساحرة بين العنبر البحري والورد",
+    price: "1,280 ر.س",
+    brand: "ANWOR ROYAL OUD",
     image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80",
     topNotes: "البرغموت، الجريب فروت الصقلي المنعش",
     heartNotes: "الورد التركي الدموي، الفلفل الوردي الحار",
@@ -172,9 +173,9 @@ export const OUD_INCENSE_PERFUMES = [
   {
     id: 303,
     name: "دهن عود تراد الحطب المعتق الفاخر - ربع تولة",
-    subtitle: "نقاء الدهن الطبيعي الصافي برائحة سويتية بخورية",
+    subtitle: "Anwor Royal Oud • نقاء الدهن الصافي برائحة بخورية سويتية",
     price: "950 ر.س",
-    brand: "أنور للعطور الملكية",
+    brand: "ANWOR ROYAL OUD",
     image: "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=800&q=80",
     topNotes: "نكهة سويتية عسلية دافئة",
     heartNotes: "طبقات بخورية عميقة مدخنة",
@@ -182,10 +183,10 @@ export const OUD_INCENSE_PERFUMES = [
   },
   {
     id: 304,
-    name: "رقائق عود مروكي طبيعي سوبر مرتفع - أوقية فاخرة (30 جم)",
-    subtitle: "زبد كثيف ونكهة مروكية زكية مناسبة للضيافة والمناسبات",
+    name: "رقائق عود مروكي طبيعي سوبر مرتفع (30 جم)",
+    subtitle: "Anwor Royal Oud • زبد كثيف ونكهة مروكية زكية للمجالس",
     price: "480 ر.س",
-    brand: "أنور للعطور الملكية",
+    brand: "ANWOR ROYAL OUD",
     image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80",
     topNotes: "رائحة بخورية خشبية باردة",
     heartNotes: "فوحان ملكي ينتشر في أرجاء المكان سريعاً",
@@ -193,21 +194,21 @@ export const OUD_INCENSE_PERFUMES = [
   },
   {
     id: 305,
-    name: "عطر عود روز وود ديور بريفيه - 125 مل",
-    subtitle: "Oud Rosewood • دفء الأخشاب الشرقية وجلال العود",
-    price: "1,450 ر.س",
-    brand: "DIOR PRIVÉE",
+    name: "عطر عود وود بريفيه الفاخر - 100 مل",
+    subtitle: "Anwor Royal Oud • دفء الأخشاب النادرة وجلال العود الصافي",
+    price: "1,180 ر.س",
+    brand: "ANWOR ROYAL OUD",
     image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=800&q=80",
-    topNotes: "سفرجل، توت العليق",
-    heartNotes: "أخشاب الورد الثمينة، خشب الصندل",
-    baseNotes: "العود الطبيعي، الجلود الفاخرة"
+    topNotes: "خشب الورد، الهيل، الفلفل الصيني",
+    heartNotes: "خشب العود الطبيعي، خشب الصندل، نجيل الهند",
+    baseNotes: "حبوب التونكا، الفانيليا، العنبر"
   },
   {
     id: 306,
-    name: "بخور دخون العود الملكي الخاص (معجون عود معتق)",
-    subtitle: "توليفة سرية من مسحوق العود، دهن الورد الطائفي، والعنبر",
+    name: "بخور دخون الملوك الخاص (معجون عود معتق)",
+    subtitle: "Anwor Royal Oud • توليفة فاخرة من مسحوق العود ودهن الورد",
     price: "360 ر.س",
-    brand: "أنور للعطور الملكية",
+    brand: "ANWOR ROYAL OUD",
     image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=80",
     topNotes: "الورد الطائفي الفاخر، الزعفران",
     heartNotes: "العود الهندي، الصندل الميسوري",
@@ -219,21 +220,21 @@ export const OUD_INCENSE_PERFUMES = [
 export const EXCLUSIVE_COLLECTIONS = [
   {
     id: 401,
-    name: "مجموعة ميني ديور بريفيه ديسكفري (8 عطور × 10 مل)",
-    subtitle: "La Collection Privée Discovery Coffret",
-    price: "1,850 ر.س",
-    brand: "DIOR PRIVÉE",
+    name: "مجموعة الديسكفري الاستكشافية (6 عطور × 15 مل)",
+    subtitle: "Noble Essence • تجربة استكشافية متكاملة لنخبة العطور",
+    price: "850 ر.س",
+    brand: "NOBLE ESSENCE",
     image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80",
-    topNotes: "عود أصفهان، جريس ديور، عنبر نوي",
-    heartNotes: "ساكورا، روز كابوكي، فانيلا ديوراما",
-    baseNotes: "توليفة ملكية استكشافية متكاملة"
+    topNotes: "عود أصفهان، عنبر رويال، روز بريفيه",
+    heartNotes: "ليذر نوار، جولد إكسير، مسك بلانك",
+    baseNotes: "باقة استكشافية فاخرة في صندوق هدايا مذهب"
   },
   {
     id: 402,
     name: "صندوق العود الملكي مع مبخرة رخامية مذهبة عيار 24",
-    subtitle: "VIP Royal Oud Collection Box",
+    subtitle: "Noble Essence • VIP Royal Oud Collection Box",
     price: "1,290 ر.س",
-    brand: "أنور للعطور الملكية",
+    brand: "NOBLE ESSENCE",
     image: "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=800&q=80",
     topNotes: "أوقية عود مروكي سوبر، تولة دهن عود تراد",
     heartNotes: "مبخرة رخامية يونانية يدوية الصنع بلمسات مذهبة",
@@ -241,24 +242,24 @@ export const EXCLUSIVE_COLLECTIONS = [
   },
   {
     id: 403,
-    name: "طقم الثنائيات العطرية VIP (عطر ساواج + معطر شعر فاخر)",
-    subtitle: "Dior Sauvage Parfum & Hair Mist Set",
-    price: "880 ر.س",
-    brand: "DIOR PARIS",
+    name: "طقم الثنائيات العطرية VIP (عطر 100 مل + معطر شعر فاخر)",
+    subtitle: "Noble Essence • Signature Perfume & Hair Mist Set",
+    price: "790 ر.س",
+    brand: "NOBLE ESSENCE",
     image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=80",
-    topNotes: "عطر ساواج 100 مل بتركيز بارفان",
-    heartNotes: "معطر شعر مغذي ومعطر برائحة ساواج الأيقونية",
+    topNotes: "عطر عنبر رويال 100 مل بتركيز بارفان",
+    heartNotes: "معطر شعر مغذي ومعطر غني بفيتامين E",
     baseNotes: "تغليف هدايا ملكي باللون الكحلي والذهبي"
   },
   {
     id: 404,
-    name: "صندوق نيش بريفيه الملكي (عطران كاملان 125 مل + شمعة معطرة)",
-    subtitle: "Dior Privée Exclusive Twin Luxury Vault",
-    price: "2,850 ر.س",
-    brand: "DIOR PRIVÉE",
+    name: "صندوق النيش الملكي الخاص (عطران 100 مل + شمعة معطرة)",
+    subtitle: "Noble Essence • Exclusive Twin Luxury Vault",
+    price: "1,650 ر.س",
+    brand: "NOBLE ESSENCE",
     image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=800&q=80",
-    topNotes: "جريس ديور 125 مل + عنبر نوي 125 مل",
-    heartNotes: "شمعة ديور المعطرة الفاخرة 250 جم",
+    topNotes: "عطران كاملان من التشكيلة الحصرية",
+    heartNotes: "شمعة معطرة من شمع الصويا الطبيعي 250 جم",
     baseNotes: "صندوق خشبي فاخر مبطن بالحرير الأسود"
   }
 ];
@@ -267,43 +268,43 @@ export const EXCLUSIVE_COLLECTIONS = [
 export const GIFTS_PERFUMES = [
   {
     id: 501,
-    name: "صندوق إهداء ملكي فاخر مخصص بالاسم (عطران + بخور)",
-    subtitle: "Custom Engraved Luxury Gift Box",
-    price: "1,600 ر.س",
-    brand: "أنور للعطور الملكية",
+    name: "صندوق إهداء ملكي فاخر محفور بالاسم بماء الذهب",
+    subtitle: "Noble Essence • Custom Engraved Luxury Gift Box",
+    price: "1,450 ر.س",
+    brand: "NOBLE ESSENCE",
     image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80",
     topNotes: "حفر ليزر مذهب لاسم متلقي الهدية على الصندوق",
-    heartNotes: "اختيار أي عطرين من مجموعة ديور بريفيه أو ساواج",
-    baseNotes: "توليفة بخور ملكية مع بطاقة تهنئة فاخرة بختم الشمع"
+    heartNotes: "عطران ملكيان من التشكيلة الحصرية مع بخور خاص",
+    baseNotes: "بطاقة تهنئة فاخرة بختم الشمع الملكي"
   },
   {
     id: 502,
     name: "مبخرة كريستالية هندسية مطلية بماء الذهب عيار 24",
-    subtitle: "Royal 24K Gold Plated Crystal Censer",
-    price: "550 ر.س",
-    brand: "أنور للعطور الملكية",
+    subtitle: "Noble Essence • Royal 24K Gold Plated Crystal Censer",
+    price: "520 ر.س",
+    brand: "NOBLE ESSENCE",
     image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80",
     topNotes: "كريستال نقي بقطع هندسي ماسي عاكس للضوء",
     heartNotes: "شبك إشعال فولاذي مقاوم للحرارة مطلي بالذهب",
-    baseNotes: "علبة إهداء فاخرة جاهزة للتقديم المباشر"
+    baseNotes: "علبة إهداء مخملية جاهزة للتقديم المباشر"
   },
   {
     id: 503,
-    name: "باقة الإهداء العطري الخاصة (Gift Ribbon & Velvet Box)",
-    subtitle: "Luxury Gift Wrapping & Presentation Package",
-    price: "790 ر.س",
-    brand: "أنور للعطور الملكية",
+    name: "باقة الإهداء العطري الخاصة مع شريط ساتان مذهب",
+    subtitle: "Noble Essence • Luxury Gift Wrapping & Presentation Package",
+    price: "690 ر.س",
+    brand: "NOBLE ESSENCE",
     image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=80",
-    topNotes: "عطر مس ديور أو ساواج حسب اختيارك",
+    topNotes: "عطر فاخر حسب اختيارك من التشكيلة",
     heartNotes: "صندوق مخملي أنيق مزين بشريط ساتان مذهب",
-    baseNotes: "عينات مجانية إضافية مرفقة مع الإهداء"
+    baseNotes: "عينات استكشافية إضافية مرفقة مع الإهداء"
   },
   {
     id: 504,
     name: "بطاقة إهداء أنور للعطور الملكية VIP (بقيمة 1,000 ر.س)",
-    subtitle: "Digital & Physical Royal VIP Voucher",
+    subtitle: "Noble Essence • Digital & Physical Royal VIP Voucher",
     price: "1,000 ر.س",
-    brand: "أنور للعطور الملكية",
+    brand: "NOBLE ESSENCE",
     image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=800&q=80",
     topNotes: "بطاقة ذهبية معدنية ملموسة داخل مغلف ملكي",
     heartNotes: "صالحة للشراء من كافة مجموعات العطور والبخور",
@@ -312,7 +313,8 @@ export const GIFTS_PERFUMES = [
 ];
 
 // Fallback all perfumes
-export const DIOR_PERFUMES = [...MEN_PERFUMES, ...WOMEN_PERFUMES, ...OUD_INCENSE_PERFUMES];
+export const PERFUMES = [...MEN_PERFUMES, ...WOMEN_PERFUMES, ...OUD_INCENSE_PERFUMES];
+export const DIOR_PERFUMES = PERFUMES; // Backwards compatibility
 
 /**
  * Detect what category or page is currently active
@@ -350,7 +352,7 @@ export function detectCurrentCategory() {
 const CATEGORY_DATA = {
   MEN: {
     title: 'العطور الرجالية الفاخرة',
-    subtitle: 'تشكيلة استثنائية من أرقى عطور ديور والعطور الفرنسية الرجالية ذات الفوحان والثبات الأسطوري.',
+    subtitle: 'تشكيلة استثنائية من أرقى العطور الفرنسية والشرقية الرجالية ذات الفوحان والثبات الأسطوري.',
     breadcrumb: 'العطور الرجالية',
     items: MEN_PERFUMES
   },
@@ -382,7 +384,7 @@ const CATEGORY_DATA = {
     title: 'أحدث الإصدارات العطرية',
     subtitle: 'نخبة العطور الملكية المختارة بعناية لأصحاب الذوق الرفيع.',
     breadcrumb: 'جميع العطور',
-    items: DIOR_PERFUMES
+    items: PERFUMES
   }
 };
 
@@ -401,7 +403,6 @@ export function preservePreviewParams(url) {
       u.searchParams.set('ws_port', '8001');
       u.searchParams.set('legacy', '0');
       u.searchParams.set('with_editor', 'false');
-      // If hostname is demostore.salla.sa, rewrite to salla.design to keep assets connected
       if (u.hostname === 'demostore.salla.sa') {
         u.hostname = 'salla.design';
       }
@@ -437,8 +438,8 @@ export function initPerfumeShowcase() {
           img.removeAttribute('srcset');
           img.alt = perfume.name;
           img.style.objectFit = 'contain';
-          img.style.backgroundColor = '#191b22';
-          img.style.padding = '8px';
+          img.style.backgroundColor = '#16171b';
+          img.style.padding = '12px';
         }
       });
 
@@ -448,7 +449,7 @@ export function initPerfumeShowcase() {
         if (t.textContent !== perfume.name) {
           t.textContent = perfume.name;
           t.title = perfume.name;
-          t.style.color = '#ffffff';
+          t.style.color = '#121316';
         }
       });
 
@@ -457,13 +458,18 @@ export function initPerfumeShowcase() {
       prices.forEach(p => {
         p.textContent = perfume.price;
         p.style.color = '#cca36e';
+        p.style.fontWeight = '800';
       });
 
-      // 4. Force Subtitle
+      // 4. Force Brand & Subtitle
+      const brandSpan = root.querySelector('.perfume-card-brand');
+      if (brandSpan && brandSpan.textContent !== perfume.brand) {
+        brandSpan.textContent = perfume.brand;
+      }
       const sub = root.querySelector('.s-product-card-content-subtitle, .s-product-card-subtitle');
-      if (sub && !sub.textContent.includes(perfume.brand)) {
-        sub.textContent = perfume.brand + ' • ' + perfume.subtitle;
-        sub.style.color = '#a09d97';
+      if (sub && !sub.textContent.includes(perfume.subtitle)) {
+        sub.textContent = perfume.subtitle;
+        sub.style.color = '#7a7670';
       }
     }
 
@@ -561,11 +567,11 @@ export function initPerfumeShowcase() {
     if (navBarInner && !document.querySelector('.royal-header-search')) {
       const searchBox = document.createElement('div');
       searchBox.className = 'royal-header-search flex-1 max-w-md mx-6 hidden md:block';
-      searchBox.style.cssText = 'flex: 1; max-width: 420px; margin: 0 1.5rem;';
+      searchBox.style.cssText = 'flex: 1; max-width: 380px; margin: 0 1.5rem;';
       searchBox.innerHTML = `
         <div style="position: relative; display: flex; align-items: center; width: 100%;">
-          <input type="text" placeholder="ابحث عن عطر، ماركة، or مكونات..." style="width: 100%; background: #cbb592 !important; color: #121316 !important; font-weight: 600; padding: 0.55rem 1rem 0.55rem 2.5rem; border-radius: 8px; border: 1px solid #cca36e; outline: none; font-size: 0.9rem;" onkeydown="if(event.key==='Enter'){window.location.href='/search?q='+encodeURIComponent(this.value)}" />
-          <i class="sicon-search" style="position: absolute; left: 12px; color: #121316; font-size: 1.15rem; pointer-events: none;"></i>
+          <input type="text" placeholder="ابحث عن عطر، ماركة، أو مكونات..." style="width: 100%; background: rgba(255, 255, 255, 0.08) !important; color: #ffffff !important; font-weight: 500; padding: 0.55rem 1rem 0.55rem 2.5rem; border-radius: 8px; border: 1px solid rgba(197, 168, 128, 0.35); outline: none; font-size: 0.88rem; transition: border-color 0.2s;" onfocus="this.style.borderColor='#cca36e'" onblur="this.style.borderColor='rgba(197, 168, 128, 0.35)'" onkeydown="if(event.key==='Enter'){window.location.href='/search?q='+encodeURIComponent(this.value)}" />
+          <i class="sicon-search" style="position: absolute; left: 12px; color: #cca36e; font-size: 1.1rem; pointer-events: none;"></i>
         </div>
       `;
       const brand = navBarInner.querySelector('.navbar-brand, a[data-testid="store-header-logo"]');
@@ -585,16 +591,35 @@ export function initPerfumeShowcase() {
       menuUl.prepend(homeLi);
     }
 
-    // 5. Hero Banner (Homepage Only)
+    // 5. Hero Banner fallback (only if not already in Twig)
     const isHome = window.location.pathname === '/' || window.location.pathname === '' || (window.location.pathname.includes('dev-') && !window.location.pathname.includes('/c') && !window.location.pathname.includes('/p/'));
-    if (isHome && !document.querySelector('.royal-perfume-hero-injected')) {
+    const existingHero = document.querySelector('.perfume-hero-section, [data-testid="store-perfume-hero"]');
+    if (isHome && !existingHero && !document.querySelector('.royal-perfume-hero-injected')) {
       const heroContainer = document.createElement('section');
       heroContainer.className = 'royal-perfume-hero-injected';
       heroContainer.style.cssText = 'max-width: 1240px; margin: 1.5rem auto 1rem; padding: 0 1rem;';
       heroContainer.innerHTML = `
-        <a href="/products" style="display: block; position: relative; overflow: hidden; border-radius: 16px; background: #141518; border: 1px solid rgba(197, 168, 128, 0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.3); text-decoration: none; transition: transform 0.3s ease;">
-          <img src="http://localhost:8000/images/hero-banner-luxury.png" alt="أنور للعطور الملكية - فخامة الحضور وسحر الأثر" style="width: 100%; height: auto; display: block; border-radius: 16px;" />
-        </a>
+        <div style="position: relative; overflow: hidden; border-radius: 18px; background: #121316; border: 1px solid rgba(197, 168, 128, 0.28); box-shadow: 0 16px 40px rgba(0,0,0,0.35); min-height: 380px; display: flex; align-items: center;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(90deg, #121316 0%, rgba(18,19,22,0.85) 45%, rgba(18,19,22,0.3) 100%); z-index: 2;"></div>
+          <img src="http://localhost:8000/images/hero-banner-luxury.png" alt="أنور للعطور الملكية - فخامة الحضور وسحر الأثر" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 1;" />
+          
+          <div style="position: relative; z-index: 3; padding: 3rem 2.5rem; max-width: 580px; text-align: right;">
+            <div style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(204, 163, 110, 0.12); border: 1px solid rgba(204, 163, 110, 0.4); padding: 0.3rem 0.85rem; border-radius: 999px; font-size: 0.76rem; font-weight: 700; color: #cca36e; margin-bottom: 1.25rem;">
+              <i class="sicon-sparkle"></i>
+              <span>دار العطور الملكية الفاخرة</span>
+            </div>
+            <h1 style="color: #faf7f2; font-size: 2.5rem; font-weight: 800; line-height: 1.25; margin: 0 0 1rem; letter-spacing: -0.02em;">عطرك... بصمتك التي لا تُنسى</h1>
+            <p style="color: #cfcbc4; font-size: 1.05rem; line-height: 1.65; margin: 0 0 1.75rem; font-weight: 300;">اكتشف مجموعة مختارة من العطور الفاخرة التي تعبّر عن شخصيتك وتترك أثراً استثنائياً في كل حضور.</p>
+            <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+              <a href="/products" style="display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 1.85rem; border-radius: 8px; background: #cca36e; color: #121316; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.25s ease; box-shadow: 0 4px 16px rgba(204,163,110,0.3);">
+                اكتشف العطور
+              </a>
+              <a href="/products" style="display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 1.85rem; border-radius: 8px; background: transparent; border: 1px solid rgba(250,247,242,0.4); color: #faf7f2; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.25s ease;">
+                تسوق الآن
+              </a>
+            </div>
+          </div>
+        </div>
       `;
       const targetSec = document.querySelector('.perfume-discovery-section, [data-testid="store-perfume-discovery"], #main-content, main, .main-content');
       if (targetSec) {
@@ -602,30 +627,47 @@ export function initPerfumeShowcase() {
       }
     }
 
-    // 6. 4 Fragrance Family Cards Grid (Homepage Only)
+    // 6. 7 Fragrance Families Distinctive Grid (اكتشف عطرك)
     const discoverySec = document.querySelector('.perfume-discovery-section, [data-testid="store-perfume-discovery"]');
-    if (discoverySec && !discoverySec.dataset.transformedGrid) {
-      discoverySec.dataset.transformedGrid = "true";
-      discoverySec.style.cssText = 'background: #faf7f2 !important; padding: 2rem 0 !important; margin: 1rem 0 !important; border-top: 1px solid rgba(197, 168, 128, 0.2); border-bottom: 1px solid rgba(197, 168, 128, 0.2);';
+    if (discoverySec && !discoverySec.dataset.transformedGridV2 && discoverySec.querySelectorAll('.perfume-family-box').length < 7) {
+      discoverySec.dataset.transformedGridV2 = "true";
+      discoverySec.style.cssText = 'background: #faf8f5 !important; padding: 2.5rem 0 !important; margin: 1.5rem 0 !important; border-top: 1px solid rgba(197, 168, 128, 0.2); border-bottom: 1px solid rgba(197, 168, 128, 0.2);';
       discoverySec.innerHTML = `
         <div style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;">
-          <h2 style="font-size: 1.5rem; font-weight: 800; color: #121316; margin-bottom: 1.25rem; text-align: right;">العائلات العطرية</h2>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;" class="royal-discovery-grid">
-            <a href="/search?q=%D8%B4%D8%B1%D9%82%D9%8A" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem 1rem; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.35); border-radius: 12px; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: all 0.25s ease;">
-              <i class="sicon-sparkle" style="font-size: 2rem; color: #121316; margin-bottom: 0.6rem;"></i>
-              <span style="font-size: 1.05rem; font-weight: 700; color: #121316;">الشرقية</span>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+            <div>
+              <h2 style="font-size: 1.6rem; font-weight: 800; color: #121316; margin: 0 0 0.35rem; text-align: right;">اكتشف عطرك</h2>
+              <p style="font-size: 0.88rem; color: #7a7670; margin: 0; text-align: right;">اختر العائلة العطرية التي تمثل شخصيتك وذوقك الخاص</p>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem;" class="royal-discovery-grid">
+            <a href="/search?q=%D8%B9%D9%88%D8%AF" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem 0.75rem; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.3); border-radius: 12px; text-decoration: none; box-shadow: 0 2px 10px rgba(0,0,0,0.03); transition: all 0.25s ease;">
+              <i class="sicon-crown" style="font-size: 1.85rem; color: #cca36e; margin-bottom: 0.5rem;"></i>
+              <span style="font-size: 1rem; font-weight: 700; color: #121316;">عود</span>
             </a>
-            <a href="/search?q=%D8%B2%D9%87%D8%B1%D9%8A" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem 1rem; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.35); border-radius: 12px; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: all 0.25s ease;">
-              <i class="sicon-flower" style="font-size: 2rem; color: #121316; margin-bottom: 0.6rem;"></i>
-              <span style="font-size: 1.05rem; font-weight: 700; color: #121316;">الزهرية</span>
+            <a href="/search?q=%D9%85%D8%B3%D9%83" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem 0.75rem; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.3); border-radius: 12px; text-decoration: none; box-shadow: 0 2px 10px rgba(0,0,0,0.03); transition: all 0.25s ease;">
+              <i class="sicon-sparkle" style="font-size: 1.85rem; color: #cca36e; margin-bottom: 0.5rem;"></i>
+              <span style="font-size: 1rem; font-weight: 700; color: #121316;">مسك</span>
             </a>
-            <a href="/search?q=%D8%AE%D8%B4%D8%A8%D9%8A" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem 1rem; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.35); border-radius: 12px; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: all 0.25s ease;">
-              <i class="sicon-tree" style="font-size: 2rem; color: #121316; margin-bottom: 0.6rem;"></i>
-              <span style="font-size: 1.05rem; font-weight: 700; color: #121316;">الخشبية</span>
+            <a href="/search?q=%D8%B9%D9%86%D8%A8%D8%B1" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem 0.75rem; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.3); border-radius: 12px; text-decoration: none; box-shadow: 0 2px 10px rgba(0,0,0,0.03); transition: all 0.25s ease;">
+              <i class="sicon-gem" style="font-size: 1.85rem; color: #cca36e; margin-bottom: 0.5rem;"></i>
+              <span style="font-size: 1rem; font-weight: 700; color: #121316;">عنبر</span>
             </a>
-            <a href="/search?q=%D8%B9%D9%88%D8%AF" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem 1rem; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.35); border-radius: 12px; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: all 0.25s ease;">
-              <i class="sicon-crown" style="font-size: 2rem; color: #121316; margin-bottom: 0.6rem;"></i>
-              <span style="font-size: 1.05rem; font-weight: 700; color: #121316;">العود الملكي</span>
+            <a href="/search?q=%D8%B2%D9%87%D8%B1%D9%8A" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem 0.75rem; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.3); border-radius: 12px; text-decoration: none; box-shadow: 0 2px 10px rgba(0,0,0,0.03); transition: all 0.25s ease;">
+              <i class="sicon-flower" style="font-size: 1.85rem; color: #cca36e; margin-bottom: 0.5rem;"></i>
+              <span style="font-size: 1rem; font-weight: 700; color: #121316;">زهري</span>
+            </a>
+            <a href="/search?q=%D8%AE%D8%B4%D8%A8%D9%8A" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem 0.75rem; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.3); border-radius: 12px; text-decoration: none; box-shadow: 0 2px 10px rgba(0,0,0,0.03); transition: all 0.25s ease;">
+              <i class="sicon-tree" style="font-size: 1.85rem; color: #cca36e; margin-bottom: 0.5rem;"></i>
+              <span style="font-size: 1rem; font-weight: 700; color: #121316;">خشبي</span>
+            </a>
+            <a href="/search?q=%D8%AD%D9%85%D8%B6%D9%8A%D8%A7%D8%AA" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem 0.75rem; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.3); border-radius: 12px; text-decoration: none; box-shadow: 0 2px 10px rgba(0,0,0,0.03); transition: all 0.25s ease;">
+              <i class="sicon-apple" style="font-size: 1.85rem; color: #cca36e; margin-bottom: 0.5rem;"></i>
+              <span style="font-size: 1rem; font-weight: 700; color: #121316;">حمضيات</span>
+            </a>
+            <a href="/search?q=%D8%B4%D8%B1%D9%82%D9%8A" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem 0.75rem; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.3); border-radius: 12px; text-decoration: none; box-shadow: 0 2px 10px rgba(0,0,0,0.03); transition: all 0.25s ease;">
+              <i class="sicon-moon" style="font-size: 1.85rem; color: #cca36e; margin-bottom: 0.5rem;"></i>
+              <span style="font-size: 1rem; font-weight: 700; color: #121316;">شرقي</span>
             </a>
           </div>
         </div>
@@ -702,7 +744,7 @@ export function initPerfumeShowcase() {
       return;
     }
 
-    // Hide homepage sections and any default dress elements
+    // Hide homepage sections
     if (heroSec) heroSec.style.display = 'none';
     if (discoverySec) discoverySec.style.display = 'none';
     if (storySec) storySec.style.display = 'none';
@@ -727,25 +769,28 @@ export function initPerfumeShowcase() {
 
     document.title = `${data.title} | أنور للعطور الملكية`;
 
+    // High luxury editorial product cards:
+    // IMAGE -> BRAND -> TITLE -> SUBTITLE/VOLUME -> PRICE -> ADD TO CART
+    // Notes are kept on product details page as instructed
     const cardsHtml = data.items.map(item => `
-      <div class="royal-perfume-card" style="background: #141518; border: 1px solid rgba(197, 168, 128, 0.28); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 6px 24px rgba(0,0,0,0.3); transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;">
-        <div style="background: #191b22; height: 270px; display: flex; align-items: center; justify-content: center; padding: 1.25rem; position: relative;">
-          <img src="${item.image}" alt="${item.name}" loading="lazy" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4)); transition: transform 0.4s ease;" />
-          <span style="position: absolute; top: 12px; right: 12px; background: rgba(20,21,24,0.9); color: #cca36e; border: 1px solid rgba(204,163,110,0.45); padding: 0.25rem 0.7rem; border-radius: 6px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.5px;">${item.brand}</span>
+      <div class="royal-perfume-card" style="background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.28); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 18px rgba(0,0,0,0.04); transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;">
+        <div style="background: #f7f5f0; height: 260px; display: flex; align-items: center; justify-content: center; padding: 1.5rem; position: relative;">
+          <img src="${item.image}" alt="${item.name}" loading="lazy" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.12)); transition: transform 0.4s ease;" />
+          <button type="button" aria-label="أضف للمفضلة" style="position: absolute; top: 12px; left: 12px; width: 34px; height: 34px; border-radius: 50%; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.3); display: flex; align-items: center; justify-content: center; color: #121316; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.color='#cca36e'" onmouseout="this.style.color='#121316'">
+            <i class="sicon-heart" style="font-size: 0.95rem;"></i>
+          </button>
+          <span style="position: absolute; top: 12px; right: 12px; background: #121316; color: #dfcaa7; border: 1px solid rgba(204,163,110,0.3); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px;">أصلي 100%</span>
         </div>
-        <div style="padding: 1.35rem 1.15rem 1.15rem; display: flex; flex-direction: column; flex-grow: 1; text-align: right;">
-          <h3 style="color: #ffffff; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.45rem; line-height: 1.45;">${item.name}</h3>
-          <p style="color: #a8a49d; font-size: 0.82rem; margin: 0 0 0.85rem; line-height: 1.45;">${item.subtitle}</p>
-          <div style="font-size: 0.76rem; color: #cfcbc4; background: rgba(255,255,255,0.03); border: 1px dashed rgba(197,168,128,0.25); border-radius: 8px; padding: 0.5rem 0.75rem; margin-bottom: 1rem; line-height: 1.5;">
-            <strong style="color: #cca36e; display: block; margin-bottom: 2px;">النوتات العطرية:</strong>
-            ${item.topNotes || item.heartNotes || ''}
-          </div>
-          <div style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.08);">
+        <div style="padding: 1.25rem 1.15rem 1.15rem; display: flex; flex-direction: column; flex-grow: 1; text-align: right;">
+          <span style="font-size: 0.7rem; font-weight: 700; color: #9e7f53; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.35rem; display: block;">${item.brand}</span>
+          <h3 style="color: #121316; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem; line-height: 1.45;">${item.name}</h3>
+          <p style="color: #7a7670; font-size: 0.82rem; margin: 0 0 1.25rem; line-height: 1.45; font-weight: 400;">${item.subtitle}</p>
+          <div style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; padding-top: 0.85rem; border-top: 1px solid #f0ede6;">
             <div>
               <span style="color: #cca36e; font-size: 1.25rem; font-weight: 800;">${item.price}</span>
             </div>
-            <button class="royal-add-cart-btn" data-prod-name="${item.name}" style="background: #cca36e; color: #121316; font-weight: 700; font-size: 0.85rem; padding: 0.5rem 1.15rem; border-radius: 8px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; transition: all 0.25s ease;">
-              <i class="sicon-shopping-bag"></i>
+            <button class="royal-add-cart-btn" data-prod-name="${item.name}" style="background: #121316; color: #ffffff; font-weight: 700; font-size: 0.85rem; padding: 0.55rem 1.15rem; border-radius: 8px; border: 1px solid #121316; cursor: pointer; display: inline-flex; align-items: center; gap: 0.45rem; transition: all 0.25s ease;">
+              <i class="sicon-shopping-bag" style="color: #cca36e;"></i>
               <span>أضف للسلة</span>
             </button>
           </div>
@@ -767,7 +812,7 @@ export function initPerfumeShowcase() {
         <div style="position: absolute; top: -40px; left: -40px; width: 160px; height: 160px; background: rgba(204, 163, 110, 0.15); border-radius: 50%; filter: blur(40px);"></div>
         <div style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(204, 163, 110, 0.15); border: 1px solid rgba(204, 163, 110, 0.45); padding: 0.3rem 0.9rem; border-radius: 999px; font-size: 0.78rem; font-weight: 700; color: #cca36e; margin-bottom: 0.85rem;">
           <i class="sicon-sparkle"></i>
-          <span>مجموعة ملكية أصلية 100% • ديور والعطور الفرنسية والشرقية الفاخرة</span>
+          <span>مجموعة أصلية 100% • مختارات الدار الحصرية من أندر التوليفات</span>
         </div>
         <h1 style="color: #faf7f2; font-size: 2.25rem; font-weight: 800; margin: 0 0 0.6rem; letter-spacing: -0.01em;">${data.title}</h1>
         <p style="color: #cfcbc4; font-size: 0.98rem; max-width: 680px; line-height: 1.65; margin: 0; font-weight: 300;">${data.subtitle}</p>
@@ -804,6 +849,7 @@ export function initPerfumeShowcase() {
         const origContent = btn.innerHTML;
         btn.innerHTML = '<i class="sicon-check"></i> <span>تمت الإضافة</span>';
         btn.style.background = '#2e7d32';
+        btn.style.borderColor = '#2e7d32';
         btn.style.color = '#ffffff';
 
         // Update cart counters
@@ -827,8 +873,9 @@ export function initPerfumeShowcase() {
 
         setTimeout(() => {
           btn.innerHTML = origContent;
-          btn.style.background = '#cca36e';
-          btn.style.color = '#121316';
+          btn.style.background = '#121316';
+          btn.style.borderColor = '#121316';
+          btn.style.color = '#ffffff';
         }, 2200);
       });
     });
@@ -862,7 +909,7 @@ export function initPerfumeShowcase() {
         }
       } else {
         li.classList.remove('is-active');
-        a.style.color = '#121316';
+        a.style.color = '#faf7f2';
         const bar = a.querySelector('.active-bar');
         if (bar) bar.remove();
       }
@@ -920,7 +967,7 @@ export function initPerfumeShowcase() {
       const q = decodeURIComponent(href);
       if (q.includes('شرقي') || q.includes('عود')) targetCat = 'OUD';
       else if (q.includes('زهري')) targetCat = 'WOMEN';
-      else if (q.includes('خشبي') || q.includes('حمضي')) targetCat = 'MEN';
+      else if (q.includes('خشبي') || q.includes('حمضي') || q.includes('مسك') || q.includes('عنبر')) targetCat = 'MEN';
     }
 
     if (targetCat) {
@@ -965,4 +1012,3 @@ export function initPerfumeShowcase() {
   transformAllProducts();
   setInterval(transformAllProducts, 250);
 }
-
