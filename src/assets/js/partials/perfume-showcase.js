@@ -670,33 +670,220 @@ export function initPerfumeShowcase() {
     }
   }
 
-  // Intercept any click on internal links to route cleanly preserving preview params
-  document.addEventListener('click', (e) => {
-    const a = e.target.closest('a');
-    if (!a || !a.href) return;
-    const href = a.getAttribute('href') || '';
-    if (href.startsWith('#') || href.startsWith('javascript:') || href.startsWith('tel:') || href.startsWith('mailto:')) {
+  // Current active category
+  let currentActiveCategory = 'HOME';
+
+  function renderCategoryProducts(categoryKey) {
+    const data = CATEGORY_DATA[categoryKey];
+    if (!data) return;
+
+    const heroSec = document.querySelector('.royal-perfume-hero-injected');
+    const discoverySec = document.querySelector('.perfume-discovery-section, [data-testid="store-perfume-discovery"]');
+    const storySec = document.querySelector('.s-block--fragrance-story, [data-testid="store-fragrance-story"]');
+    const mainProductsSec = document.querySelector('.s-block--products, salla-products-list, salla-products-slider, .s-block');
+
+    let catView = document.querySelector('.royal-category-showcase-view');
+
+    if (categoryKey === 'HOME') {
+      if (heroSec) heroSec.style.display = 'block';
+      if (discoverySec) discoverySec.style.display = 'block';
+      if (storySec) storySec.style.display = 'block';
+      if (catView) catView.style.display = 'none';
+      if (mainProductsSec) mainProductsSec.style.display = 'block';
       return;
     }
 
-    // Always preserve preview query parameters
-    const targetUrl = preservePreviewParams(a.href);
-    if (targetUrl !== a.href) {
+    // Hide homepage sections
+    if (heroSec) heroSec.style.display = 'none';
+    if (discoverySec) discoverySec.style.display = 'none';
+    if (storySec) storySec.style.display = 'none';
+    if (mainProductsSec) mainProductsSec.style.display = 'none';
+
+    if (!catView) {
+      catView = document.createElement('div');
+      catView.className = 'royal-category-showcase-view';
+      catView.style.cssText = 'max-width: 1240px; margin: 1.5rem auto 3rem; padding: 0 1rem;';
+      const insertTarget = heroSec || discoverySec || document.querySelector('main, #main-content, .main-content') || document.body;
+      insertTarget.parentNode.insertBefore(catView, insertTarget);
+    } else {
+      catView.style.display = 'block';
+    }
+
+    const cardsHtml = data.items.map(item => `
+      <div class="royal-perfume-card" style="background: #141518; border: 1px solid rgba(197, 168, 128, 0.25); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 20px rgba(0,0,0,0.25); transition: transform 0.3s ease, border-color 0.3s ease;">
+        <div style="background: #191b22; height: 260px; display: flex; align-items: center; justify-content: center; padding: 1rem; position: relative;">
+          <img src="${item.image}" alt="${item.name}" style="max-height: 100%; max-width: 100%; object-fit: contain; transition: transform 0.4s ease;" />
+          <span style="position: absolute; top: 12px; right: 12px; background: rgba(20,21,24,0.85); color: #cca36e; border: 1px solid rgba(204,163,110,0.4); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">${item.brand}</span>
+        </div>
+        <div style="padding: 1.25rem 1rem 1rem; display: flex; flex-direction: column; flex-grow: 1; text-align: right;">
+          <h3 style="color: #ffffff; font-size: 1rem; font-weight: 700; margin: 0 0 0.4rem; line-height: 1.4;">${item.name}</h3>
+          <p style="color: #a09d97; font-size: 0.8rem; margin: 0 0 0.75rem; line-height: 1.4;">${item.subtitle}</p>
+          <div style="font-size: 0.75rem; color: #a8a49d; background: rgba(255,255,255,0.03); border: 1px dashed rgba(197,168,128,0.2); border-radius: 6px; padding: 0.4rem 0.6rem; margin-bottom: 0.85rem;">
+            <strong style="color: #cca36e;">المكونات:</strong> ${item.topNotes || item.heartNotes || ''}
+          </div>
+          <div style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.06);">
+            <span style="color: #cca36e; font-size: 1.15rem; font-weight: 800;">${item.price}</span>
+            <button style="background: #cca36e; color: #121316; font-weight: 700; font-size: 0.82rem; padding: 0.45rem 1rem; border-radius: 6px; border: none; cursor: pointer; transition: all 0.2s ease;">أضف للسلة</button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    catView.innerHTML = `
+      <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: #8c8881; margin-bottom: 1.25rem; text-align: right;">
+        <a href="#home" class="royal-back-home" style="color: #121316; text-decoration: none; font-weight: 600; cursor: pointer;">الرئيسية</a>
+        <span>›</span>
+        <span style="color: #cca36e; font-weight: 700;">${data.breadcrumb}</span>
+      </div>
+
+      <div style="background: linear-gradient(135deg, #141518 0%, #1c1d22 100%); border: 1px solid rgba(197, 168, 128, 0.3); border-radius: 16px; padding: 2rem 2.5rem; margin-bottom: 2rem; text-align: right; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
+        <div style="position: absolute; top: -30px; left: -30px; width: 140px; height: 140px; background: rgba(204, 163, 110, 0.12); border-radius: 50%; filter: blur(35px);"></div>
+        <div style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(204, 163, 110, 0.15); border: 1px solid rgba(204, 163, 110, 0.4); padding: 0.25rem 0.8rem; border-radius: 999px; font-size: 0.75rem; font-weight: 700; color: #cca36e; margin-bottom: 0.75rem;">
+          <i class="sicon-sparkle"></i>
+          <span>مجموعة ملكية أصلية 100% • ديور والعطور الفاخرة</span>
+        </div>
+        <h1 style="color: #faf7f2; font-size: 2.2rem; font-weight: 800; margin: 0 0 0.5rem; letter-spacing: -0.01em;">${data.title}</h1>
+        <p style="color: #cfcbc4; font-size: 0.95rem; max-width: 650px; line-height: 1.6; margin: 0; font-weight: 300;">${data.subtitle}</p>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(197,168,128,0.2); padding-bottom: 0.75rem;">
+        <span style="font-weight: 700; color: #121316; font-size: 1rem;">عرض ${data.items.length} إصدارات فاخرة</span>
+        <span style="font-size: 0.82rem; color: #7a7670;">شحن مجاني لكافة مدن المملكة للطلبات فوق 500 ريال</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem;">
+        ${cardsHtml}
+      </div>
+    `;
+
+    const backHome = catView.querySelector('.royal-back-home');
+    if (backHome) {
+      backHome.addEventListener('click', (e) => {
+        e.preventDefault();
+        switchCategory('HOME');
+      });
+    }
+  }
+
+  function updateMenuHighlight(categoryKey) {
+    const catTextMap = {
+      HOME: 'الرئيسية',
+      MEN: 'العطور الرجالية',
+      WOMEN: 'العطور النسائية',
+      OUD: 'عود وبخور',
+      EXCLUSIVE: 'مجموعات حصرية',
+      GIFTS: 'هدايا فخمة'
+    };
+    const activeText = catTextMap[categoryKey] || 'الرئيسية';
+
+    document.querySelectorAll('.main-menu li, #mainnav li, nav li').forEach(li => {
+      const a = li.querySelector('a');
+      if (!a) return;
+      const txt = (a.innerText || a.textContent || '').trim();
+      if (txt === activeText) {
+        li.classList.add('is-active');
+        a.style.color = '#cca36e';
+        if (!a.querySelector('.active-bar')) {
+          const bar = document.createElement('span');
+          bar.className = 'active-bar';
+          bar.style.cssText = 'position: absolute; bottom: 2px; left: 15%; right: 15%; height: 2px; background: #cca36e; border-radius: 2px;';
+          a.appendChild(bar);
+        }
+      } else {
+        li.classList.remove('is-active');
+        a.style.color = '#faf7f2';
+        const bar = a.querySelector('.active-bar');
+        if (bar) bar.remove();
+      }
+    });
+  }
+
+  function switchCategory(categoryKey) {
+    currentActiveCategory = categoryKey;
+    updateMenuHighlight(categoryKey);
+    renderCategoryProducts(categoryKey);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  window.switchRoyalCategory = switchCategory;
+
+  // Intercept category navigation clicks for instant, smooth rendering
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (!a) return;
+    const txt = (a.innerText || a.textContent || '').trim();
+    const href = a.getAttribute('href') || '';
+
+    // Menu category clicks
+    if (txt.includes('الرجالية') || href.includes('فساتين') || href.includes('men') || href.includes('c703129794')) {
       e.preventDefault();
       e.stopPropagation();
-      window.location.href = targetUrl;
+      switchCategory('MEN');
+      return;
+    }
+    if (txt.includes('النسائية') || href.includes('بلايز') || href.includes('women')) {
+      e.preventDefault();
+      e.stopPropagation();
+      switchCategory('WOMEN');
+      return;
+    }
+    if (txt.includes('عود') || txt.includes('بخور') || href.includes('تنانير') || href.includes('oud')) {
+      e.preventDefault();
+      e.stopPropagation();
+      switchCategory('OUD');
+      return;
+    }
+    if (txt.includes('مجموعات') || txt.includes('حصرية') || href.includes('جاكيت') || href.includes('exclusive')) {
+      e.preventDefault();
+      e.stopPropagation();
+      switchCategory('EXCLUSIVE');
+      return;
+    }
+    if (txt.includes('هدايا') || txt.includes('عروض') || href.includes('تخفيضات') || href.includes('gifts')) {
+      e.preventDefault();
+      e.stopPropagation();
+      switchCategory('GIFTS');
+      return;
+    }
+    if (txt === 'الرئيسية' || href === '/' || href.includes('#home') || a.classList.contains('navbar-brand') || a.dataset.testid === 'store-header-logo') {
+      e.preventDefault();
+      e.stopPropagation();
+      switchCategory('HOME');
+      return;
+    }
+
+    // Olfactory discovery cards clicks
+    if (href.includes('search?q=') || href.includes('products.index')) {
+      const q = decodeURIComponent(href);
+      if (q.includes('شرقي') || q.includes('عود')) {
+        e.preventDefault();
+        e.stopPropagation();
+        switchCategory('OUD');
+        return;
+      }
+      if (q.includes('زهري')) {
+        e.preventDefault();
+        e.stopPropagation();
+        switchCategory('WOMEN');
+        return;
+      }
+      if (q.includes('خشبي') || q.includes('حمضي')) {
+        e.preventDefault();
+        e.stopPropagation();
+        switchCategory('MEN');
+        return;
+      }
     }
   }, true);
 
-  // Auto-redirect if page currently missing assets_url in preview mode
-  if (!window.location.search.includes('assets_url=') && window.location.hostname.includes('salla.')) {
-    const currentUrl = preservePreviewParams(window.location.href);
-    if (currentUrl !== window.location.href) {
-      window.location.replace(currentUrl);
-    }
+  // Initial category detection based on URL
+  const initialCat = detectCurrentCategory();
+  if (initialCat !== 'ALL') {
+    switchCategory(initialCat);
   }
 
   // Run immediately and continuously every 250ms
   transformAllProducts();
   setInterval(transformAllProducts, 250);
 }
+
