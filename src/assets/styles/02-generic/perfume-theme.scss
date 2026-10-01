@@ -251,8 +251,8 @@ body {
 }
 
 /* Header Action Icons: Perfectly Unified 36x36px Circular Luxury Palette */
-.store-header button,
-.store-header a[href*="wishlist"],
+.store-header .flex.items-center.justify-end > button,
+.store-header .flex.items-center.justify-end > a[href*="wishlist"],
 .store-header .header-buttons button {
   width: 36px !important;
   height: 36px !important;
@@ -361,19 +361,16 @@ salla-cart-summary {
   }
 }
 
-/* User Menu & Avatar: Strictly 36x36px Circular Trigger with Luxury Dropdown */
+/* User Menu & Avatar: Professional Luxury Pill Trigger with Pristine Dark Dropdown */
 salla-user-menu {
   position: relative !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 36px !important;
-  height: 36px !important;
+  width: auto !important;
   min-width: 36px !important;
-  max-width: 36px !important;
-  min-height: 36px !important;
-  max-height: 36px !important;
-  overflow: visible !important; /* Must allow dropdown menu to display outside */
+  height: 36px !important;
+  overflow: visible !important; /* Must allow dropdown menu to display */
   background: transparent !important;
   color: #faf7f2 !important;
   padding: 0 !important;
@@ -381,36 +378,44 @@ salla-user-menu {
   vertical-align: middle !important;
   box-sizing: border-box !important;
 
-  /* ONLY target the trigger element (button / avatar), NEVER dropdown links */
-  > .s-user-menu-login-btn,
-  > .s-user-menu-trigger,
-  > .s-user-menu-avatar,
+  /* Trigger Container (Button or Link or Wrapper) */
+  .s-user-menu-trigger,
+  .s-user-menu-avatar,
+  .dropdown__trigger,
+  .dropdown-toggler > .dropdown__trigger,
   > button,
   > a,
-  > slot-fb > button,
-  > slot-fb > a,
-  .dropdown__trigger,
-  .dropdown-toggler > .dropdown__trigger {
-    width: 36px !important;
+  > slot-fb > button {
     height: 36px !important;
-    min-width: 36px !important;
-    max-width: 36px !important;
     min-height: 36px !important;
     max-height: 36px !important;
-    border-radius: 50% !important;
+    border-radius: 9999px !important;
     border: 1px solid rgba(197, 168, 128, 0.35) !important;
-    background: #141518 !important;
+    background: #141518 !important; /* Pure luxury dark header background */
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     color: #faf7f2 !important;
-    padding: 0 !important;
+    padding: 2px 10px 2px 4px !important;
     margin: 0 !important;
-    overflow: hidden !important;
     transition: all 0.25s ease !important;
     cursor: pointer !important;
     box-shadow: none !important;
     box-sizing: border-box !important;
+    gap: 8px !important;
+    text-decoration: none !important;
+    outline: none !important;
+
+    /* When it's logged out / icon-only button */
+    &:has(> svg:only-child),
+    &.s-user-menu-login-btn,
+    &:only-child:not(:has(span)) {
+      width: 36px !important;
+      min-width: 36px !important;
+      max-width: 36px !important;
+      padding: 0 !important;
+      border-radius: 50% !important;
+    }
 
     svg {
       width: 17px !important;
@@ -425,22 +430,26 @@ salla-user-menu {
       border-color: #cca36e !important;
       color: #121316 !important;
 
+      * {
+        color: #121316 !important;
+      }
       svg {
         fill: #121316 !important;
         color: #121316 !important;
       }
     }
 
-    /* Clip ANY avatar image or illustration inside trigger */
-    img {
-      width: 36px !important;
-      height: 36px !important;
-      min-width: 36px !important;
-      max-width: 36px !important;
-      min-height: 36px !important;
-      max-height: 36px !important;
+    /* Avatar image inside trigger */
+    img,
+    .s-user-menu-avatar-image {
+      width: 28px !important;
+      height: 28px !important;
+      min-width: 28px !important;
+      max-width: 28px !important;
+      min-height: 28px !important;
+      max-height: 28px !important;
       border-radius: 50% !important;
-      border: 1px solid rgba(197, 168, 128, 0.35) !important;
+      border: 1px solid rgba(197, 168, 128, 0.4) !important;
       object-fit: cover !important;
       background: #ffffff !important;
       display: block !important;
@@ -448,34 +457,75 @@ salla-user-menu {
       padding: 0 !important;
       box-sizing: border-box !important;
     }
+
+    /* User Greeting & Name text inside trigger */
+    span,
+    p,
+    div {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      display: inline-flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: center !important;
+      line-height: 1.15 !important;
+      text-align: right !important;
+    }
+
+    /* Greeting text ("حَيَّاك") */
+    .s-user-menu-greeting,
+    [class*="greeting"] {
+      font-size: 0.65rem !important;
+      color: #cca36e !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.02em !important;
+    }
+
+    /* User name text ("انور سالم") */
+    .s-user-menu-name,
+    [class*="name"] {
+      font-size: 0.78rem !important;
+      color: #faf7f2 !important;
+      font-weight: 700 !important;
+      max-width: 100px !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
   }
 
-  /* Luxury Dropdown Menu: Royal Dark Palette with Clean Arabic Typography */
+  /* Universal Luxury Dark Dropdown Menu */
   .dropdown__menu,
   .s-user-menu-dropdown,
   [class*="dropdown__menu"],
   [class*="user-menu-dropdown"] {
-    background: #16171b !important;
-    border: 1px solid rgba(197, 168, 128, 0.35) !important;
-    border-radius: 12px !important;
-    box-shadow: 0 16px 40px -4px rgba(0, 0, 0, 0.65) !important;
+    background: #141518 !important;
+    border: 1px solid rgba(197, 168, 128, 0.3) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 20px 50px -6px rgba(0, 0, 0, 0.75) !important;
     padding: 8px 6px !important;
-    width: 220px !important;
-    min-width: 200px !important;
-    max-width: 260px !important;
+    width: 230px !important;
+    min-width: 220px !important;
+    max-width: 280px !important;
     height: auto !important;
     min-height: auto !important;
     max-height: none !important;
     overflow: visible !important;
-    z-index: 100 !important;
+    z-index: 1000 !important;
     top: calc(100% + 8px) !important;
     right: 0 !important;
     left: auto !important;
+    direction: rtl !important;
 
+    /* Reset all list items / wrappers: NO borders, NO pill shape */
     ul,
     ol,
     li,
-    .menu-item {
+    .menu-item,
+    div {
       width: 100% !important;
       height: auto !important;
       min-width: 100% !important;
@@ -487,91 +537,124 @@ salla-user-menu {
       margin: 0 !important;
       display: block !important;
       list-style: none !important;
-      overflow: visible !important;
+      box-shadow: none !important;
+      outline: none !important;
     }
 
-    /* All Links and Buttons inside the Dropdown: Elegantly Formatted */
+    /* Dropdown Links & Buttons: Sleek full-width items */
     a,
     button {
       width: 100% !important;
       min-width: 100% !important;
       max-width: 100% !important;
-      height: auto !important;
-      min-height: 38px !important;
-      max-height: none !important;
+      height: 42px !important;
+      min-height: 42px !important;
+      max-height: 42px !important;
       border-radius: 8px !important;
       border: none !important;
       background: transparent !important;
-      color: #ede9e1 !important;
+      color: #faf7f2 !important; /* Pure legible white text */
       display: flex !important;
+      flex-direction: row !important;
       align-items: center !important;
       justify-content: flex-start !important;
-      padding: 9px 14px !important;
-      font-size: 0.85rem !important;
+      padding: 0 14px !important;
+      font-size: 0.86rem !important;
       font-weight: 600 !important;
-      line-height: 1.5 !important;
+      line-height: 1 !important;
       text-align: right !important;
       direction: rtl !important;
-      gap: 10px !important;
+      gap: 12px !important;
       transition: all 0.2s ease !important;
       box-shadow: none !important;
+      outline: none !important;
       box-sizing: border-box !important;
       overflow: visible !important;
       white-space: nowrap !important;
       cursor: pointer !important;
 
+      /* Gold luxury icons on right */
       i,
       svg {
-        width: 16px !important;
-        height: 16px !important;
-        font-size: 1rem !important;
+        width: 18px !important;
+        height: 18px !important;
+        font-size: 1.1rem !important;
         color: #cca36e !important;
         fill: #cca36e !important;
         flex-shrink: 0 !important;
         margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        outline: none !important;
       }
 
       span,
       p,
       b {
-        color: inherit !important;
-        font-size: inherit !important;
-        font-weight: inherit !important;
-        display: inline !important;
+        color: #faf7f2 !important;
+        font-size: 0.86rem !important;
+        font-weight: 600 !important;
+        display: inline-block !important;
+        border: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        outline: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        flex-grow: 1 !important;
       }
 
       &:hover {
-        background: rgba(197, 168, 128, 0.12) !important;
+        background: rgba(201, 166, 107, 0.12) !important;
         color: #cca36e !important;
 
+        span,
+        p {
+          color: #cca36e !important;
+        }
         i,
         svg {
           color: #dfcaa7 !important;
           fill: #dfcaa7 !important;
         }
       }
+    }
 
-      /* Logout Item: Distinction in Soft Royal Red */
-      &[href*="logout"],
-      &.logout,
-      &.text-red-500,
-      &[class*="danger"],
-      &[onclick*="logout"],
-      &:last-child {
+    /* Specific Logout Item: Clean red highlight */
+    .menu-item:last-child a,
+    a.logout,
+    a[href*="logout"],
+    button.logout,
+    button[onclick*="logout"] {
+      color: #f87171 !important;
+      border-top: 1px solid rgba(197, 168, 128, 0.15) !important;
+      margin-top: 4px !important;
+      padding-top: 0 !important;
+      border-radius: 0 0 8px 8px !important;
+
+      i,
+      svg {
         color: #f87171 !important;
-        border-top: 1px solid rgba(197, 168, 128, 0.15) !important;
-        margin-top: 4px !important;
-        padding-top: 10px !important;
+        fill: #f87171 !important;
+      }
+      span,
+      p {
+        color: #f87171 !important;
+      }
 
+      &:hover {
+        background: rgba(239, 68, 68, 0.15) !important;
+        color: #ffffff !important;
+        span,
+        p {
+          color: #ffffff !important;
+        }
         i,
         svg {
-          color: #f87171 !important;
-          fill: #f87171 !important;
-        }
-
-        &:hover {
-          background: rgba(239, 68, 68, 0.15) !important;
           color: #ffffff !important;
+          fill: #ffffff !important;
         }
       }
     }
