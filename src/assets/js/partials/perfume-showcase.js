@@ -369,54 +369,26 @@ export const PERFUMES = [...MEN_PERFUMES, ...WOMEN_PERFUMES, ...OUD_INCENSE_PERF
 export const DIOR_PERFUMES = PERFUMES; // Backwards compatibility
 
 /**
- * Luxury Marketing Badge Style Resolver
+/**
+ * Luxury Marketing Badge Style Resolver (Unified Champagne Luxury Palette)
  */
 export function getBadgeConfig(badgeText) {
   const text = (badgeText || '').trim();
-  if (text.includes('خصم') || text.includes('%')) {
-    return {
-      type: 'discount',
-      bg: 'rgba(114, 38, 47, 0.92)',
-      color: '#faf7f2',
-      border: '1px solid rgba(180, 70, 80, 0.4)'
-    };
-  } else if (text.includes('الأكثر مبيعًا') || text.includes('الأكثر طلبًا')) {
-    return {
-      type: 'bestseller',
-      bg: '#141518',
-      color: '#faf7f2',
-      border: '1px solid rgba(201, 166, 107, 0.45)'
-    };
-  } else if (text.includes('جديد')) {
-    return {
-      type: 'new',
-      bg: 'rgba(201, 166, 107, 0.14)',
-      color: '#c9a66b',
-      border: '1px solid rgba(201, 166, 107, 0.45)'
-    };
-  } else if (text.includes('محدود')) {
-    return {
-      type: 'limited',
-      bg: 'rgba(45, 60, 48, 0.9)',
-      color: '#e8ede6',
-      border: '1px solid rgba(80, 110, 85, 0.4)'
-    };
-  } else if (text.includes('ملكي') || text.includes('حصري') || text.includes('فاخر') || text.includes('طقم') || text.includes('VIP')) {
-    return {
-      type: 'royal',
-      bg: 'rgba(38, 34, 30, 0.92)',
-      color: '#dfcaa7',
-      border: '1px solid rgba(204, 163, 110, 0.45)'
-    };
-  } else {
-    // Featured / Default
-    return {
-      type: 'featured',
-      bg: 'rgba(197, 168, 128, 0.18)',
-      color: '#d4af37',
-      border: '1px solid rgba(197, 168, 128, 0.4)'
-    };
-  }
+  let type = 'unified-luxury';
+  if (text.includes('خصم') || text.includes('%')) type = 'discount';
+  else if (text.includes('الأكثر')) type = 'bestseller';
+  else if (text.includes('جديد')) type = 'new';
+  else if (text.includes('محدود')) type = 'limited';
+  else if (text.includes('ملكي') || text.includes('حصري') || text.includes('فاخر') || text.includes('طقم') || text.includes('VIP')) type = 'royal';
+  else type = 'featured';
+
+  // Unified Champagne Gold Luxury Token (Consistent across all products)
+  return {
+    type: type,
+    bg: 'rgba(201, 166, 107, 0.14)',
+    color: '#9e7a46',
+    border: '1px solid rgba(201, 166, 107, 0.45)'
+  };
 }
 
 /**
@@ -587,7 +559,7 @@ export function initPerfumeShowcase() {
         sub.style.fontWeight = '500';
       }
 
-      // 6. Force Badge (clean Arabic text & luxury marketing badge style)
+      // 6. Force Badge (clean Arabic text & unified luxury marketing badge style)
       const badge = root.querySelector('.s-product-card-promotion-title, .badge, .promotion-title, .s-product-card-badge');
       const bText = perfume.badge || (badge ? badge.textContent.trim() : '');
       if (badge && bText) {
@@ -604,17 +576,24 @@ export function initPerfumeShowcase() {
         badge.style.setProperty('background', bConf.bg, 'important');
         badge.style.setProperty('color', bConf.color, 'important');
         badge.style.setProperty('border', bConf.border, 'important');
-        badge.style.setProperty('padding', '3px 10px', 'important');
+        badge.style.setProperty('padding', '0 10px', 'important');
+        badge.style.setProperty('height', '24px', 'important');
+        badge.style.setProperty('min-height', '24px', 'important');
+        badge.style.setProperty('max-height', '24px', 'important');
+        badge.style.setProperty('line-height', '22px', 'important');
         badge.style.setProperty('border-radius', '4px', 'important');
         badge.style.setProperty('font-size', '0.7rem', 'important');
         badge.style.setProperty('font-weight', '700', 'important');
         badge.style.setProperty('letter-spacing', '0.02em', 'important');
-        badge.style.setProperty('line-height', '1.2', 'important');
-        badge.style.setProperty('max-height', '26px', 'important');
         badge.style.setProperty('z-index', '10', 'important');
-        badge.style.setProperty('box-shadow', '0 2px 6px rgba(0,0,0,0.06)', 'important');
+        badge.style.setProperty('box-shadow', '0 2px 6px rgba(0,0,0,0.04)', 'important');
         badge.style.setProperty('max-width', 'none', 'important');
+        badge.style.setProperty('box-sizing', 'border-box', 'important');
+        badge.style.setProperty('display', 'inline-flex', 'important');
+        badge.style.setProperty('align-items', 'center', 'important');
+        badge.style.setProperty('justify-content', 'center', 'important');
         badge.style.setProperty('pointer-events', 'none', 'important');
+        badge.style.setProperty('white-space', 'nowrap', 'important');
       }
 
       // 7. Wishlist Button (Top-Left in RTL, separated from badge, perfectly aligned at top: 14px)
@@ -625,6 +604,8 @@ export function initPerfumeShowcase() {
         wishlistBtn.style.setProperty('left', '14px', 'important');
         wishlistBtn.style.setProperty('right', 'auto', 'important');
         wishlistBtn.style.setProperty('bottom', 'auto', 'important');
+        wishlistBtn.style.setProperty('width', '32px', 'important');
+        wishlistBtn.style.setProperty('height', '32px', 'important');
         wishlistBtn.style.setProperty('margin', '0', 'important');
         wishlistBtn.style.setProperty('transform', 'none', 'important');
         wishlistBtn.style.setProperty('z-index', '10', 'important');
@@ -925,11 +906,11 @@ export function initPerfumeShowcase() {
         <div style="background: #f8f6f2; height: 270px; width: 100%; display: flex; align-items: center; justify-content: center; padding: 1.25rem; position: relative; overflow: hidden; border-top-left-radius: 11px; border-top-right-radius: 11px;">
           <img src="${item.image}" alt="${item.name}" loading="lazy" style="max-height: 85%; max-width: 85%; object-fit: contain; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.08)); transition: transform 0.4s ease;" />
           
-          <button type="button" aria-label="أضف للمفضلة" class="royal-wishlist-btn" style="position: absolute; top: 14px; left: 14px; width: 34px; height: 34px; border-radius: 50%; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.3); display: flex; align-items: center; justify-content: center; color: #121316; cursor: pointer; transition: all 0.2s; z-index: 10;" onmouseover="this.style.color='#cca36e'; this.style.borderColor='#cca36e';" onmouseout="this.style.color='#121316'; this.style.borderColor='rgba(197, 168, 128, 0.3)';">
-            <i class="sicon-heart" style="font-size: 0.95rem;"></i>
+          <button type="button" aria-label="أضف للمفضلة" class="royal-wishlist-btn" style="position: absolute; top: 14px; left: 14px; width: 32px; height: 32px; border-radius: 50%; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.3); display: flex; align-items: center; justify-content: center; color: #121316; cursor: pointer; transition: all 0.2s; z-index: 10;" onmouseover="this.style.color='#cca36e'; this.style.borderColor='#cca36e';" onmouseout="this.style.color='#121316'; this.style.borderColor='rgba(197, 168, 128, 0.3)';">
+            <i class="sicon-heart" style="font-size: 0.9rem;"></i>
           </button>
           
-          <span class="royal-perfume-badge royal-badge--${bConf.type}" style="position: absolute; top: 14px; right: 14px; left: auto; bottom: auto; margin: 0; transform: none; background: ${bConf.bg} !important; color: ${bConf.color} !important; border: ${bConf.border} !important; padding: 3px 10px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.02em; line-height: 1.2; max-height: 26px; z-index: 10; box-shadow: 0 2px 6px rgba(0,0,0,0.06); display: inline-flex; align-items: center; justify-content: center; pointer-events: none; white-space: nowrap;">${item.badge || 'جديد'}</span>
+          <span class="royal-perfume-badge royal-badge--${bConf.type}" style="position: absolute; top: 14px; right: 14px; left: auto; bottom: auto; margin: 0; transform: none; background: ${bConf.bg} !important; color: ${bConf.color} !important; border: ${bConf.border} !important; padding: 0 10px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.02em; line-height: 22px; height: 24px; min-height: 24px; max-height: 24px; z-index: 10; box-shadow: 0 2px 6px rgba(0,0,0,0.04); display: inline-flex; align-items: center; justify-content: center; pointer-events: none; white-space: nowrap; box-sizing: border-box;">${item.badge || 'جديد'}</span>
         </div>
         
         <div style="padding: 1.25rem 1.15rem 1.15rem; display: flex; flex-direction: column; flex-grow: 1; text-align: right;">

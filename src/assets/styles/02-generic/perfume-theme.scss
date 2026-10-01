@@ -433,78 +433,45 @@ salla-user-menu {
   }
 
   /* ============================================================
-     PREMIUM MARKETING BADGES SYSTEM (CARD-SCOPED)
+     PREMIUM MARKETING BADGES SYSTEM (UNIFIED LUXURY PALETTE)
      ============================================================ */
   .s-product-card-promotion-title,
   .promotion-title,
   .royal-perfume-badge,
-  .s-product-card-badge {
+  .s-product-card-badge,
+  [class*="royal-badge"],
+  [class*="badge--"] {
     position: absolute !important;
     top: 14px !important;
     right: 14px !important;
     left: auto !important;
     bottom: auto !important;
     z-index: 10 !important;
-    padding: 3px 10px !important;
+    height: 24px !important;
+    min-height: 24px !important;
+    max-height: 24px !important;
+    line-height: 22px !important;
+    padding: 0 10px !important;
     border-radius: 4px !important;
     font-size: 0.7rem !important;
     font-weight: 700 !important;
     letter-spacing: 0.02em !important;
-    line-height: 1.2 !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
     transition: all 0.2s ease !important;
     max-width: none !important;
-    max-height: 26px !important;
     margin: 0 !important;
     transform: none !important;
-    border: none;
     pointer-events: none !important;
-  }
 
-  /* Badge Color Tokens */
-  .badge--new,
-  .royal-badge--new {
+    /* Unified Champagne Gold Luxury Token for all badges */
     background: rgba(201, 166, 107, 0.14) !important;
-    color: #c9a66b !important;
+    color: #9e7a46 !important;
     border: 1px solid rgba(201, 166, 107, 0.45) !important;
-  }
-
-  .badge--bestseller,
-  .royal-badge--bestseller {
-    background: #141518 !important;
-    color: #faf7f2 !important;
-    border: 1px solid rgba(201, 166, 107, 0.45) !important;
-  }
-
-  .badge--discount,
-  .royal-badge--discount {
-    background: rgba(114, 38, 47, 0.92) !important;
-    color: #faf7f2 !important;
-    border: 1px solid rgba(180, 70, 80, 0.4) !important;
-  }
-
-  .badge--featured,
-  .royal-badge--featured {
-    background: rgba(197, 168, 128, 0.18) !important;
-    color: #d4af37 !important;
-    border: 1px solid rgba(197, 168, 128, 0.4) !important;
-  }
-
-  .badge--limited,
-  .royal-badge--limited {
-    background: rgba(45, 60, 48, 0.9) !important;
-    color: #e8ede6 !important;
-    border: 1px solid rgba(80, 110, 85, 0.4) !important;
-  }
-
-  .badge--royal,
-  .royal-badge--royal {
-    background: rgba(38, 34, 30, 0.92) !important;
-    color: #dfcaa7 !important;
-    border: 1px solid rgba(204, 163, 110, 0.45) !important;
   }
 
   /* Wishlist Button: Top-Left in RTL, separated from badge */
@@ -515,6 +482,9 @@ salla-user-menu {
     left: 14px !important;
     right: auto !important;
     bottom: auto !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
     margin: 0 !important;
     transform: none !important;
     z-index: 10 !important;
@@ -952,7 +922,9 @@ salla-maintenance-alert,
 .royal-perfume-badge,
 .s-product-card-promotion-title,
 .promotion-title,
-.s-product-card-badge {
+.s-product-card-badge,
+[class*="royal-badge"],
+[class*="badge--"] {
   position: absolute !important;
   top: 14px !important;
   right: 14px !important;
@@ -961,19 +933,27 @@ salla-maintenance-alert,
   margin: 0 !important;
   transform: none !important;
   z-index: 10 !important;
-  padding: 3px 10px !important;
+  height: 24px !important;
+  min-height: 24px !important;
+  max-height: 24px !important;
+  line-height: 22px !important;
+  padding: 0 10px !important;
   border-radius: 4px !important;
   font-size: 0.7rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.02em !important;
-  line-height: 1.2 !important;
-  max-height: 26px !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
   pointer-events: none !important;
   white-space: nowrap !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+
+  /* Unified Champagne Gold Luxury Palette */
+  background: rgba(201, 166, 107, 0.14) !important;
+  color: #9e7a46 !important;
+  border: 1px solid rgba(201, 166, 107, 0.45) !important;
 }
 
 .royal-wishlist-btn,
@@ -983,8 +963,12 @@ salla-maintenance-alert,
   left: 14px !important;
   right: auto !important;
   bottom: auto !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
   margin: 0 !important;
   transform: none !important;
   z-index: 10 !important;
 }
+
 
