@@ -180,26 +180,36 @@ isElementLoaded(selector){
   }
 
   initiateStickyMenu() {
-    let header = this.element('#mainnav'),
-      height = this.element('#mainnav .inner')?.clientHeight;
-    //when it's landing page, there is no header
-    if (!header) {
+    const storeHeader = document.querySelector('.store-header') || this.element('#mainnav');
+    const mainNav = this.element('#mainnav');
+    if (!storeHeader) {
       return;
     }
 
-    window.addEventListener('load', () => setTimeout(() => this.setHeaderHeight(), 500))
-    window.addEventListener('resize', () => this.setHeaderHeight())
+    const handleSticky = () => {
+      const isScrolled = window.scrollY > 30;
+      if (isScrolled) {
+        storeHeader.classList.add('header--scrolled');
+        if (mainNav) mainNav.classList.add('fixed-header', 'is-sticky');
+        document.body.classList.add('header-is-scrolled');
+      } else {
+        storeHeader.classList.remove('header--scrolled');
+        if (mainNav) mainNav.classList.remove('fixed-header', 'is-sticky', 'fixed-pinned', 'animated');
+        document.body.classList.remove('header-is-scrolled');
+      }
+    };
 
-    window.addEventListener('scroll', () => {
-      window.scrollY >= header.offsetTop + height ? header.classList.add('fixed-pinned', 'animated') : header.classList.remove('fixed-pinned');
-      window.scrollY >= 200 ? header.classList.add('fixed-header') : header.classList.remove('fixed-header', 'animated');
-    }, { passive: true });
+    window.addEventListener('scroll', handleSticky, { passive: true });
+    window.addEventListener('load', handleSticky);
+    handleSticky();
   }
 
   setHeaderHeight() {
-    let height = this.element('#mainnav .inner').clientHeight,
-      header = this.element('#mainnav');
-    header.style.height = height + 'px';
+    // Dynamic height handled by CSS sticky container
+    const header = this.element('#mainnav');
+    if (header) {
+      header.style.height = 'auto';
+    }
   }
 
   initiateDropdowns() {

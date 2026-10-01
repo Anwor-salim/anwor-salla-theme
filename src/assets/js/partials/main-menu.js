@@ -250,7 +250,7 @@ class NavigationMenu extends HTMLElement {
             }
         });
 
-        const availableWidth = containerWidth - usedWidth - 300; // 300px buffer for More dropdown
+        const availableWidth = containerWidth - usedWidth - 60; // 60px minimal buffer for More dropdown
         let currentWidth = 0;
         let visibleCount = 0;
 

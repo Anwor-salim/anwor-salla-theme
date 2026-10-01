@@ -103,6 +103,79 @@ body {
 .store-header {
   background: #141518 !important;
   border-bottom: 1px solid rgba(197, 168, 128, 0.22);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 50 !important;
+}
+
+.perfume-top-ribbon {
+  max-height: 44px;
+  opacity: 1;
+  overflow: hidden;
+  transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, padding 0.25s ease;
+}
+
+/* Scrolled Header State */
+.store-header.header--scrolled {
+  background: rgba(20, 21, 24, 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(201, 166, 107, 0.15) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+
+  .perfume-top-ribbon {
+    max-height: 0 !important;
+    opacity: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .main-nav-container {
+    min-height: 56px !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+
+    .inner {
+      background: transparent !important;
+    }
+
+    .container > div {
+      padding-top: 0.35rem !important;
+      padding-bottom: 0.35rem !important;
+    }
+
+    .navbar-brand img {
+      max-height: 38px !important;
+      transition: max-height 0.2s ease;
+    }
+
+    custom-main-menu {
+      min-height: 54px !important;
+    }
+
+    .main-menu li a {
+      padding-top: 0.45rem !important;
+      padding-bottom: 0.45rem !important;
+      font-size: 0.9rem !important;
+    }
+  }
+
+  button,
+  a[href*="wishlist"] {
+    width: 36px !important;
+    height: 36px !important;
+  }
+}
+
+/* Neutralize old Theme Raed fixed-pinned jump */
+.main-nav-container.fixed-pinned .inner,
+.main-nav-container.fixed-header .inner {
+  position: static !important;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 .top-navbar {
@@ -129,7 +202,7 @@ body {
 
 .main-nav-container {
   background: #141518 !important;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   border-bottom: 1px solid rgba(197, 168, 128, 0.18) !important;
   box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.3) !important;
 
@@ -141,6 +214,7 @@ body {
     max-height: 48px;
     width: auto;
     object-fit: contain;
+    transition: max-height 0.2s ease;
   }
 }
 
@@ -358,16 +432,85 @@ salla-user-menu {
     }
   }
 
-  /* Refined, Minimal Badges */
-  .s-product-card-promotion-title {
-    background: #121316 !important;
-    color: #dfcaa7 !important;
-    border-right: 3px solid #cca36e !important;
-    border-radius: 0 4px 4px 0 !important;
+  /* ============================================================
+     PREMIUM MARKETING BADGES SYSTEM
+     ============================================================ */
+  .s-product-card-promotion-title,
+  .promotion-title,
+  .royal-perfume-badge,
+  .s-product-card-badge {
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    left: auto !important;
+    z-index: 5 !important;
+    padding: 4px 10px !important;
+    border-radius: 5px !important;
     font-size: 0.72rem !important;
     font-weight: 700 !important;
-    letter-spacing: 0.02em;
-    padding: 0.25rem 0.65rem !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1.3 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.2s ease !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border: none;
+  }
+
+  /* Badge Color Tokens */
+  .badge--new,
+  .royal-badge--new {
+    background: rgba(201, 166, 107, 0.14) !important;
+    color: #c9a66b !important;
+    border: 1px solid rgba(201, 166, 107, 0.45) !important;
+  }
+
+  .badge--bestseller,
+  .royal-badge--bestseller {
+    background: #141518 !important;
+    color: #faf7f2 !important;
+    border: 1px solid rgba(201, 166, 107, 0.45) !important;
+  }
+
+  .badge--discount,
+  .royal-badge--discount {
+    background: rgba(114, 38, 47, 0.92) !important;
+    color: #faf7f2 !important;
+    border: 1px solid rgba(180, 70, 80, 0.4) !important;
+  }
+
+  .badge--featured,
+  .royal-badge--featured {
+    background: rgba(197, 168, 128, 0.18) !important;
+    color: #d4af37 !important;
+    border: 1px solid rgba(197, 168, 128, 0.4) !important;
+  }
+
+  .badge--limited,
+  .royal-badge--limited {
+    background: rgba(45, 60, 48, 0.9) !important;
+    color: #e8ede6 !important;
+    border: 1px solid rgba(80, 110, 85, 0.4) !important;
+  }
+
+  .badge--royal,
+  .royal-badge--royal {
+    background: rgba(38, 34, 30, 0.92) !important;
+    color: #dfcaa7 !important;
+    border: 1px solid rgba(204, 163, 110, 0.45) !important;
+  }
+
+  /* Wishlist Button: Top-Left in RTL, separated from badge */
+  .s-product-card-wishlist-btn,
+  .royal-wishlist-btn {
+    position: absolute !important;
+    top: 12px !important;
+    left: 12px !important;
+    right: auto !important;
+    z-index: 5 !important;
   }
 
   .s-product-card-quantity {

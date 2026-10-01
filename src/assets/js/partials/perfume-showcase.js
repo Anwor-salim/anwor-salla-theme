@@ -369,6 +369,57 @@ export const PERFUMES = [...MEN_PERFUMES, ...WOMEN_PERFUMES, ...OUD_INCENSE_PERF
 export const DIOR_PERFUMES = PERFUMES; // Backwards compatibility
 
 /**
+ * Luxury Marketing Badge Style Resolver
+ */
+export function getBadgeConfig(badgeText) {
+  const text = (badgeText || '').trim();
+  if (text.includes('خصم') || text.includes('%')) {
+    return {
+      type: 'discount',
+      bg: 'rgba(114, 38, 47, 0.92)',
+      color: '#faf7f2',
+      border: '1px solid rgba(180, 70, 80, 0.4)'
+    };
+  } else if (text.includes('الأكثر مبيعًا') || text.includes('الأكثر طلبًا')) {
+    return {
+      type: 'bestseller',
+      bg: '#141518',
+      color: '#faf7f2',
+      border: '1px solid rgba(201, 166, 107, 0.45)'
+    };
+  } else if (text.includes('جديد')) {
+    return {
+      type: 'new',
+      bg: 'rgba(201, 166, 107, 0.14)',
+      color: '#c9a66b',
+      border: '1px solid rgba(201, 166, 107, 0.45)'
+    };
+  } else if (text.includes('محدود')) {
+    return {
+      type: 'limited',
+      bg: 'rgba(45, 60, 48, 0.9)',
+      color: '#e8ede6',
+      border: '1px solid rgba(80, 110, 85, 0.4)'
+    };
+  } else if (text.includes('ملكي') || text.includes('حصري') || text.includes('فاخر') || text.includes('طقم') || text.includes('VIP')) {
+    return {
+      type: 'royal',
+      bg: 'rgba(38, 34, 30, 0.92)',
+      color: '#dfcaa7',
+      border: '1px solid rgba(204, 163, 110, 0.45)'
+    };
+  } else {
+    // Featured / Default
+    return {
+      type: 'featured',
+      bg: 'rgba(197, 168, 128, 0.18)',
+      color: '#d4af37',
+      border: '1px solid rgba(197, 168, 128, 0.4)'
+    };
+  }
+}
+
+/**
  * Detect what category or page is currently active
  */
 export function detectCurrentCategory() {
@@ -536,10 +587,38 @@ export function initPerfumeShowcase() {
         sub.style.fontWeight = '500';
       }
 
-      // 6. Force Badge (clean Arabic text: جديد / الأكثر مبيعًا / اختيار مميز)
-      const badge = root.querySelector('.s-product-card-promotion-title, .badge');
-      if (badge && perfume.badge) {
-        badge.textContent = perfume.badge;
+      // 6. Force Badge (clean Arabic text & luxury marketing badge style)
+      const badge = root.querySelector('.s-product-card-promotion-title, .badge, .promotion-title, .s-product-card-badge');
+      const bText = perfume.badge || (badge ? badge.textContent.trim() : '');
+      if (badge && bText) {
+        badge.textContent = bText;
+        const bConf = getBadgeConfig(bText);
+        badge.className = (badge.className || '') + ` royal-perfume-badge royal-badge--${bConf.type}`;
+        badge.style.setProperty('position', 'absolute', 'important');
+        badge.style.setProperty('top', '12px', 'important');
+        badge.style.setProperty('right', '12px', 'important');
+        badge.style.setProperty('left', 'auto', 'important');
+        badge.style.setProperty('background', bConf.bg, 'important');
+        badge.style.setProperty('color', bConf.color, 'important');
+        badge.style.setProperty('border', bConf.border, 'important');
+        badge.style.setProperty('padding', '4px 10px', 'important');
+        badge.style.setProperty('border-radius', '5px', 'important');
+        badge.style.setProperty('font-size', '0.72rem', 'important');
+        badge.style.setProperty('font-weight', '700', 'important');
+        badge.style.setProperty('letter-spacing', '0.02em', 'important');
+        badge.style.setProperty('z-index', '5', 'important');
+        badge.style.setProperty('box-shadow', '0 2px 8px rgba(0,0,0,0.08)', 'important');
+        badge.style.setProperty('max-width', 'none', 'important');
+      }
+
+      // 7. Wishlist Button (Top-Left in RTL, separated from badge)
+      const wishlistBtn = root.querySelector('.s-product-card-wishlist-btn, [data-wishlist], button[aria-label*="مفضلة"], button[aria-label*="wishlist"]');
+      if (wishlistBtn) {
+        wishlistBtn.style.setProperty('position', 'absolute', 'important');
+        wishlistBtn.style.setProperty('top', '12px', 'important');
+        wishlistBtn.style.setProperty('left', '12px', 'important');
+        wishlistBtn.style.setProperty('right', 'auto', 'important');
+        wishlistBtn.style.setProperty('z-index', '5', 'important');
       }
     }
 
@@ -616,14 +695,11 @@ export function initPerfumeShowcase() {
       }
     }
 
-    // 2. Royal Calligraphy Logo
+    // 2. Royal Logo Styling
     document.querySelectorAll('.navbar-brand, a[data-testid="store-header-logo"]').forEach(brand => {
       brand.style.background = 'transparent';
       const img = brand.querySelector('img');
-      if (img && img.dataset.royalLogo !== 'true') {
-        img.dataset.royalLogo = 'true';
-        img.src = 'http://localhost:8000/images/anwor-royal-logo.png';
-        img.srcset = '';
+      if (img) {
         img.style.maxHeight = '48px';
         img.style.width = 'auto';
         img.style.objectFit = 'contain';
@@ -632,25 +708,8 @@ export function initPerfumeShowcase() {
       }
     });
 
-    // 3. Center Search Input in Header
-    const navBarInner = document.querySelector('#mainnav .inner .container > div, .store-header .container');
-    if (navBarInner && !document.querySelector('.royal-header-search')) {
-      const searchBox = document.createElement('div');
-      searchBox.className = 'royal-header-search flex-1 max-w-md mx-6 hidden md:block';
-      searchBox.style.cssText = 'flex: 1; max-width: 380px; margin: 0 1.5rem;';
-      searchBox.innerHTML = `
-        <div style="position: relative; display: flex; align-items: center; width: 100%;">
-          <input type="text" placeholder="ابحث عن عطر، ماركة، أو مكونات..." style="width: 100%; background: rgba(255, 255, 255, 0.08) !important; color: #ffffff !important; font-weight: 500; padding: 0.55rem 1rem 0.55rem 2.5rem; border-radius: 8px; border: 1px solid rgba(197, 168, 128, 0.35); outline: none; font-size: 0.88rem; transition: border-color 0.2s;" onfocus="this.style.borderColor='#cca36e'" onblur="this.style.borderColor='rgba(197, 168, 128, 0.35)'" onkeydown="if(event.key==='Enter'){window.location.href='/search?q='+encodeURIComponent(this.value)}" />
-          <i class="sicon-search" style="position: absolute; left: 12px; color: #cca36e; font-size: 1.1rem; pointer-events: none;"></i>
-        </div>
-      `;
-      const brand = navBarInner.querySelector('.navbar-brand, a[data-testid="store-header-logo"]');
-      if (brand && brand.nextSibling) {
-        navBarInner.insertBefore(searchBox, brand.nextSibling);
-      } else {
-        navBarInner.appendChild(searchBox);
-      }
-    }
+    // 3. Header Action Icons & Search Integration
+    // Search is handled gracefully by Salla search trigger button in header action icons
 
     // 4. Main Menu 'الرئيسية' link
     const menuUl = document.querySelector('.main-menu ul, #mainnav ul, nav ul');
@@ -846,16 +905,18 @@ export function initPerfumeShowcase() {
     // Metadata (Volume only - NO long descriptions)
     // Price (Prominent Champagne Gold)
     // Add to Cart Button (Compact, Dark with Gold Icon)
-    const cardsHtml = data.items.map(item => `
+    const cardsHtml = data.items.map(item => {
+      const bConf = getBadgeConfig(item.badge || 'جديد');
+      return `
       <div class="royal-perfume-card" style="background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.22); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 16px rgba(0,0,0,0.03); transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;">
         <div style="background: #f8f6f2; height: 270px; width: 100%; display: flex; align-items: center; justify-content: center; padding: 1.25rem; position: relative;">
           <img src="${item.image}" alt="${item.name}" loading="lazy" style="max-height: 85%; max-width: 85%; object-fit: contain; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.08)); transition: transform 0.4s ease;" />
           
-          <button type="button" aria-label="أضف للمفضلة" style="position: absolute; top: 12px; left: 12px; width: 34px; height: 34px; border-radius: 50%; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.3); display: flex; align-items: center; justify-content: center; color: #121316; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.color='#cca36e'; this.style.borderColor='#cca36e';" onmouseout="this.style.color='#121316'; this.style.borderColor='rgba(197, 168, 128, 0.3)';">
+          <button type="button" aria-label="أضف للمفضلة" class="royal-wishlist-btn" style="position: absolute; top: 12px; left: 12px; width: 34px; height: 34px; border-radius: 50%; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.3); display: flex; align-items: center; justify-content: center; color: #121316; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.color='#cca36e'; this.style.borderColor='#cca36e';" onmouseout="this.style.color='#121316'; this.style.borderColor='rgba(197, 168, 128, 0.3)';">
             <i class="sicon-heart" style="font-size: 0.95rem;"></i>
           </button>
           
-          <span style="position: absolute; top: 12px; right: 12px; background: #121316; color: #dfcaa7; border: 1px solid rgba(204,163,110,0.3); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.3px;">${item.badge || 'جديد'}</span>
+          <span class="royal-perfume-badge royal-badge--${bConf.type}" style="position: absolute; top: 12px; right: 12px; background: ${bConf.bg} !important; color: ${bConf.color} !important; border: ${bConf.border} !important; padding: 4px 10px; border-radius: 5px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.02em; z-index: 5; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">${item.badge || 'جديد'}</span>
         </div>
         
         <div style="padding: 1.25rem 1.15rem 1.15rem; display: flex; flex-direction: column; flex-grow: 1; text-align: right;">
@@ -874,7 +935,8 @@ export function initPerfumeShowcase() {
           </div>
         </div>
       </div>
-    `).join('');
+      `;
+    }).join('');
 
     catView.innerHTML = `
       <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.88rem; color: #8c8881; margin-bottom: 1.5rem; text-align: right;">
@@ -1099,6 +1161,20 @@ export function initPerfumeShowcase() {
       switchCategory(initialCat);
     }
   }
+
+  // Smooth Sticky Header Scroll State
+  const updateStickyHeader = () => {
+    const header = document.querySelector('.store-header');
+    if (header) {
+      if (window.scrollY > 30) {
+        header.classList.add('header--scrolled');
+      } else {
+        header.classList.remove('header--scrolled');
+      }
+    }
+  };
+  window.addEventListener('scroll', updateStickyHeader, { passive: true });
+  updateStickyHeader();
 
   // Run immediately and continuously every 250ms
   transformAllProducts();
