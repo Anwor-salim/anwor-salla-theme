@@ -77,7 +77,14 @@
   }
 
   &-promotion-title {
-    @apply absolute top-4 left-0 rtl:right-0 rtl:left-[unset] z-1 font-bold px-2.5 py-1.5 md:py-2 text-xs bg-red-400 text-white rounded-r rtl:rounded-l rtl:rounded-r-none max-w-[calc(100%-60px)];
+    position: absolute !important;
+    top: 14px !important;
+    right: 14px !important;
+    left: auto !important;
+    bottom: auto !important;
+    margin: 0 !important;
+    transform: none !important;
+    z-index: 10 !important;
   }
 
   &-out-badge {

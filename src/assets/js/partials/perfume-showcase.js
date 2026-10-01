@@ -595,30 +595,39 @@ export function initPerfumeShowcase() {
         const bConf = getBadgeConfig(bText);
         badge.className = (badge.className || '') + ` royal-perfume-badge royal-badge--${bConf.type}`;
         badge.style.setProperty('position', 'absolute', 'important');
-        badge.style.setProperty('top', '12px', 'important');
-        badge.style.setProperty('right', '12px', 'important');
+        badge.style.setProperty('top', '14px', 'important');
+        badge.style.setProperty('right', '14px', 'important');
         badge.style.setProperty('left', 'auto', 'important');
+        badge.style.setProperty('bottom', 'auto', 'important');
+        badge.style.setProperty('margin', '0', 'important');
+        badge.style.setProperty('transform', 'none', 'important');
         badge.style.setProperty('background', bConf.bg, 'important');
         badge.style.setProperty('color', bConf.color, 'important');
         badge.style.setProperty('border', bConf.border, 'important');
-        badge.style.setProperty('padding', '4px 10px', 'important');
-        badge.style.setProperty('border-radius', '5px', 'important');
-        badge.style.setProperty('font-size', '0.72rem', 'important');
+        badge.style.setProperty('padding', '3px 10px', 'important');
+        badge.style.setProperty('border-radius', '4px', 'important');
+        badge.style.setProperty('font-size', '0.7rem', 'important');
         badge.style.setProperty('font-weight', '700', 'important');
         badge.style.setProperty('letter-spacing', '0.02em', 'important');
-        badge.style.setProperty('z-index', '5', 'important');
-        badge.style.setProperty('box-shadow', '0 2px 8px rgba(0,0,0,0.08)', 'important');
+        badge.style.setProperty('line-height', '1.2', 'important');
+        badge.style.setProperty('max-height', '26px', 'important');
+        badge.style.setProperty('z-index', '10', 'important');
+        badge.style.setProperty('box-shadow', '0 2px 6px rgba(0,0,0,0.06)', 'important');
         badge.style.setProperty('max-width', 'none', 'important');
+        badge.style.setProperty('pointer-events', 'none', 'important');
       }
 
-      // 7. Wishlist Button (Top-Left in RTL, separated from badge)
+      // 7. Wishlist Button (Top-Left in RTL, separated from badge, perfectly aligned at top: 14px)
       const wishlistBtn = root.querySelector('.s-product-card-wishlist-btn, [data-wishlist], button[aria-label*="مفضلة"], button[aria-label*="wishlist"]');
       if (wishlistBtn) {
         wishlistBtn.style.setProperty('position', 'absolute', 'important');
-        wishlistBtn.style.setProperty('top', '12px', 'important');
-        wishlistBtn.style.setProperty('left', '12px', 'important');
+        wishlistBtn.style.setProperty('top', '14px', 'important');
+        wishlistBtn.style.setProperty('left', '14px', 'important');
         wishlistBtn.style.setProperty('right', 'auto', 'important');
-        wishlistBtn.style.setProperty('z-index', '5', 'important');
+        wishlistBtn.style.setProperty('bottom', 'auto', 'important');
+        wishlistBtn.style.setProperty('margin', '0', 'important');
+        wishlistBtn.style.setProperty('transform', 'none', 'important');
+        wishlistBtn.style.setProperty('z-index', '10', 'important');
       }
     }
 
@@ -912,15 +921,15 @@ export function initPerfumeShowcase() {
     const cardsHtml = data.items.map(item => {
       const bConf = getBadgeConfig(item.badge || 'جديد');
       return `
-      <div class="royal-perfume-card" style="background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.22); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 16px rgba(0,0,0,0.03); transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;">
-        <div style="background: #f8f6f2; height: 270px; width: 100%; display: flex; align-items: center; justify-content: center; padding: 1.25rem; position: relative;">
+      <div class="royal-perfume-card" style="background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.22); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 16px rgba(0,0,0,0.03); transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; position: relative;">
+        <div style="background: #f8f6f2; height: 270px; width: 100%; display: flex; align-items: center; justify-content: center; padding: 1.25rem; position: relative; overflow: hidden; border-top-left-radius: 11px; border-top-right-radius: 11px;">
           <img src="${item.image}" alt="${item.name}" loading="lazy" style="max-height: 85%; max-width: 85%; object-fit: contain; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.08)); transition: transform 0.4s ease;" />
           
-          <button type="button" aria-label="أضف للمفضلة" class="royal-wishlist-btn" style="position: absolute; top: 12px; left: 12px; width: 34px; height: 34px; border-radius: 50%; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.3); display: flex; align-items: center; justify-content: center; color: #121316; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.color='#cca36e'; this.style.borderColor='#cca36e';" onmouseout="this.style.color='#121316'; this.style.borderColor='rgba(197, 168, 128, 0.3)';">
+          <button type="button" aria-label="أضف للمفضلة" class="royal-wishlist-btn" style="position: absolute; top: 14px; left: 14px; width: 34px; height: 34px; border-radius: 50%; background: #ffffff; border: 1px solid rgba(197, 168, 128, 0.3); display: flex; align-items: center; justify-content: center; color: #121316; cursor: pointer; transition: all 0.2s; z-index: 10;" onmouseover="this.style.color='#cca36e'; this.style.borderColor='#cca36e';" onmouseout="this.style.color='#121316'; this.style.borderColor='rgba(197, 168, 128, 0.3)';">
             <i class="sicon-heart" style="font-size: 0.95rem;"></i>
           </button>
           
-          <span class="royal-perfume-badge royal-badge--${bConf.type}" style="position: absolute; top: 12px; right: 12px; background: ${bConf.bg} !important; color: ${bConf.color} !important; border: ${bConf.border} !important; padding: 4px 10px; border-radius: 5px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.02em; z-index: 5; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">${item.badge || 'جديد'}</span>
+          <span class="royal-perfume-badge royal-badge--${bConf.type}" style="position: absolute; top: 14px; right: 14px; left: auto; bottom: auto; margin: 0; transform: none; background: ${bConf.bg} !important; color: ${bConf.color} !important; border: ${bConf.border} !important; padding: 3px 10px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.02em; line-height: 1.2; max-height: 26px; z-index: 10; box-shadow: 0 2px 6px rgba(0,0,0,0.06); display: inline-flex; align-items: center; justify-content: center; pointer-events: none; white-space: nowrap;">${item.badge || 'جديد'}</span>
         </div>
         
         <div style="padding: 1.25rem 1.15rem 1.15rem; display: flex; flex-direction: column; flex-grow: 1; text-align: right;">

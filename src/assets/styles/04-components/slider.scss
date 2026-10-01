@@ -36,8 +36,14 @@ salla-slider{
 }
 
 .promotion-title{
-  @apply absolute z-10 top-4 rtl:right-0 ltr:left-0 font-bold text-sm bg-red-800 text-white rtl:rounded-l-md ltr:rounded-r-md;
-  @apply w-auto m-0 px-3 py-2 #{!important};
+  position: absolute !important;
+  top: 14px !important;
+  right: 14px !important;
+  left: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  transform: none !important;
+  z-index: 10 !important;
 }
 
 .home-slider {

@@ -433,31 +433,35 @@ salla-user-menu {
   }
 
   /* ============================================================
-     PREMIUM MARKETING BADGES SYSTEM
+     PREMIUM MARKETING BADGES SYSTEM (CARD-SCOPED)
      ============================================================ */
   .s-product-card-promotion-title,
   .promotion-title,
   .royal-perfume-badge,
   .s-product-card-badge {
     position: absolute !important;
-    top: 12px !important;
-    right: 12px !important;
+    top: 14px !important;
+    right: 14px !important;
     left: auto !important;
-    z-index: 5 !important;
-    padding: 4px 10px !important;
-    border-radius: 5px !important;
-    font-size: 0.72rem !important;
+    bottom: auto !important;
+    z-index: 10 !important;
+    padding: 3px 10px !important;
+    border-radius: 4px !important;
+    font-size: 0.7rem !important;
     font-weight: 700 !important;
     letter-spacing: 0.02em !important;
-    line-height: 1.3 !important;
+    line-height: 1.2 !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
     transition: all 0.2s ease !important;
     max-width: none !important;
+    max-height: 26px !important;
     margin: 0 !important;
+    transform: none !important;
     border: none;
+    pointer-events: none !important;
   }
 
   /* Badge Color Tokens */
@@ -507,10 +511,13 @@ salla-user-menu {
   .s-product-card-wishlist-btn,
   .royal-wishlist-btn {
     position: absolute !important;
-    top: 12px !important;
-    left: 12px !important;
+    top: 14px !important;
+    left: 14px !important;
     right: auto !important;
-    z-index: 5 !important;
+    bottom: auto !important;
+    margin: 0 !important;
+    transform: none !important;
+    z-index: 10 !important;
   }
 
   .s-product-card-quantity {
@@ -914,6 +921,9 @@ salla-maintenance-alert,
 }
 
 .royal-perfume-card {
+  overflow: hidden !important;
+  border-radius: 12px !important;
+
   &:hover {
     transform: translateY(-5px);
     border-color: #cca36e !important;
@@ -935,3 +945,46 @@ salla-maintenance-alert,
     }
   }
 }
+
+/* ============================================================
+   UNIVERSAL LUXURY MARKETING BADGES (UN-SCOPED)
+   ============================================================ */
+.royal-perfume-badge,
+.s-product-card-promotion-title,
+.promotion-title,
+.s-product-card-badge {
+  position: absolute !important;
+  top: 14px !important;
+  right: 14px !important;
+  left: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  transform: none !important;
+  z-index: 10 !important;
+  padding: 3px 10px !important;
+  border-radius: 4px !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.2 !important;
+  max-height: 26px !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+  pointer-events: none !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.royal-wishlist-btn,
+.s-product-card-wishlist-btn {
+  position: absolute !important;
+  top: 14px !important;
+  left: 14px !important;
+  right: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  transform: none !important;
+  z-index: 10 !important;
+}
+
