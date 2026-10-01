@@ -700,6 +700,10 @@ export function initPerfumeShowcase() {
       brand.style.background = 'transparent';
       const img = brand.querySelector('img');
       if (img) {
+        if (!img.src || !img.src.includes('anwor-royal-logo') || img.src.includes('.png')) {
+          img.src = 'http://localhost:8000/images/anwor-royal-logo.svg';
+          img.srcset = '';
+        }
         img.style.maxHeight = '48px';
         img.style.width = 'auto';
         img.style.objectFit = 'contain';

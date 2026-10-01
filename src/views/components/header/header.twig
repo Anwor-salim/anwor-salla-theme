@@ -9,11 +9,22 @@
 <header data-testid="store-header" class="store-header sticky top-0 z-50 transition-all duration-300">
   {# Luxury Fragrance Announcement Bar #}
   {% if theme.settings.get('show_top_ribbon', true) %}
-  <div class="perfume-top-ribbon bg-[#cca36e] text-[#121316] text-xs py-2 px-4 text-center font-bold tracking-wide flex items-center justify-center gap-2 shadow-sm">
-    <span class="inline-flex items-center gap-1.5 font-bold">
-      <i class="sicon-sparkle text-xs"></i>
-      <span>{{ theme.settings.get('top_ribbon_text', 'عروض حصرية: احصل على خصم 20% على العطور الملكية لفترة محدودة | شحن مجاني للطلبات فوق 500 ريال') }}</span>
-    </span>
+  <div class="perfume-top-ribbon bg-[#d4b07c] text-[#121316] text-xs py-1.5 px-4 shadow-sm border-b border-[#cca36e]/40">
+    <div class="container flex items-center justify-between text-xs font-semibold">
+      <div class="flex items-center gap-2 text-[#121316]/80">
+        <button type="button" class="hover:opacity-70 transition-opacity flex items-center" aria-label="السابق"><i class="sicon-keyboard_arrow_right text-xs"></i></button>
+        <button type="button" class="hover:opacity-70 transition-opacity flex items-center" aria-label="التالي"><i class="sicon-keyboard_arrow_left text-xs"></i></button>
+      </div>
+      <div class="flex-1 text-center font-bold tracking-wide">
+        <span class="inline-flex items-center gap-1.5">
+          <span>عطور مختارة بعناية لأجمل لحظاتك</span>
+        </span>
+      </div>
+      <div class="hidden sm:flex items-center gap-1.5 font-bold text-xs text-[#121316]">
+        <i class="sicon-delivery-truck text-sm"></i>
+        <span>شحن مجاني للطلبات فوق 500 ريال</span>
+      </div>
+    </div>
   </div>
   {% endif %}
 
@@ -72,7 +83,7 @@
                         <i class="sicon-menu text-[#faf7f2] text-2xl"></i>
                       </a>
                       <a data-testid="store-header-logo" class="navbar-brand flex items-center" href="{{ store.url }}">
-                          <img fetchpriority="high" width="100%" height="100%" loading="eager" src="{{ store.logo|cdn(175) }}" alt="{{ store.name }} logo" class="max-h-12 w-auto object-contain">
+                          <img fetchpriority="high" width="100%" height="100%" loading="eager" src="{{ ('images/anwor-royal-logo.svg'|asset) }}" alt="ANWOR SCENTS OF LUXURY" class="max-h-12 w-auto object-contain">
                           {% if is_page('index') %}
                             <h1 class="sr-only">{{ store.name }}</h1>
                           {% else %}
