@@ -361,8 +361,9 @@ salla-cart-summary {
   }
 }
 
-/* User Menu & Avatar: Strictly 36x36px Circular with Champagne Border */
+/* User Menu & Avatar: Strictly 36x36px Circular Trigger with Luxury Dropdown */
 salla-user-menu {
+  position: relative !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -372,8 +373,7 @@ salla-user-menu {
   max-width: 36px !important;
   min-height: 36px !important;
   max-height: 36px !important;
-  border-radius: 50% !important;
-  overflow: hidden !important;
+  overflow: visible !important; /* Must allow dropdown menu to display outside */
   background: transparent !important;
   color: #faf7f2 !important;
   padding: 0 !important;
@@ -381,13 +381,16 @@ salla-user-menu {
   vertical-align: middle !important;
   box-sizing: border-box !important;
 
-  > *,
-  .s-user-menu-login-btn,
-  .s-user-menu-trigger,
-  .s-user-menu-avatar,
-  .s-user-menu-wrapper,
-  button,
-  a {
+  /* ONLY target the trigger element (button / avatar), NEVER dropdown links */
+  > .s-user-menu-login-btn,
+  > .s-user-menu-trigger,
+  > .s-user-menu-avatar,
+  > button,
+  > a,
+  > slot-fb > button,
+  > slot-fb > a,
+  .dropdown__trigger,
+  .dropdown-toggler > .dropdown__trigger {
     width: 36px !important;
     height: 36px !important;
     min-width: 36px !important;
@@ -427,26 +430,151 @@ salla-user-menu {
         color: #121316 !important;
       }
     }
+
+    /* Clip ANY avatar image or illustration inside trigger */
+    img {
+      width: 36px !important;
+      height: 36px !important;
+      min-width: 36px !important;
+      max-width: 36px !important;
+      min-height: 36px !important;
+      max-height: 36px !important;
+      border-radius: 50% !important;
+      border: 1px solid rgba(197, 168, 128, 0.35) !important;
+      object-fit: cover !important;
+      background: #ffffff !important;
+      display: block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      box-sizing: border-box !important;
+    }
   }
 
-  /* Clip ANY avatar image or illustration into a pristine 36px circle */
-  img,
-  .s-user-menu-avatar img,
-  .s-user-menu-trigger img {
-    width: 36px !important;
-    height: 36px !important;
-    min-width: 36px !important;
-    max-width: 36px !important;
-    min-height: 36px !important;
-    max-height: 36px !important;
-    border-radius: 50% !important;
+  /* Luxury Dropdown Menu: Royal Dark Palette with Clean Arabic Typography */
+  .dropdown__menu,
+  .s-user-menu-dropdown,
+  [class*="dropdown__menu"],
+  [class*="user-menu-dropdown"] {
+    background: #16171b !important;
     border: 1px solid rgba(197, 168, 128, 0.35) !important;
-    object-fit: cover !important;
-    background: #ffffff !important;
-    display: block !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
+    border-radius: 12px !important;
+    box-shadow: 0 16px 40px -4px rgba(0, 0, 0, 0.65) !important;
+    padding: 8px 6px !important;
+    width: 220px !important;
+    min-width: 200px !important;
+    max-width: 260px !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    z-index: 100 !important;
+    top: calc(100% + 8px) !important;
+    right: 0 !important;
+    left: auto !important;
+
+    ul,
+    ol,
+    li,
+    .menu-item {
+      width: 100% !important;
+      height: auto !important;
+      min-width: 100% !important;
+      max-width: 100% !important;
+      border-radius: 0 !important;
+      border: none !important;
+      background: transparent !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      display: block !important;
+      list-style: none !important;
+      overflow: visible !important;
+    }
+
+    /* All Links and Buttons inside the Dropdown: Elegantly Formatted */
+    a,
+    button {
+      width: 100% !important;
+      min-width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      min-height: 38px !important;
+      max-height: none !important;
+      border-radius: 8px !important;
+      border: none !important;
+      background: transparent !important;
+      color: #ede9e1 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      padding: 9px 14px !important;
+      font-size: 0.85rem !important;
+      font-weight: 600 !important;
+      line-height: 1.5 !important;
+      text-align: right !important;
+      direction: rtl !important;
+      gap: 10px !important;
+      transition: all 0.2s ease !important;
+      box-shadow: none !important;
+      box-sizing: border-box !important;
+      overflow: visible !important;
+      white-space: nowrap !important;
+      cursor: pointer !important;
+
+      i,
+      svg {
+        width: 16px !important;
+        height: 16px !important;
+        font-size: 1rem !important;
+        color: #cca36e !important;
+        fill: #cca36e !important;
+        flex-shrink: 0 !important;
+        margin: 0 !important;
+      }
+
+      span,
+      p,
+      b {
+        color: inherit !important;
+        font-size: inherit !important;
+        font-weight: inherit !important;
+        display: inline !important;
+      }
+
+      &:hover {
+        background: rgba(197, 168, 128, 0.12) !important;
+        color: #cca36e !important;
+
+        i,
+        svg {
+          color: #dfcaa7 !important;
+          fill: #dfcaa7 !important;
+        }
+      }
+
+      /* Logout Item: Distinction in Soft Royal Red */
+      &[href*="logout"],
+      &.logout,
+      &.text-red-500,
+      &[class*="danger"],
+      &[onclick*="logout"],
+      &:last-child {
+        color: #f87171 !important;
+        border-top: 1px solid rgba(197, 168, 128, 0.15) !important;
+        margin-top: 4px !important;
+        padding-top: 10px !important;
+
+        i,
+        svg {
+          color: #f87171 !important;
+          fill: #f87171 !important;
+        }
+
+        &:hover {
+          background: rgba(239, 68, 68, 0.15) !important;
+          color: #ffffff !important;
+        }
+      }
+    }
   }
 }
 

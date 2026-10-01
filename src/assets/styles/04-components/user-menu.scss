@@ -8,8 +8,43 @@
 }
 
 .dropdown__menu {
-  @apply origin-top-right duration-200 transition-all scale-y-90 absolute opacity-0 -translate-y-4 invisible rtl:left-0 ltr:right-0 z-30 w-80 lg:w-60 rounded-t-md lg:rounded-t-none rounded-b-md shadow-default bg-white top-full lg:border-t lg:border-gray-300/30;
+  @apply origin-top-right duration-200 transition-all scale-y-90 absolute opacity-0 -translate-y-4 invisible rtl:left-0 ltr:right-0 z-30 w-80 lg:w-60 rounded-xl shadow-2xl top-full;
+  background: #16171b !important;
+  border: 1px solid rgba(197, 168, 128, 0.35) !important;
   outline: none;
+  padding: 8px 6px !important;
+
+  .menu-item,
+  li {
+    width: 100% !important;
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    a,
+    button {
+      width: 100% !important;
+      min-width: 100% !important;
+      display: flex !important;
+      align-items: center !important;
+      padding: 10px 14px !important;
+      color: #faf7f2 !important;
+      font-size: 0.85rem !important;
+      font-weight: 600 !important;
+      border-radius: 8px !important;
+      transition: all 0.2s ease !important;
+      gap: 10px !important;
+      text-align: right !important;
+      white-space: nowrap !important;
+      background: transparent !important;
+      border: none !important;
+
+      &:hover {
+        background: rgba(197, 168, 128, 0.12) !important;
+        color: #cca36e !important;
+      }
+    }
+  }
 }
 
 .dropdown-toggler {
