@@ -250,18 +250,27 @@ body {
   }
 }
 
-/* Header Action Icons: 38x38px with uniform delicate borders */
+/* Header Action Icons: Perfectly Unified 36x36px Circular Luxury Palette */
 .store-header button,
-.store-header a[href*="wishlist"] {
-  width: 38px !important;
-  height: 38px !important;
+.store-header a[href*="wishlist"],
+.store-header .header-buttons button {
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  max-width: 36px !important;
+  min-height: 36px !important;
+  max-height: 36px !important;
   border-radius: 50% !important;
   border: 1px solid rgba(197, 168, 128, 0.35) !important;
-  display: flex !important;
+  display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+  background: #141518 !important;
   color: #faf7f2 !important;
+  padding: 0 !important;
+  margin: 0 !important;
   transition: all 0.25s ease !important;
+  box-sizing: border-box !important;
 
   &:hover {
     background: #cca36e !important;
@@ -270,27 +279,219 @@ body {
   }
 }
 
-/* Cart Badge & User Menu */
+/* Cart Button in Header */
 salla-cart-summary {
-  .header-btn__icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  max-width: 36px !important;
+  min-height: 36px !important;
+  max-height: 36px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  .header-btn,
+  button,
+  a {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    max-width: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(197, 168, 128, 0.35) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #141518 !important;
     color: #faf7f2 !important;
-    transition: transform 0.2s ease, color 0.2s ease;
+    position: relative !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    transition: all 0.25s ease !important;
+    box-sizing: border-box !important;
+
+    &:hover {
+      background: #cca36e !important;
+      border-color: #cca36e !important;
+      color: #121316 !important;
+      .header-btn__icon {
+        color: #121316 !important;
+      }
+    }
   }
-  &:hover .header-btn__icon {
-    color: #cca36e !important;
-    transform: scale(1.08);
+
+  .header-btn__icon,
+  i,
+  svg {
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #faf7f2 !important;
+    font-size: 1.05rem !important;
+    transition: color 0.2s ease !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
+
   .s-cart-summary-count {
+    position: absolute !important;
+    top: -2px !important;
+    right: -2px !important;
     background: #cca36e !important;
     color: #121316 !important;
-    border: 1px solid #141518 !important;
-    font-size: 0.72rem !important;
+    border: 1.5px solid #141518 !important;
+    font-size: 0.65rem !important;
     font-weight: 800 !important;
+    width: 17px !important;
+    height: 17px !important;
+    min-width: 17px !important;
+    min-height: 17px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    padding: 0 !important;
   }
 }
 
+/* User Menu & Avatar: Strictly 36x36px Circular with Champagne Border */
 salla-user-menu {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  max-width: 36px !important;
+  min-height: 36px !important;
+  max-height: 36px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  background: transparent !important;
   color: #faf7f2 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  vertical-align: middle !important;
+  box-sizing: border-box !important;
+
+  > *,
+  .s-user-menu-login-btn,
+  .s-user-menu-trigger,
+  .s-user-menu-avatar,
+  .s-user-menu-wrapper,
+  button,
+  a {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    max-width: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(197, 168, 128, 0.35) !important;
+    background: #141518 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #faf7f2 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    transition: all 0.25s ease !important;
+    cursor: pointer !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+
+    svg {
+      width: 17px !important;
+      height: 17px !important;
+      fill: #faf7f2 !important;
+      color: #faf7f2 !important;
+      transition: fill 0.2s ease !important;
+    }
+
+    &:hover {
+      background: #cca36e !important;
+      border-color: #cca36e !important;
+      color: #121316 !important;
+
+      svg {
+        fill: #121316 !important;
+        color: #121316 !important;
+      }
+    }
+  }
+
+  /* Clip ANY avatar image or illustration into a pristine 36px circle */
+  img,
+  .s-user-menu-avatar img,
+  .s-user-menu-trigger img {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    max-width: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(197, 168, 128, 0.35) !important;
+    object-fit: cover !important;
+    background: #ffffff !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Universal Luxury Fragrance Marketing Badges */
+.royal-perfume-badge,
+.s-product-card-badge,
+.s-product-card-promotion-title,
+.promotion-title,
+[class*="royal-badge"],
+[class*="badge--"],
+.s-product-card .badge,
+.product-entry__badge {
+  position: absolute !important;
+  top: 14px !important;
+  right: 14px !important;
+  left: auto !important;
+  bottom: auto !important;
+  z-index: 10 !important;
+  height: 24px !important;
+  min-height: 24px !important;
+  max-height: 24px !important;
+  line-height: 24px !important;
+  padding: 0 10px !important;
+  border-radius: 5px !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.03em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  white-space: nowrap !important;
+  box-shadow: 0 2px 6px rgba(135, 99, 42, 0.08) !important;
+  transition: all 0.2s ease !important;
+  max-width: none !important;
+  margin: 0 !important;
+  transform: none !important;
+  pointer-events: none !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+
+  /* Unified Champagne Gold Luxury Token with high-contrast bronze-gold typography */
+  background: rgba(201, 166, 107, 0.16) !important;
+  color: #87632a !important;
+  border: 1px solid rgba(201, 166, 107, 0.5) !important;
 }
 
 /* 3. Luxury Perfume Product Cards */
@@ -452,10 +653,10 @@ salla-user-menu {
     max-height: 24px !important;
     line-height: 22px !important;
     padding: 0 10px !important;
-    border-radius: 4px !important;
-    font-size: 0.7rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.02em !important;
+    border-radius: 5px !important;
+    font-size: 0.72rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.03em !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -467,11 +668,12 @@ salla-user-menu {
     margin: 0 !important;
     transform: none !important;
     pointer-events: none !important;
+    backdrop-filter: blur(4px) !important;
 
-    /* Unified Champagne Gold Luxury Token for all badges */
-    background: rgba(201, 166, 107, 0.14) !important;
-    color: #9e7a46 !important;
-    border: 1px solid rgba(201, 166, 107, 0.45) !important;
+    /* Unified Champagne Gold Luxury Token with high-definition typography */
+    background: rgba(201, 166, 107, 0.16) !important;
+    color: #87632a !important;
+    border: 1px solid rgba(201, 166, 107, 0.5) !important;
   }
 
   /* Wishlist Button: Top-Left in RTL, separated from badge */
@@ -938,10 +1140,10 @@ salla-maintenance-alert,
   max-height: 24px !important;
   line-height: 22px !important;
   padding: 0 10px !important;
-  border-radius: 4px !important;
-  font-size: 0.7rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.02em !important;
+  border-radius: 5px !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.03em !important;
   box-sizing: border-box !important;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
   pointer-events: none !important;
@@ -949,11 +1151,12 @@ salla-maintenance-alert,
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+  backdrop-filter: blur(4px) !important;
 
   /* Unified Champagne Gold Luxury Palette */
-  background: rgba(201, 166, 107, 0.14) !important;
-  color: #9e7a46 !important;
-  border: 1px solid rgba(201, 166, 107, 0.45) !important;
+  background: rgba(201, 166, 107, 0.16) !important;
+  color: #87632a !important;
+  border: 1px solid rgba(201, 166, 107, 0.5) !important;
 }
 
 .royal-wishlist-btn,

@@ -385,9 +385,9 @@ export function getBadgeConfig(badgeText) {
   // Unified Champagne Gold Luxury Token (Consistent across all products)
   return {
     type: type,
-    bg: 'rgba(201, 166, 107, 0.14)',
-    color: '#9e7a46',
-    border: '1px solid rgba(201, 166, 107, 0.45)'
+    bg: 'rgba(201, 166, 107, 0.16)',
+    color: '#87632a',
+    border: '1px solid rgba(201, 166, 107, 0.5)'
   };
 }
 
@@ -580,13 +580,14 @@ export function initPerfumeShowcase() {
         badge.style.setProperty('height', '24px', 'important');
         badge.style.setProperty('min-height', '24px', 'important');
         badge.style.setProperty('max-height', '24px', 'important');
-        badge.style.setProperty('line-height', '22px', 'important');
-        badge.style.setProperty('border-radius', '4px', 'important');
-        badge.style.setProperty('font-size', '0.7rem', 'important');
-        badge.style.setProperty('font-weight', '700', 'important');
-        badge.style.setProperty('letter-spacing', '0.02em', 'important');
+        badge.style.setProperty('line-height', '24px', 'important');
+        badge.style.setProperty('border-radius', '5px', 'important');
+        badge.style.setProperty('font-size', '0.72rem', 'important');
+        badge.style.setProperty('font-weight', '800', 'important');
+        badge.style.setProperty('letter-spacing', '0.03em', 'important');
         badge.style.setProperty('z-index', '10', 'important');
-        badge.style.setProperty('box-shadow', '0 2px 6px rgba(0,0,0,0.04)', 'important');
+        badge.style.setProperty('box-shadow', '0 2px 6px rgba(135, 99, 42, 0.08)', 'important');
+        badge.style.setProperty('backdrop-filter', 'blur(4px)', 'important');
         badge.style.setProperty('max-width', 'none', 'important');
         badge.style.setProperty('box-sizing', 'border-box', 'important');
         badge.style.setProperty('display', 'inline-flex', 'important');
@@ -910,7 +911,7 @@ export function initPerfumeShowcase() {
             <i class="sicon-heart" style="font-size: 0.9rem;"></i>
           </button>
           
-          <span class="royal-perfume-badge royal-badge--${bConf.type}" style="position: absolute; top: 14px; right: 14px; left: auto; bottom: auto; margin: 0; transform: none; background: ${bConf.bg} !important; color: ${bConf.color} !important; border: ${bConf.border} !important; padding: 0 10px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.02em; line-height: 22px; height: 24px; min-height: 24px; max-height: 24px; z-index: 10; box-shadow: 0 2px 6px rgba(0,0,0,0.04); display: inline-flex; align-items: center; justify-content: center; pointer-events: none; white-space: nowrap; box-sizing: border-box;">${item.badge || 'جديد'}</span>
+          <span class="royal-perfume-badge royal-badge--${bConf.type}" style="position: absolute; top: 14px; right: 14px; left: auto; bottom: auto; margin: 0; transform: none; background: ${bConf.bg} !important; color: ${bConf.color} !important; border: ${bConf.border} !important; padding: 0 10px; border-radius: 5px; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.03em; line-height: 24px; height: 24px; min-height: 24px; max-height: 24px; z-index: 10; box-shadow: 0 2px 6px rgba(135, 99, 42, 0.08); backdrop-filter: blur(4px); display: inline-flex; align-items: center; justify-content: center; pointer-events: none; white-space: nowrap; box-sizing: border-box;">${item.badge || 'جديد'}</span>
         </div>
         
         <div style="padding: 1.25rem 1.15rem 1.15rem; display: flex; flex-direction: column; flex-grow: 1; text-align: right;">
