@@ -1,26 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="280" height="80">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="300" height="80">
   <defs>
     <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#edd6b1"/>
-      <stop offset="50%" stop-color="#cca36e"/>
+      <stop offset="35%" stop-color="#cca36e"/>
+      <stop offset="70%" stop-color="#dfcaa7"/>
       <stop offset="100%" stop-color="#a87f43"/>
     </linearGradient>
+    <linearGradient id="goldSheen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#cca36e" stop-opacity="0.2"/>
+    </linearGradient>
   </defs>
-  <!-- Royal Perfume Emblem -->
-  <g transform="translate(140, 20) scale(0.9)" stroke="url(#goldGrad)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Center bud / flame -->
-    <path d="M0 -14 C2 -7, 3 -3, 0 3 C-3 -3, -2 -7, 0 -14 Z" fill="url(#goldGrad)"/>
-    <!-- Inner petals -->
-    <path d="M-2 2 C-7 -4, -9 -10, -5 -13 C-2 -10, 0 -3, 0 3"/>
-    <path d="M2 2 C7 -4, 9 -10, 5 -13 C2 -10, 0 -3, 0 3"/>
-    <!-- Outer petals -->
-    <path d="M-4 3 C-12 -2, -14 -8, -10 -11 C-7 -7, -2 0, 0 4"/>
-    <path d="M4 3 C12 -2, 14 -8, 10 -11 C7 -7, 2 0, 0 4"/>
-    <!-- Base arch -->
-    <path d="M-8 4 C-4 6, 4 6, 8 4" stroke-width="1.2"/>
+
+  <!-- Group Emblem: Crown + Diamond Perfume Bottle -->
+  <g transform="translate(42, 40)">
+    <!-- Crown atop Bottle -->
+    <path d="M-11 -21 L-16 -32 L-7 -27 L0 -35 L7 -27 L16 -32 L11 -21 Z" fill="url(#goldGrad)"/>
+    <!-- Crown Jewels / dots -->
+    <circle cx="-16" cy="-33" r="1.3" fill="#ffffff"/>
+    <circle cx="0" cy="-36" r="1.6" fill="#ffffff"/>
+    <circle cx="16" cy="-33" r="1.3" fill="#ffffff"/>
+    <circle cx="-7" cy="-28" r="1.1" fill="url(#goldGrad)"/>
+    <circle cx="7" cy="-28" r="1.1" fill="url(#goldGrad)"/>
+    
+    <!-- Bottle Neck & Atomizer Collar -->
+    <rect x="-6" y="-20" width="12" height="4" rx="1.5" fill="url(#goldGrad)"/>
+    <rect x="-4" y="-16" width="8" height="3" fill="#dfcaa7"/>
+
+    <!-- Diamond Flacon (Faceted Perfume Bottle) -->
+    <!-- Outer Facets -->
+    <polygon points="0,-13 18,-6 24,6 15,22 -15,22 -24,6 -18,-6" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-linejoin="round"/>
+    <!-- Inner Gem Facets -->
+    <polygon points="0,-13 0,16 15,22 24,6 18,-6" fill="url(#goldGrad)" fill-opacity="0.12"/>
+    <polygon points="0,-13 -18,-6 -24,6 -15,22 0,16" fill="url(#goldGrad)" fill-opacity="0.06"/>
+    <!-- Central Facet Lines -->
+    <line x1="0" y1="-13" x2="0" y2="22" stroke="url(#goldGrad)" stroke-width="1.2"/>
+    <line x1="0" y1="-4" x2="18" y2="-6" stroke="url(#goldGrad)" stroke-width="1"/>
+    <line x1="0" y1="-4" x2="-18" y2="-6" stroke="url(#goldGrad)" stroke-width="1"/>
+    <line x1="0" y1="6" x2="24" y2="6" stroke="url(#goldGrad)" stroke-width="1"/>
+    <line x1="0" y1="6" x2="-24" y2="6" stroke="url(#goldGrad)" stroke-width="1"/>
+    <line x1="0" y1="16" x2="15" y2="22" stroke="url(#goldGrad)" stroke-width="1"/>
+    <line x1="0" y1="16" x2="-15" y2="22" stroke="url(#goldGrad)" stroke-width="1"/>
+    
+    <!-- Fragrance Dip Tube (Pipette) -->
+    <path d="M0 -13 Q 1 2 0 16" stroke="#edd6b1" stroke-width="0.8" fill="none" opacity="0.7"/>
+
+    <!-- Sparkle accents -->
+    <path d="M26 -16 Q 28 -14 30 -16 Q 28 -18 26 -16" fill="#edd6b1"/>
+    <path d="M-26 18 Q -24 20 -22 18 Q -24 16 -26 18" fill="#edd6b1"/>
   </g>
-  <!-- ANWOR Brand Name -->
-  <text x="140" y="54" text-anchor="middle" font-family="'Cinzel', 'Playfair Display', 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="5" fill="url(#goldGrad)">ANWOR</text>
-  <!-- Subtitle -->
-  <text x="140" y="68" text-anchor="middle" font-family="'Montserrat', 'Inter', sans-serif" font-size="6.5" font-weight="600" letter-spacing="3.2" fill="#c5a880">SCENTS OF LUXURY</text>
+
+  <!-- Typography: Luxury Fragrance Brand -->
+  <g transform="translate(90, 0)">
+    <!-- Brand Name -->
+    <text x="0" y="44" font-family="'Cinzel', 'Playfair Display', 'Times New Roman', Georgia, serif" font-size="28" font-weight="700" letter-spacing="4.5" fill="url(#goldGrad)">ANWOR</text>
+    <!-- Subtitle: Royal Fragrances -->
+    <text x="1.5" y="60" font-family="'Montserrat', 'Inter', 'Segoe UI', sans-serif" font-size="8.5" font-weight="600" letter-spacing="3.8" fill="#dfcaa7">ROYAL FRAGRANCES</text>
+    <!-- Arabic Script Subtitle -->
+    <text x="152" y="60" font-family="'Tajawal', 'Cairo', sans-serif" font-size="8" font-weight="500" letter-spacing="0.5" fill="#a8a49d">عطور ملكية</text>
+  </g>
 </svg>
